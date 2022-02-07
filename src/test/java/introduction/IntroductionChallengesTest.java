@@ -7,8 +7,8 @@ import org.junit.Test;
 public class IntroductionChallengesTest {
 
 	@Test
-	public void generateInvoiceNumber() {
-		String day = IntroductionChallenges.findDay(8, 14, 2017);
+	public void findDayOfWeek() {
+		String day = IntroductionChallenges.findDayOfWeek(8, 14, 2017);
 		
 		assertTrue(day.equals("MONDAY"));
 		

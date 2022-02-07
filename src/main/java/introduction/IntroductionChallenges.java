@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
 public class IntroductionChallenges {
 	
 	//Java Date and Time
-	public static String findDay(int month, int day, int year) {
+	public static String findDayOfWeek(int month, int day, int year) {
 		
 		String dayNames[] = new DateFormatSymbols().getWeekdays();  
 		
