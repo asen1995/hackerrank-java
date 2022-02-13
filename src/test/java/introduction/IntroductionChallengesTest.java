@@ -20,4 +20,10 @@ public class IntroductionChallengesTest {
 		
 		
 	}
+	
+	@Test
+	public void currencyConverter() {
+		IntroductionChallenges.currencyConverter(12324.134);
+	}
+	
 }
