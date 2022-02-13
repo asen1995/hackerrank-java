@@ -12,5 +12,12 @@ public class IntroductionChallengesTest {
 		
 		assertTrue(day.equals("MONDAY"));
 		
+		
+		String test2 = IntroductionChallenges.findDayOfWeek(2, 6, 2022);
+		
+		assertTrue(test2.equals("SUNDAY"));
+		
+		
+		
 	}
 }
