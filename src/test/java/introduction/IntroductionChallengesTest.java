@@ -23,5 +23,11 @@ public class IntroductionChallengesTest {
 		double payment = 12324.134;
 		assertTrue(IntroductionChallenges.currencyConverter(payment).equals("SUCCESS"));
 	}
+	
+	@Test
+	public void calculator() {
+		assertTrue(0.0 == IntroductionChallenges.calculator(1,1,"+"));
+	}
+	
 
 }

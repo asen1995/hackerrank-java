@@ -42,5 +42,10 @@ public class IntroductionChallenges {
 		return "SUCCESS";
 
 	}
+	
+	public static double calculator(double number1,double number2, String operation) {
+
+		return 0.0;
+	}
 
 }
