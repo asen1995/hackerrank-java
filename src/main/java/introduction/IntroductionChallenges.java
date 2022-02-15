@@ -44,7 +44,20 @@ public class IntroductionChallenges {
 	}
 	
 	public static double calculator(double number1,double number2, String operation) {
+		
+		switch (operation) {
+		case "+":
+			return number1 + number2;
+		case "-":
+			return number1 - number2;
+		case "*":
+			return number1 * number2;
+		case "/":
+			return number1 / number2;
 
+		default:
+			break;
+		}
 		return 0.0;
 	}
 
