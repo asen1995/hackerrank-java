@@ -26,7 +26,7 @@ public class IntroductionChallengesTest {
 	
 	@Test
 	public void calculator() {
-		assertTrue(0.0 == IntroductionChallenges.calculator(1,1,"+"));
+		assertTrue(2.0 == IntroductionChallenges.calculator(1,1,"+"));
 	}
 	
 
