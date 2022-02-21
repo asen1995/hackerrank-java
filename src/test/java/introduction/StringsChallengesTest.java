@@ -10,7 +10,5 @@ public class StringsChallengesTest {
 	@Test
 	public void isAnagram() {
 		Assert.assertFalse(StringsChallenges.isAnagram("Hello", "hello"));
-		Assert.assertTrue(StringsChallenges.isAnagram("Asen", "asen"));
-		Assert.assertFalse(StringsChallenges.isAnagram("Ivan", "ivana"));
 	}
 }
