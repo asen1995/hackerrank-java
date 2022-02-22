@@ -7,8 +7,14 @@ import junit.framework.Assert;
 public class StringsChallengesTest {
 
 	
+//	@Test
+//	public void isAnagram() {
+//		Assert.assertFalse(StringsChallenges.isAnagram("Hello", "hello"));
+//	}
+	
 	@Test
-	public void isAnagram() {
-		Assert.assertFalse(StringsChallenges.isAnagram("Hello", "hello"));
+	public void getSmallestAndLargest() {
+		String smallestAndLargest = StringsChallenges.getSmallestAndLargest("welcometojava", 3);
+		Assert.assertTrue(smallestAndLargest.isEmpty());
 	}
 }

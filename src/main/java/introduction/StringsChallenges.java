@@ -19,6 +19,19 @@ public class StringsChallenges {
         String smallest = "";
         String largest = "";
         
+        
+        int lenght = 0;
+        
+        smallest = s.substring( lenght, lenght + k );
+        lenght++;
+        
+        while((lenght + k)  < s.length() - 1 ) {
+        	String secondStringForCompare = s.substring(lenght, lenght + k);
+        	if(secondStringForCompare.compareTo(smallest) < 0 ) { //smaller
+        		smallest = secondStringForCompare;
+        	}
+        	lenght++;
+        }
         // Complete the function
         // 'smallest' must be the lexicographically smallest substring of length 'k'
         // 'largest' must be the lexicographically largest substring of length 'k'
