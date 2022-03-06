@@ -1,5 +1,8 @@
 package introduction;
 
+import java.util.List;
+import java.util.regex.Pattern;
+
 public class StringsChallenges {
 
 	
@@ -78,6 +81,21 @@ public class StringsChallenges {
 		// 'largest' must be the lexicographically largest substring of length 'k'
 
 		return smallest + "\n" + largest;
+	}
+
+	public static void isItAValidPattern(List<String> list) {
+		
+		for (String regex : list) {
+
+			try {
+				Pattern compile = Pattern.compile(regex);
+				System.out.println("Valid");
+
+			} catch (java.util.regex.PatternSyntaxException e) {
+				System.out.println("Invalid"); // if pattern compile throws exception, the regex is invalid
+			}
+		}
+
 	}
 
 	
