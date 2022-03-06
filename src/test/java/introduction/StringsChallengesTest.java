@@ -1,6 +1,7 @@
 package introduction;
 
 import org.junit.Test;
+import org.junit.Test.None;
 
 import junit.framework.Assert;
 
@@ -14,6 +15,14 @@ public class StringsChallengesTest {
 		Assert.assertFalse(StringsChallenges.isAnagram("cat6", "cat"));		
 		
 	}
+	
+	//expecting to not throw exception
+	@Test(expected = None.class)
+	public void splitStringIntoTokens() {
+		StringsChallenges.splitStringIntoTokens("He is a very very good boy, isn't he?");		
+	}
+	
+	
 	
 //	@Test
 //	public void getSmallestAndLargest() {
