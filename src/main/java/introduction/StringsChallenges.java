@@ -41,8 +41,9 @@ public class StringsChallenges {
 		String trimmedSentense = s.trim();		
 		String rexeg = "[! ,?._'@]+"; //split by all this characters 
 		
-		String[] split = trimmedSentense.split(rexeg);
-		for (String splittedString : split) {
+		String[] splitWordsFromSentence = trimmedSentense.split(rexeg);
+		System.out.println(splitWordsFromSentence.length);
+		for (String splittedString : splitWordsFromSentence) {
 			System.out.println(splittedString);
 		}
 		
