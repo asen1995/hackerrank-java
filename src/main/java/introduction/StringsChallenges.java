@@ -34,6 +34,28 @@ public class StringsChallenges {
 		}
 		return true;
 	}
+	
+	//we need to print all tokens from string sentence and split them by space and special characters
+	public static void splitStringIntoTokens(String s) {
+
+		String trimmedSentense = s.trim();
+		
+		if (trimmedSentense == null || trimmedSentense.isEmpty()) {
+			System.out.println("0");
+
+		} else {
+
+			String rexeg = "[! ,?._'@]+"; // split by all this characters
+
+			String[] splitWordsFromSentence = trimmedSentense.split(rexeg);
+			System.out.println(splitWordsFromSentence.length);
+			for (String splittedString : splitWordsFromSentence) {
+				System.out.println(splittedString);
+			}
+
+		}
+	}
+	
 
 	public static String getSmallestAndLargest(String s, int k) {
 		String smallest = "";
@@ -57,5 +79,7 @@ public class StringsChallenges {
 
 		return smallest + "\n" + largest;
 	}
+
+	
 
 }
