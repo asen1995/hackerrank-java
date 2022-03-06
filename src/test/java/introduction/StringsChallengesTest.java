@@ -1,5 +1,7 @@
 package introduction;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.Test.None;
 
@@ -22,6 +24,17 @@ public class StringsChallengesTest {
 		StringsChallenges.splitStringIntoTokens("He is a very very good boy, isn't he?");		
 	}
 	
+	
+	
+	
+	//expecting to not throw exception
+	@Test(expected = None.class)
+	public void isItAValidPattern() {
+		String first = "([A-Z])(.+)";
+		String second  ="[AZ[a-z](a-z)";
+		String third  ="batcatpat(nat";
+		StringsChallenges.isItAValidPattern(Arrays.asList(first,second,third));
+	}
 	
 	
 //	@Test

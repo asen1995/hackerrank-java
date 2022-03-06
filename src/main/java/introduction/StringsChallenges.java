@@ -1,5 +1,6 @@
 package introduction;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -83,9 +84,9 @@ public class StringsChallenges {
 		return smallest + "\n" + largest;
 	}
 
-	public static void isItAValidPattern(List<String> list) {
-		
-		for (String regex : list) {
+	public static void isItAValidPattern(List<String> listOfRegularExpressions) {
+		List<String> listOfRegularExdpressions = new ArrayList();
+		for (String regex : listOfRegularExpressions) {
 
 			try {
 				Pattern compile = Pattern.compile(regex);
