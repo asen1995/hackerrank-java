@@ -16,14 +16,17 @@ public class StringsChallenges {
 		if (a.length() != b.length()) {
 			return false;
 		}
-
-		StringBuilder builder = new StringBuilder(b);
-
-		for (int i = 0; i < a.length(); i++) {
-			String letter = String.valueOf(a.charAt(i));			
-			int indexOfLetterInsideStringBuilder = builder.indexOf(letter);
+		
+		//upperCase both words for easier comparing
+		String firstWord = a.toUpperCase();
+		StringBuilder secondWord = new StringBuilder(b.toUpperCase());		
+		
+		for (int i = 0; i < firstWord.length(); i++) {
+			
+			String letter = String.valueOf(firstWord.charAt(i)).toUpperCase();			
+			int indexOfLetterInsideStringBuilder = secondWord.indexOf(letter);
 			if(indexOfLetterInsideStringBuilder != -1) {
-				builder.deleteCharAt(indexOfLetterInsideStringBuilder);
+				secondWord.deleteCharAt(indexOfLetterInsideStringBuilder);
 			}else {
 				return false;
 			}

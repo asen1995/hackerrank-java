@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		boolean anagram = StringsChallenges.isAnagram("cat", "act");
+		boolean anagram = StringsChallenges.isAnagram("Hello", "hello");
 		
 	}
 
