@@ -24,10 +24,10 @@ public class IntroductionChallengesTest {
 		assertTrue(IntroductionChallenges.currencyConverter(payment).equals("SUCCESS"));
 	}
 	
-	@Test
-	public void calculator() {
-		assertTrue(2.0 == IntroductionChallenges.calculator(1,1,"+"));
-	}
-	
+//	@Test
+//	public void calculator() {
+//		assertTrue(2.0 == IntroductionChallenges.calculator(1,1,"+"));
+//	}
+//	
 
 }

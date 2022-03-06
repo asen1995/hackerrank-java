@@ -2,16 +2,37 @@ package introduction;
 
 public class StringsChallenges {
 
+	
+	//examples of ANAGRAM is   CAT = ACT , elbow = below
 	static boolean isAnagram(String a, String b) {
-		if (a.length() != b.length())
-			return false;
 
-		int value = 0;
-		for (int i = 0; i < a.length(); i++) {
-			value += ((int) a.charAt(i)) ^ 2;
-			value -= ((int) b.charAt(i)) ^ 2;
+		if (a == null && b == null) {
+			return true;
 		}
-		return value == 0;
+		if (a == null || b == null) {
+			return false;
+		}
+
+		if (a.length() != b.length()) {
+			return false;
+		}
+		
+		//upperCase both words for easier comparing
+		String firstWord = a.toUpperCase();
+		StringBuilder secondWord = new StringBuilder(b.toUpperCase());		
+		
+		for (int i = 0; i < firstWord.length(); i++) {
+			
+			String letter = String.valueOf(firstWord.charAt(i)).toUpperCase();			
+			int indexOfLetterInsideStringBuilder = secondWord.indexOf(letter);
+			if(indexOfLetterInsideStringBuilder != -1) {
+				secondWord.deleteCharAt(indexOfLetterInsideStringBuilder);
+			}else {
+				return false;
+			}
+			
+		}
+		return true;
 	}
 
 	public static String getSmallestAndLargest(String s, int k) {
