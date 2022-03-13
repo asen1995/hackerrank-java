@@ -101,19 +101,17 @@ public class StringsChallenges {
 
 	}
 
-	public static String removeDuplicateWords(String input) {
-		String regex = "\\b(\\w+)(\\s+\\1\\b)*";
+	public static String removeDuplicateWords(String sentence) {
+		String regexMatchingDuplicateWords = "\\b(\\w+)(\\s+\\1\\b)*";
+		 
+		Pattern p = Pattern.compile(regexMatchingDuplicateWords, Pattern.CASE_INSENSITIVE);
 		
-		Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-		
-		Matcher m = p.matcher(input);
+		Matcher m = p.matcher(sentence);
 		
 		while (m.find()) {
-		     input = input.replaceAll(m.group(0), m.group(1));
-		}
-		
-		System.out.println(input);
-		return input;
+		     sentence = sentence.replaceAll(m.group(0), m.group(1));
+		}		
+		return sentence;
 		
 	}
 
