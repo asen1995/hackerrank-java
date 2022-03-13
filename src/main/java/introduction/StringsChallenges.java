@@ -2,6 +2,7 @@ package introduction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringsChallenges {
@@ -100,8 +101,19 @@ public class StringsChallenges {
 
 	}
 
-	public static void duplicateWords(String string) {
-		// TODO Auto-generated method stub
+	public static String removeDuplicateWords(String input) {
+		String regex = "\\b(\\w+)(\\s+\\1\\b)*";
+		
+		Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+		
+		Matcher m = p.matcher(input);
+		
+		while (m.find()) {
+		     input = input.replaceAll(m.group(0), m.group(1));
+		}
+		
+		System.out.println(input);
+		return input;
 		
 	}
 
