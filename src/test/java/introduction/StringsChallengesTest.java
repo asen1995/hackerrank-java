@@ -44,6 +44,19 @@ public class StringsChallengesTest {
 				.equals(StringsChallenges.removeDuplicateWords("Goodbye bye bye world world world")));
 		Assert.assertTrue("Sam went to his business"
 				.equals(StringsChallenges.removeDuplicateWords("Sam went went to to to his business")));
+		
+		//	StringsChallenges.removeTagsFromSentence("<h1>Nayeem loves counseling</h1>");
+		StringsChallenges.removeTagsFromSentence("<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>");
+	
+
+	}
+	
+	// expecting to not throw exception
+	@Test(expected = None.class)
+	public void removeTagsFromSentence() {
+
+		StringsChallenges.removeTagsFromSentence("<h1>Nayeem loves counseling</h1>");
+		StringsChallenges.removeTagsFromSentence("<h1><h1>Sanjay has no watch</h1></h1><par>So wait for a while</par>");
 
 	}
 }
