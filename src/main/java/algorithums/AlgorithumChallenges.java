@@ -23,4 +23,8 @@ public class AlgorithumChallenges {
         }
         return Arrays.asList(aRates, bRates);
     }
+
+    public long aVeryBigSum(List<Long> ar) {
+        return ar.stream().mapToLong(Long::longValue).sum();
+    }
 }

@@ -29,4 +29,19 @@ public class AlgorithumChallengesTest {
         assertEquals(result.get(0), Integer.valueOf(2));
         assertEquals(result.get(1), Integer.valueOf(1));
     }
+
+    @Test
+    public void aVeryBigSum() {
+
+        //Sample Input
+        //1000000001 1000000002 1000000003 1000000004 1000000005
+
+        //Output 5000000015
+
+        final List<Long> inputLongNumbers = Arrays.asList(1000000001L, 1000000002L, 1000000003L, 1000000004L, 1000000005L);
+        final long result = algorithumChallenges.aVeryBigSum(inputLongNumbers);
+
+        assertEquals(5000000015L, result);
+    }
+
 }
