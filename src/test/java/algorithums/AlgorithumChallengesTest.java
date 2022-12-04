@@ -2,6 +2,7 @@ package algorithums;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,4 +45,28 @@ public class AlgorithumChallengesTest {
         assertEquals(5000000015L, result);
     }
 
+
+    @Test
+    public void diagonalDifference() {
+
+        //        Sample Input
+        //
+        //        3
+        //        11 2 4
+        //        4 5 6
+        //        10 8 -12
+
+        //  sample output
+        //15
+
+        List<List<Integer>> arr = new ArrayList<>(3);
+
+        arr.add(Arrays.asList(11, 2, 4));
+        arr.add(Arrays.asList(4, 5, 6));
+        arr.add(Arrays.asList(10, 8, -12));
+
+        final int result = algorithumChallenges.diagonalDifference(arr);
+
+        assertEquals(15, result);
+    }
 }
