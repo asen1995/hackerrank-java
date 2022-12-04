@@ -31,7 +31,9 @@ public class AlgorithumChallenges {
     public int diagonalDifference(List<List<Integer>> arr) {
 
         int leftDiagonal = 0, rightDiagonal = 0;
-        final int matrixMax = 3;
+        final int matrixMax = arr.size();
+
+        //3 dimensional array example of diagonals
 
         //        0 0
         //        1 1
@@ -42,7 +44,7 @@ public class AlgorithumChallenges {
         //         0 2
 
 
-        for (byte iteration = 0, leftDiagonalIndex = 0, rightDiagonalIndex = matrixMax - 1; iteration < matrixMax; iteration++) {
+        for (int iteration = 0, leftDiagonalIndex = 0, rightDiagonalIndex = matrixMax - 1; iteration < matrixMax; iteration++) {
 
             leftDiagonal += arr.get(leftDiagonalIndex).get(iteration);
             rightDiagonal += arr.get(rightDiagonalIndex).get(iteration);
@@ -50,7 +52,7 @@ public class AlgorithumChallenges {
             leftDiagonalIndex++;
             rightDiagonalIndex--;
         }
-        
+
         return Math.abs(leftDiagonal - rightDiagonal);
     }
 }
