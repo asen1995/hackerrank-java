@@ -42,14 +42,15 @@ public class AlgorithumChallenges {
         //         0 2
 
 
-        for (int i = 0, j = 0; i < matrixMax; i++, j++) {
-            leftDiagonal += arr.get(i).get(j);
-        }
+        for (byte iteration = 0, leftDiagonalIndex = 0, rightDiagonalIndex = matrixMax - 1; iteration < matrixMax; iteration++) {
 
-        for (int i = matrixMax - 1, j = 0; i >= 0; i--, j++) {
-            rightDiagonal += arr.get(i).get(j);
-        }
+            leftDiagonal += arr.get(leftDiagonalIndex).get(iteration);
+            rightDiagonal += arr.get(rightDiagonalIndex).get(iteration);
 
+            leftDiagonalIndex++;
+            rightDiagonalIndex--;
+        }
+        
         return Math.abs(leftDiagonal - rightDiagonal);
     }
 }
