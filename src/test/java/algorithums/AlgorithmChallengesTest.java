@@ -88,4 +88,21 @@ public class AlgorithmChallengesTest {
 
 
     }
+
+
+    @Test
+    public void stairCase() {
+
+        //print stairCase
+
+        //
+        //     #
+        //    ##
+        //   ###
+        //  ####
+        // #####
+        //######
+        algorithmChallenges.staircase(6);
+
+    }
 }

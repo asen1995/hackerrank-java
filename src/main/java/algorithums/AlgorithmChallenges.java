@@ -82,4 +82,30 @@ public class AlgorithmChallenges {
 
     }
 
+
+    public void staircase(int n) {
+
+        int treeCellsPerRow = 1;
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < (n - treeCellsPerRow); j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < treeCellsPerRow; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+            treeCellsPerRow++;
+        }
+
+        //
+        //     #
+        //    ##
+        //   ###
+        //  ####
+        // #####
+        //######
+    }
 }
