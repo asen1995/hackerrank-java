@@ -8,10 +8,10 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class AlgorithumChallengesTest {
+public class AlgorithmChallengesTest {
 
 
-    private final AlgorithumChallenges algorithumChallenges = new AlgorithumChallenges();
+    private final AlgorithmChallenges algorithmChallenges = new AlgorithmChallenges();
 
     @Test
     public void testCompareTriplets() {
@@ -22,7 +22,7 @@ public class AlgorithumChallengesTest {
 
         final List<Integer> aliceRatings = Arrays.asList(17, 28, 30);
         final List<Integer> bobRatings = Arrays.asList(99, 16, 8);
-        final List<Integer> result = algorithumChallenges.compareTriplets(aliceRatings, bobRatings);
+        final List<Integer> result = algorithmChallenges.compareTriplets(aliceRatings, bobRatings);
 
 
         //      Sample Output
@@ -40,7 +40,7 @@ public class AlgorithumChallengesTest {
         //Output 5000000015
 
         final List<Long> inputLongNumbers = Arrays.asList(1000000001L, 1000000002L, 1000000003L, 1000000004L, 1000000005L);
-        final long result = algorithumChallenges.aVeryBigSum(inputLongNumbers);
+        final long result = algorithmChallenges.aVeryBigSum(inputLongNumbers);
 
         assertEquals(5000000015L, result);
     }
@@ -65,7 +65,7 @@ public class AlgorithumChallengesTest {
         arr.add(Arrays.asList(4, 5, 6));
         arr.add(Arrays.asList(10, 8, -12));
 
-        final int result = algorithumChallenges.diagonalDifference(arr);
+        final int result = algorithmChallenges.diagonalDifference(arr);
 
         assertEquals(15, result);
     }
