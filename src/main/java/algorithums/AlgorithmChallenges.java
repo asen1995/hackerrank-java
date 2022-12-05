@@ -108,4 +108,14 @@ public class AlgorithmChallenges {
         // #####
         //######
     }
+
+    public void miniMaxSum(List<Integer> arr) {
+
+        final int min = arr.stream().min(Integer::compareTo).get();
+        final int max = arr.stream().max(Integer::compareTo).get();
+
+        final int sum = arr.stream().mapToInt(Integer::intValue).sum();
+
+        System.out.printf("%d %d", (sum - max), (sum - min));
+    }
 }

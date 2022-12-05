@@ -105,4 +105,18 @@ public class AlgorithmChallengesTest {
         algorithmChallenges.staircase(6);
 
     }
+
+    @Test
+    public void minMaxSum() {
+
+//        Sample Input
+//
+//        1 2 3 4 5
+//
+//        Sample Output
+//
+//        10 14
+
+        algorithmChallenges.miniMaxSum(Arrays.asList(1, 2, 3, 4, 5));
+    }
 }
