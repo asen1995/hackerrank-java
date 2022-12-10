@@ -134,4 +134,18 @@ public class AlgorithmChallengesTest {
         final int result = algorithmChallenges.birthdayCakeCandles(Arrays.asList(3, 2, 1, 3));
         assertEquals(2, result);
     }
+
+    @Test
+    public void timeConversion() {
+        //        Sample Input 0
+        //
+        //        07:05:45PM
+        //
+        //        Sample Output 0
+        //
+        //        19:05:45
+
+        final String result = algorithmChallenges.timeConversion("07:05:45PM");
+        assertEquals("19:05:45", result);
+    }
 }

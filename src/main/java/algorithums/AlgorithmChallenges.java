@@ -145,4 +145,25 @@ public class AlgorithmChallenges {
 
         return maxHeightCount;
     }
+
+    public String timeConversion(String s) {
+
+        if (!s.endsWith("AM") && !s.endsWith("PM")) {
+            throw new IllegalArgumentException("the time format is not valid!");
+        }
+
+        if (s.endsWith("AM")) {
+            return s.replace("AM", "");
+        } else {
+
+            final String[] hms = s.replace("PM", "").split(":");
+
+            if (hms.length != 3) {
+                throw new IllegalArgumentException("the time format is not correct!");
+            }
+            hms[0] = String.valueOf(Integer.parseInt(hms[0]) + 12);
+
+            return String.join(":", hms);
+        }
+    }
 }
