@@ -125,4 +125,24 @@ public class AlgorithmChallenges {
 
         System.out.println((sum - max) + " " + (sum - min));
     }
+
+    public int birthdayCakeCandles(List<Integer> candles) {
+
+        //        3 2 1 3
+
+        int maxCandleSize = 0, maxHeightCount = 0;
+
+        for (final Integer currentCandle : candles) {
+
+            if (currentCandle > maxCandleSize) {
+                maxCandleSize = currentCandle;
+                maxHeightCount = 1;
+            } else if (currentCandle == maxCandleSize) {
+                maxHeightCount++;
+            }
+
+        }
+
+        return maxHeightCount;
+    }
 }

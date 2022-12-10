@@ -119,4 +119,19 @@ public class AlgorithmChallengesTest {
 
         algorithmChallenges.miniMaxSum(Arrays.asList(1, 2, 3, 4, 5));
     }
+
+    @Test
+    public void birthdayCakeCandles() {
+        //        Sample Input 0
+        //
+        //        4
+        //        3 2 1 3
+        //
+        //        Sample Output 0
+        //
+        //        2
+
+        final int result = algorithmChallenges.birthdayCakeCandles(Arrays.asList(3, 2, 1, 3));
+        assertEquals(2, result);
+    }
 }
