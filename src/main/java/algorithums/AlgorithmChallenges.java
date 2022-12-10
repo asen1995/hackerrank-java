@@ -148,26 +148,23 @@ public class AlgorithmChallenges {
 
     public String timeConversion(String s) {
 
-        if (!s.endsWith("AM") && !s.endsWith("PM")) {
-            throw new IllegalArgumentException("the time format is not valid!");
-        }
+        String[] timeParts = s.split(":");
 
-        boolean isAM = s.endsWith("AM");
-        final String[] hms = s.replace("PM", "").replace("AM", "").split(":");
+        int hours = Integer.parseInt(timeParts[0]);
+        int minutes = Integer.parseInt(timeParts[1]);
+        int seconds = Integer.parseInt(timeParts[2].substring(0, 2));
+        String format = timeParts[2].substring(2);
 
-        if (hms.length != 3) {
-            throw new IllegalArgumentException("the time format is not valid!");
-        }
-        if (hms[0].equals("12")) {
-            if (isAM) {
-                hms[0] = "00";
-            }else{
-                hms[0] = "12";
+        if (format.equalsIgnoreCase("AM")) {
+            if (hours == 12) {
+                hours = 0;
             }
-        } else {
-            hms[0] = String.valueOf(Integer.parseInt(hms[0]) + 12);
+        } else if (format.equalsIgnoreCase("PM")) {
+            if (hours != 12) {
+                hours += 12;
+            }
         }
 
-        return String.join(":", hms);
+        return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 }
