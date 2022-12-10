@@ -157,7 +157,7 @@ public class AlgorithmChallengesTest {
         //
         //        Sample Output 0
         //
-        //        19:05:45
+        //        00:05:39
 
         final String result = algorithmChallenges.timeConversion("12:05:39AM");
         assertEquals("00:05:39", result);
