@@ -152,18 +152,22 @@ public class AlgorithmChallenges {
             throw new IllegalArgumentException("the time format is not valid!");
         }
 
-        if (s.endsWith("AM")) {
-            return s.replace("AM", "");
-        } else {
+        boolean isAM = s.endsWith("AM");
+        final String[] hms = s.replace("PM", "").replace("AM", "").split(":");
 
-            final String[] hms = s.replace("PM", "").split(":");
-
-            if (hms.length != 3) {
-                throw new IllegalArgumentException("the time format is not correct!");
-            }
-            hms[0] = String.valueOf(Integer.parseInt(hms[0]) + 12);
-
-            return String.join(":", hms);
+        if (hms.length != 3) {
+            throw new IllegalArgumentException("the time format is not valid!");
         }
+        if (hms[0].equals("12")) {
+            if (isAM) {
+                hms[0] = "00";
+            }else{
+                hms[0] = "12";
+            }
+        } else {
+            hms[0] = String.valueOf(Integer.parseInt(hms[0]) + 12);
+        }
+
+        return String.join(":", hms);
     }
 }
