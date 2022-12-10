@@ -148,18 +148,21 @@ public class AlgorithmChallenges {
 
     public String timeConversion(String s) {
 
+        boolean isAM = s.endsWith("AM");
+
+        s = s.replace("AM", "").replace("PM", "");
+
         String[] timeParts = s.split(":");
 
         int hours = Integer.parseInt(timeParts[0]);
         int minutes = Integer.parseInt(timeParts[1]);
-        int seconds = Integer.parseInt(timeParts[2].substring(0, 2));
-        String format = timeParts[2].substring(2);
+        int seconds = Integer.parseInt(timeParts[2]);
 
-        if (format.equalsIgnoreCase("AM")) {
+        if (isAM) {
             if (hours == 12) {
                 hours = 0;
             }
-        } else if (format.equalsIgnoreCase("PM")) {
+        } else {
             if (hours != 12) {
                 hours += 12;
             }
