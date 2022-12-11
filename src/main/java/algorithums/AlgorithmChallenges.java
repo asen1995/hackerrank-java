@@ -2,6 +2,7 @@ package algorithums;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -169,5 +170,24 @@ public class AlgorithmChallenges {
         }
 
         return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    }
+
+    public List<Integer> gradingStudents(List<Integer> grades) {
+
+        List<Integer> roundedGrades = new ArrayList<>();
+
+        for (Integer grade : grades) {
+            if (grade >= 38) {
+                int nextMultipleOfFile = grade;
+                while (nextMultipleOfFile % 5 != 0) {
+                    nextMultipleOfFile++;
+                }
+                roundedGrades.add(((nextMultipleOfFile - grade) < 3) ? nextMultipleOfFile : grade);
+            } else {
+                roundedGrades.add(grade);
+            }
+        }
+
+        return roundedGrades;
     }
 }

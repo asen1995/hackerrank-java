@@ -162,4 +162,25 @@ public class AlgorithmChallengesTest {
         final String result = algorithmChallenges.timeConversion("12:05:39AM");
         assertEquals("00:05:39", result);
     }
+
+    @Test
+    public void gradingStudents() {
+        //        Sample Input 0
+        //
+        //        4
+        //        73
+        //        67
+        //        38
+        //        33
+        //
+        //        Sample Output 0
+        //
+        //        75
+        //        67
+        //        40
+        //        33
+
+        final List<Integer> result = algorithmChallenges.gradingStudents(Arrays.asList(73, 67, 38, 33));
+        assertEquals(Arrays.asList(75, 67, 40, 33), result);
+    }
 }
