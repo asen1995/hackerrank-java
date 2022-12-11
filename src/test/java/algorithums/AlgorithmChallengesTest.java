@@ -169,6 +169,11 @@ public class AlgorithmChallengesTest {
     }
 
     @Test
+    public void gradingStudents() {
+        algorithmChallenges.gradingStudents(Arrays.asList(73, 67, 38, 33));
+    }
+
+    @Test
     public void kangaroo() {
         //        Sample Input 0
         //

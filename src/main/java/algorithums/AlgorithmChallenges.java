@@ -223,7 +223,6 @@ public class AlgorithmChallenges {
                 return "YES";
             }
         }
-
         return "NO";
     }
 }
