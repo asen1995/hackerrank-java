@@ -213,43 +213,17 @@ public class AlgorithmChallenges {
     }
 
     public String kangaroo(int x1, int v1, int x2, int v2) {
-
-//        kangaroo(0, 3, 4, 2);
-
-        //first kangaroo jumps 3
-        //second kangaroo jumps 2
-
-        // first jump will be  [3] [6]
-        // 6-3 = 3
-
-
-        // first jump will be  [6] [8]
-        // 8-6 = 2
-
-
-        boolean firstKangarooStartAtBetterPosition = (x1 > x2);
-
-        while (true) {
-            x1 += v1;
-            x2 += v2;
-
-            if (x1 == x2) {
+        if (v1 > v2) {
+            int distance = x1 - x2;
+            //  0 - 4 = -4
+            int speed = v1 - v2;
+            //  3 - 2 = 1
+            if (distance % speed == 0) {
+                //  -4 % 1 == 0
                 return "YES";
             }
-
-            if (!firstKangarooStartAtBetterPosition) {
-                if ((x2 - x1) <= v1) {
-                    continue;
-                } else {
-                    return "NO";
-                }
-            } else {
-                if ((x1 - x2) <= v2) {
-                    continue;
-                } else {
-                    return "NO";
-                }
-            }
         }
+
+        return "NO";
     }
 }
