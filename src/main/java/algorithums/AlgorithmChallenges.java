@@ -193,22 +193,22 @@ public class AlgorithmChallenges {
 
     public void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
 
-        int applesCount = 0, orangesCount = 0;
-        for (Integer apple : apples) {
-            final int placeOfFalling = a + apple;
-            if (placeOfFalling >= s && placeOfFalling <= t) {
-                applesCount++;
-            }
-        }
+            int applesOnHouse = 0, orangesOnHouse = 0;
 
-        for (Integer orange : oranges) {
-            final int placeOfFalling = b + orange;
-            if (placeOfFalling >= s && placeOfFalling <= t) {
-                orangesCount++;
+            for (final Integer apple : apples) {
+                if (apple + a >= s && apple + a <= t) {
+                    applesOnHouse++;
+                }
             }
-        }
-        System.out.println(applesCount);
-        System.out.println(orangesCount);
+
+            for (final Integer orange : oranges) {
+                if (orange + b >= s && orange + b <= t) {
+                    orangesOnHouse++;
+                }
+            }
+
+            System.out.println(applesOnHouse);
+            System.out.println(orangesOnHouse);
 
     }
 }
