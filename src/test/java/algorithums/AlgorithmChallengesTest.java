@@ -165,6 +165,21 @@ public class AlgorithmChallengesTest {
 
     @Test
     public void countApplesAndOranges() {
-        algorithmChallenges.countApplesAndOranges(7, 11, 5, 15, Arrays.asList(-2, 2, 1), Arrays.asList(5, -6));    }
+        algorithmChallenges.countApplesAndOranges(7, 11, 5, 15, Arrays.asList(-2, 2, 1), Arrays.asList(5, -6));
+    }
+
+    @Test
+    public void kangaroo() {
+        //        Sample Input 0
+        //
+        //        0 3 4 2
+        //
+        //        Sample Output 0
+        //
+        //        YES
+
+        final String result = algorithmChallenges.kangaroo(0, 3, 4, 2);
+        assertEquals("YES", result);
+    }
 
 }

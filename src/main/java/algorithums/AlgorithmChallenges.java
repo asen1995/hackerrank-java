@@ -193,22 +193,63 @@ public class AlgorithmChallenges {
 
     public void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
 
-            int applesOnHouse = 0, orangesOnHouse = 0;
+        int applesOnHouse = 0, orangesOnHouse = 0;
 
-            for (final Integer apple : apples) {
-                if (apple + a >= s && apple + a <= t) {
-                    applesOnHouse++;
-                }
+        for (final Integer apple : apples) {
+            if (apple + a >= s && apple + a <= t) {
+                applesOnHouse++;
+            }
+        }
+
+        for (final Integer orange : oranges) {
+            if (orange + b >= s && orange + b <= t) {
+                orangesOnHouse++;
+            }
+        }
+
+        System.out.println(applesOnHouse);
+        System.out.println(orangesOnHouse);
+
+    }
+
+    public String kangaroo(int x1, int v1, int x2, int v2) {
+
+//        kangaroo(0, 3, 4, 2);
+
+        //first kangaroo jumps 3
+        //second kangaroo jumps 2
+
+        // first jump will be  [3] [6]
+        // 6-3 = 3
+
+
+        // first jump will be  [6] [8]
+        // 8-6 = 2
+
+
+        boolean firstKangarooStartAtBetterPosition = (x1 > x2);
+
+        while (true) {
+            x1 += v1;
+            x2 += v2;
+
+            if (x1 == x2) {
+                return "YES";
             }
 
-            for (final Integer orange : oranges) {
-                if (orange + b >= s && orange + b <= t) {
-                    orangesOnHouse++;
+            if (!firstKangarooStartAtBetterPosition) {
+                if ((x2 - x1) <= v1) {
+                    continue;
+                } else {
+                    return "NO";
+                }
+            } else {
+                if ((x1 - x2) <= v2) {
+                    continue;
+                } else {
+                    return "NO";
                 }
             }
-
-            System.out.println(applesOnHouse);
-            System.out.println(orangesOnHouse);
-
+        }
     }
 }
