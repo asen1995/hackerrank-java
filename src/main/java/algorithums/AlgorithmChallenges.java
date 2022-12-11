@@ -190,4 +190,25 @@ public class AlgorithmChallenges {
 
         return roundedGrades;
     }
+
+    public void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+
+        int applesCount = 0, orangesCount = 0;
+        for (Integer apple : apples) {
+            final int placeOfFalling = a + apple;
+            if (placeOfFalling >= s && placeOfFalling <= t) {
+                applesCount++;
+            }
+        }
+
+        for (Integer orange : oranges) {
+            final int placeOfFalling = b + orange;
+            if (placeOfFalling >= s && placeOfFalling <= t) {
+                orangesCount++;
+            }
+        }
+        System.out.println(applesCount);
+        System.out.println(orangesCount);
+
+    }
 }

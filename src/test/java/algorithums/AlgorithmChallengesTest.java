@@ -164,23 +164,7 @@ public class AlgorithmChallengesTest {
     }
 
     @Test
-    public void gradingStudents() {
-        //        Sample Input 0
-        //
-        //        4
-        //        73
-        //        67
-        //        38
-        //        33
-        //
-        //        Sample Output 0
-        //
-        //        75
-        //        67
-        //        40
-        //        33
+    public void countApplesAndOranges() {
+        algorithmChallenges.countApplesAndOranges(7, 11, 5, 15, Arrays.asList(-2, 2, 1), Arrays.asList(5, -6));    }
 
-        final List<Integer> result = algorithmChallenges.gradingStudents(Arrays.asList(73, 67, 38, 33));
-        assertEquals(Arrays.asList(75, 67, 40, 33), result);
-    }
 }
