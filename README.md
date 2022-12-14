@@ -1,1 +1,0 @@
-This are challenges from hackerrank for JAVA
