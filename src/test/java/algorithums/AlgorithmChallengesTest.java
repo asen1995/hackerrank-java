@@ -191,4 +191,14 @@ public class AlgorithmChallengesTest {
     public void getTotalX(){
         algorithmChallenges.getTotalX(Arrays.asList(2, 4), Arrays.asList(16, 32, 96));
     }
+
+    @Test
+    public void breakingRecords(){
+        assertEquals(Arrays.asList(2, 4), algorithmChallenges.breakingRecords(Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1)));
+    }
+
+    @Test
+    public void birthday(){
+        assertEquals(3, algorithmChallenges.birthday(Arrays.asList(1, 2, 1, 3, 2), 3, 2));
+    }
 }

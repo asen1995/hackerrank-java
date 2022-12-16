@@ -229,34 +229,61 @@ public class AlgorithmChallenges {
 
     public int getTotalX(List<Integer> a, List<Integer> b) {
 
-            int totalX = 0;
+        int totalX = 0;
 
-            for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 100; i++) {
 
-                boolean isFactor = true;
+            boolean isFactor = true;
 
-                for (final Integer number : a) {
-                    if (i % number != 0) {
+            for (final Integer number : a) {
+                if (i % number != 0) {
+                    isFactor = false;
+                    break;
+                }
+            }
+
+            if (isFactor) {
+                for (final Integer number : b) {
+                    if (number % i != 0) {
                         isFactor = false;
                         break;
                     }
                 }
-
-                if (isFactor) {
-                    for (final Integer number : b) {
-                        if (number % i != 0) {
-                            isFactor = false;
-                            break;
-                        }
-                    }
-                }
-
-                if (isFactor) {
-                    totalX++;
-                }
             }
 
-            return totalX;
+            if (isFactor) {
+                totalX++;
+            }
+        }
+
+        return totalX;
 
     }
+
+    public List<Integer> breakingRecords(List<Integer> scores) {
+
+        int breakingBestRecords = 0, breakingWorstRecord = 0;
+
+        int bestRecord = scores.get(0);
+        int worstRecord = scores.get(0);
+
+        for (int scoreIndex = 1; scoreIndex < scores.size(); scoreIndex++) {
+
+            final Integer score = scores.get(scoreIndex);
+
+            if (score > bestRecord) {
+
+                bestRecord = score;
+                breakingBestRecords++;
+
+            } else if (score < worstRecord) {
+                breakingWorstRecord++;
+                worstRecord = score;
+            }
+
+        }
+
+        return Arrays.asList(breakingBestRecords, breakingWorstRecord);
+    }
+
 }
