@@ -187,4 +187,8 @@ public class AlgorithmChallengesTest {
         assertEquals("YES", result);
     }
 
+    @Test
+    public void getTotalX(){
+        algorithmChallenges.getTotalX(Arrays.asList(2, 4), Arrays.asList(16, 32, 96));
+    }
 }

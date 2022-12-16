@@ -225,4 +225,38 @@ public class AlgorithmChallenges {
         }
         return "NO";
     }
+
+
+    public int getTotalX(List<Integer> a, List<Integer> b) {
+
+            int totalX = 0;
+
+            for (int i = 1; i <= 100; i++) {
+
+                boolean isFactor = true;
+
+                for (final Integer number : a) {
+                    if (i % number != 0) {
+                        isFactor = false;
+                        break;
+                    }
+                }
+
+                if (isFactor) {
+                    for (final Integer number : b) {
+                        if (number % i != 0) {
+                            isFactor = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (isFactor) {
+                    totalX++;
+                }
+            }
+
+            return totalX;
+
+    }
 }
