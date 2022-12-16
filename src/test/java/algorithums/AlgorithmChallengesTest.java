@@ -199,6 +199,6 @@ public class AlgorithmChallengesTest {
 
     @Test
     public void birthday(){
-        assertEquals(3, algorithmChallenges.birthday(Arrays.asList(1, 2, 1, 3, 2), 3, 2));
+        assertEquals(2, algorithmChallenges.birthday(Arrays.asList(1, 2, 1, 3, 2), 3, 2));
     }
 }

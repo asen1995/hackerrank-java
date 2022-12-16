@@ -286,4 +286,28 @@ public class AlgorithmChallenges {
         return Arrays.asList(breakingBestRecords, breakingWorstRecord);
     }
 
+
+    public int birthday(List<Integer> s, int d, int m) {
+
+        int numberOfSegments = 0;
+
+        for (int i = 0; i <= s.size() - m; i++) {
+
+            int sum = 0;
+
+            for (int j = i, counter = 0; counter < m; j++, counter++) {
+                sum += s.get(j);
+
+                if (sum > d) {
+                    break;
+                }
+            }
+
+            if (sum == d) {
+                numberOfSegments++;
+            }
+        }
+
+        return numberOfSegments;
+    }
 }
