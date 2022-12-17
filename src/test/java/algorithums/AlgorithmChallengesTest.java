@@ -201,4 +201,9 @@ public class AlgorithmChallengesTest {
     public void birthday(){
         assertEquals(2, algorithmChallenges.birthday(Arrays.asList(1, 2, 1, 3, 2), 3, 2));
     }
+
+    @Test
+    public void divisibleSumPairs(){
+        assertEquals(5, algorithmChallenges.divisibleSumPairs(6, 3, Arrays.asList(1, 3, 2, 6, 1, 2)));
+    }
 }

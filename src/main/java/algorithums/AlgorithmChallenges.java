@@ -309,4 +309,26 @@ public class AlgorithmChallenges {
 
         return totalWays;
     }
+
+
+    public int divisibleSumPairs(int n, int k, List<Integer> ar) {
+
+        int divisibleSubPairs = 0;
+        for(int i  = 0 ; i < n ; i++){
+
+            for(int j = i + 1; j < n ; j++){
+                final Integer firstNumber = ar.get(i);
+                final Integer secondNumber = ar.get(j);
+
+                if( ( ( firstNumber + secondNumber ) % k == 0 ) ){
+                    divisibleSubPairs++;
+                }
+
+            }
+
+        }
+
+
+        return divisibleSubPairs;
+    }
 }
