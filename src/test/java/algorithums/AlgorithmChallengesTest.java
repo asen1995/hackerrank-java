@@ -205,5 +205,9 @@ public class AlgorithmChallengesTest {
     @Test
     public void divisibleSumPairs(){
         assertEquals(5, algorithmChallenges.divisibleSumPairs(6, 3, Arrays.asList(1, 3, 2, 6, 1, 2)));
+        assertEquals(3, algorithmChallenges.divisibleSumPairs(6, 5, Arrays.asList(1, 2, 3, 4, 5, 6)));
     }
+
+
+
 }
