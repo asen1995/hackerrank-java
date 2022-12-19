@@ -2,9 +2,7 @@ package algorithums;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class AlgorithmChallenges {
 
@@ -314,13 +312,13 @@ public class AlgorithmChallenges {
     public int divisibleSumPairs(int n, int k, List<Integer> ar) {
 
         int divisibleSubPairs = 0;
-        for(int i  = 0 ; i < n ; i++){
+        for (int i = 0; i < n; i++) {
 
-            for(int j = i + 1; j < n ; j++){
+            for (int j = i + 1; j < n; j++) {
                 final Integer firstNumber = ar.get(i);
                 final Integer secondNumber = ar.get(j);
 
-                if( ( ( firstNumber + secondNumber ) % k == 0 ) ){
+                if (((firstNumber + secondNumber) % k == 0)) {
                     divisibleSubPairs++;
                 }
 
@@ -331,4 +329,24 @@ public class AlgorithmChallenges {
 
         return divisibleSubPairs;
     }
+
+    public String solution(String S) {
+
+        if (S == null || S.length() < 2) {
+            throw new IllegalStateException("Invalid input");
+        }
+
+        Map<Character, Character> map = new HashMap<>();
+
+        for (int i = 0; i < S.length(); i++) {
+            final Character currentChar = S.charAt(i);
+            if (!map.containsKey(currentChar)) {
+                map.put(currentChar, currentChar);
+            } else return String.valueOf(currentChar);
+        }
+
+        throw new IllegalArgumentException("No duplicate found");
+    }
+
+
 }

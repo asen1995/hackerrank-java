@@ -208,6 +208,11 @@ public class AlgorithmChallengesTest {
         assertEquals(3, algorithmChallenges.divisibleSumPairs(6, 5, Arrays.asList(1, 2, 3, 4, 5, 6)));
     }
 
+    @Test
+    public void solution(){
+        //assertEquals("a", algorithmChallenges.solution("aba"));
+        assertEquals("i", algorithmChallenges.solution("codility"));
+    }
 
 
 }
