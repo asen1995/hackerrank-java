@@ -33,7 +33,7 @@ public class CommonAlgorithm {
 
         int left = 0, right = word.length() - 1 ;
 
-        while (left < right){
+        while (left <= right){
             if(word.charAt(left) != word.charAt(right)){
                 return false;
             }
