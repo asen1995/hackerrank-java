@@ -19,4 +19,10 @@ public class CommonAlgorithmTest {
     public void binarySearchNonExistent() {
         assertEquals(-1, commonAlgorithms.binarySearch(56, Arrays.asList(4, 66, 44, 33, 22, 77, 55, 2, 34, 37)));
     }
+
+    @Test
+    public void isPalidrome() {
+        assertTrue(commonAlgorithms.isPalidrome("racecar"));
+    }
+
 }
