@@ -96,7 +96,6 @@ public class DataStructureChallenges {
         return array.stream().max(Integer::compareTo).get();
     }
 
-
     public void preOrder(Node root) {
         if (root == null) {
             return;
@@ -132,10 +131,10 @@ public class DataStructureChallenges {
         if (root == null) {
             return -1;
         }
+        int leftHeight = height(root.getLeft());
+        int rightHeight = height(root.getRight());
 
-        int left = 1 + height(root.getLeft());
-        int right = 1 + height(root.getRight());
-
-        return Math.max(left, right);
+        int max = (leftHeight == rightHeight) ? leftHeight : (leftHeight > rightHeight) ? leftHeight : rightHeight;
+        return max + 1;
     }
 }
