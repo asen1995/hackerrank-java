@@ -1,8 +1,6 @@
 package datastructures;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -51,6 +49,34 @@ public class DataStructureChallenges {
             rotatedList.add(arr.get((i + d) % size));
         }
         return rotatedList;
+    }
+
+    public static List<Integer> matchingStrings(List<String> stringList, List<String> queries) {
+
+        Map<String, Integer> mapOfStrings = new HashMap<>(stringList.size());
+
+        for (String inputString : stringList) {
+            if (mapOfStrings.containsKey(inputString)) {
+                Integer count = mapOfStrings.get(inputString);
+                count += 1;
+                mapOfStrings.put(inputString, count);
+            } else {
+                mapOfStrings.put(inputString, 1);
+            }
+        }
+
+        List<Integer> result = new LinkedList<>();
+
+        for (String query : queries) {
+            if (mapOfStrings.containsKey(query)) {
+                result.add(mapOfStrings.get(query));
+            } else {
+                result.add(0);
+            }
+        }
+
+        return result;
+
     }
 
     public List<Integer> reverseArray(List<Integer> a) {

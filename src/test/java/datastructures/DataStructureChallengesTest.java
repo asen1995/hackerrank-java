@@ -33,4 +33,9 @@ public class DataStructureChallengesTest {
     public void rotateLeft() {
         assertEquals(Arrays.asList(5, 1, 2, 3, 4), dataStructureChallenges.rotateLeft(4, Arrays.asList(1, 2, 3, 4, 5)));
     }
+
+    @Test
+    public void matchingStrings() {
+        assertEquals(Arrays.asList(2, 1, 0), dataStructureChallenges.matchingStrings(Arrays.asList("aba", "baba", "aba", "xzxb"), Arrays.asList("aba", "xzxb", "ab")));
+    }
 }
