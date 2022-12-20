@@ -3,6 +3,8 @@ package datastructures;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -24,5 +26,11 @@ public class DataStructureChallengesTest {
                 Arrays.asList(0, 0, 2, 4, 4, 0),
                 Arrays.asList(0, 0, 0, 2, 0, 0),
                 Arrays.asList(0, 0, 1, 2, 4, 0))));
+    }
+
+
+    @Test
+    public void rotateLeft() {
+        assertEquals(Arrays.asList(5, 1, 2, 3, 4), dataStructureChallenges.rotateLeft(4, Arrays.asList(1, 2, 3, 4, 5)));
     }
 }
