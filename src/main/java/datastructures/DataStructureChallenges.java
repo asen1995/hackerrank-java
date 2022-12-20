@@ -68,11 +68,7 @@ public class DataStructureChallenges {
         List<Integer> result = new LinkedList<>();
 
         for (String query : queries) {
-            if (mapOfStrings.containsKey(query)) {
-                result.add(mapOfStrings.get(query));
-            } else {
-                result.add(0);
-            }
+            result.add(mapOfStrings.getOrDefault(query, 0));
         }
 
         return result;
