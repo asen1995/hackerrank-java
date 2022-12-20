@@ -38,4 +38,12 @@ public class DataStructureChallengesTest {
     public void matchingStrings() {
         assertEquals(Arrays.asList(2, 1, 0), dataStructureChallenges.matchingStrings(Arrays.asList("aba", "baba", "aba", "xzxb"), Arrays.asList("aba", "xzxb", "ab")));
     }
+
+    @Test
+    public void arrayManipulation() {
+        assertEquals(200, dataStructureChallenges.arrayManipulation(5, Arrays.asList(
+                Arrays.asList(1, 2, 100),
+                Arrays.asList(2, 5, 100),
+                Arrays.asList(3, 4, 100))));
+    }
 }

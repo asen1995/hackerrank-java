@@ -80,4 +80,24 @@ public class DataStructureChallenges {
         return a;
     }
 
+    public long arrayManipulation(int n, List<List<Integer>> queries) {
+
+        List<Integer> array = new ArrayList<>(n);
+        for(int i = 0; i < n; i++) {
+            array.add(0);
+        }
+
+        for(List<Integer> query : queries){
+            int startIndex = query.get(0) - 1;
+            int endIndex = query.get(1);
+            int increasedValue = query.get(2);
+
+            for(int i = startIndex ; i < endIndex; i++){
+                array.set(i, array.get(i) + increasedValue);
+            }
+        }
+
+        return array.stream().max(Integer::compareTo).get();
+    }
+
 }
