@@ -20,10 +20,6 @@ public class DataStructureChallenges {
         int maxSum = Integer.MIN_VALUE;
         final int numberOfArrays = arr.size();
 
-        var collect = Stream.of(3).collect(Collectors.toList());
-
-        var hashmap = Collections.singletonMap(1, 1);
-
         for (int i = 0; i < numberOfArrays - 2; i++) {
 
             for (int j = 0; j < numberOfArrays - 2; j++) {
