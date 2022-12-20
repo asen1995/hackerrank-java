@@ -137,4 +137,14 @@ public class DataStructureChallenges {
         int max = (leftHeight == rightHeight) ? leftHeight : (leftHeight > rightHeight) ? leftHeight : rightHeight;
         return max + 1;
     }
+
+    public static void topView(Node root) {
+
+        if(root == null){
+            return;
+        }
+
+        System.out.print(root.getData() + " ");
+        topView(root.getRight());
+    }
 }
