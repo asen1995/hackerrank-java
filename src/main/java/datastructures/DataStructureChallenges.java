@@ -45,21 +45,12 @@ public class DataStructureChallenges {
     }
 
     public static List<Integer> rotateLeft(int d, List<Integer> arr) {
-
-
-//        assertEquals(Arrays.asList(5, 1, 2, 3, 4), dataStructureChallenges.rotateLeft(4, Arrays.asList(1, 2, 3, 4, 5)));
-
-        for (int rotation = 0; rotation < d; rotation++) {
-            List<Integer> rotated = new ArrayList<>();
-            for (int j = 1; j <= d; j++) {
-                rotated.add(arr.get(j));
-            }
-            rotated.add(arr.get(0));
-
-            arr = rotated;
+        List<Integer> rotatedList = new ArrayList<>();
+        int size = arr.size();
+        for (int i = 0; i < size; i++) {
+            rotatedList.add(arr.get((i + d) % size));
         }
-
-        return arr;
+        return rotatedList;
     }
 
     public List<Integer> reverseArray(List<Integer> a) {
