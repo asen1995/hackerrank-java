@@ -128,4 +128,14 @@ public class DataStructureChallenges {
         inOrder(root.getRight());
     }
 
+    public static int height(Node root) {
+        if (root == null) {
+            return -1;
+        }
+
+        int left = 1 + height(root.getLeft());
+        int right = 1 + height(root.getRight());
+
+        return Math.max(left, right);
+    }
 }

@@ -63,4 +63,10 @@ public class DataStructureChallengesTest {
         Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
         dataStructureChallenges.inOrder(root);
     }
+
+    @Test
+    public void heightOfBinaryTree() {
+        Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
+        assertEquals(4, dataStructureChallenges.height(root));
+    }
 }
