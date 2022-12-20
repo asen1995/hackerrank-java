@@ -1,9 +1,8 @@
 package datastructures;
+
 import datastructures.tree.Node;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class DataStructureChallenges {
 
@@ -80,16 +79,16 @@ public class DataStructureChallenges {
     public long arrayManipulation(int n, List<List<Integer>> queries) {
 
         List<Integer> array = new ArrayList<>(n);
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             array.add(0);
         }
 
-        for(List<Integer> query : queries){
+        for (List<Integer> query : queries) {
             int startIndex = query.get(0) - 1;
             int endIndex = query.get(1);
             int increasedValue = query.get(2);
 
-            for(int i = startIndex ; i < endIndex; i++){
+            for (int i = startIndex; i < endIndex; i++) {
                 array.set(i, array.get(i) + increasedValue);
             }
         }
@@ -98,15 +97,26 @@ public class DataStructureChallenges {
     }
 
 
-
     public void preOrder(Node root) {
-        if(root == null){
+        if (root == null) {
             return;
         }
 
         System.out.print(root.getData() + " ");
         preOrder(root.getLeft());
         preOrder(root.getRight());
+    }
+
+    public void postOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        postOrder(root.getLeft());
+        postOrder(root.getRight());
+        System.out.print(root.getData() + " ");
+
+
     }
 
 }
