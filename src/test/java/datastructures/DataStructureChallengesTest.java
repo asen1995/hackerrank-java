@@ -57,4 +57,10 @@ public class DataStructureChallengesTest {
         Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
         dataStructureChallenges.postOrder(root);
     }
+
+    @Test
+    public void inOrderTraversal() {
+        Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
+        dataStructureChallenges.inOrder(root);
+    }
 }

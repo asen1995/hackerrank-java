@@ -119,4 +119,13 @@ public class DataStructureChallenges {
 
     }
 
+    public void inOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.getLeft());
+        System.out.print(root.getData() + " ");
+        inOrder(root.getRight());
+    }
+
 }
