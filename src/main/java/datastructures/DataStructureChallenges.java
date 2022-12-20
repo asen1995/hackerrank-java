@@ -71,6 +71,27 @@ public class DataStructureChallenges {
 
     }
 
+    public static int height(Node root) {
+        if (root == null) {
+            return -1;
+        }
+        int leftHeight = height(root.getLeft());
+        int rightHeight = height(root.getRight());
+
+        int max = (leftHeight == rightHeight) ? leftHeight : (leftHeight > rightHeight) ? leftHeight : rightHeight;
+        return max + 1;
+    }
+
+    public static void topView(Node root) {
+
+        if (root == null) {
+            return;
+        }
+
+        System.out.print(root.getData() + " ");
+        topView(root.getRight());
+    }
+
     public List<Integer> reverseArray(List<Integer> a) {
         Collections.reverse(a);
         return a;
@@ -127,24 +148,26 @@ public class DataStructureChallenges {
         inOrder(root.getRight());
     }
 
-    public static int height(Node root) {
+    public void levelOrder(Node root) {
         if (root == null) {
-            return -1;
-        }
-        int leftHeight = height(root.getLeft());
-        int rightHeight = height(root.getRight());
-
-        int max = (leftHeight == rightHeight) ? leftHeight : (leftHeight > rightHeight) ? leftHeight : rightHeight;
-        return max + 1;
-    }
-
-    public static void topView(Node root) {
-
-        if(root == null){
             return;
         }
 
-        System.out.print(root.getData() + " ");
-        topView(root.getRight());
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            final Node node = queue.poll();
+
+            System.out.print(node.getData() + " ");
+
+            if (node.getLeft() != null)
+                queue.add(node.getLeft());
+
+            if (node.getRight() != null)
+                queue.add(node.getRight());
+
+
+        }
     }
 }
