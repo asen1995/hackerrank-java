@@ -1,4 +1,5 @@
 package datastructures;
+import datastructures.tree.Node;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -98,6 +99,18 @@ public class DataStructureChallenges {
         }
 
         return array.stream().max(Integer::compareTo).get();
+    }
+
+
+
+    public void preOrder(Node root) {
+        if(root == null){
+            return;
+        }
+
+        System.out.print(root.getData() + " ");
+        preOrder(root.getLeft());
+        preOrder(root.getRight());
     }
 
 }

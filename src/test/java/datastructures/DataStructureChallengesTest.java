@@ -1,12 +1,11 @@
 package datastructures;
 
+import datastructures.tree.Node;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class DataStructureChallengesTest {
 
@@ -14,7 +13,7 @@ public class DataStructureChallengesTest {
 
     @Test
     public void reverseArray() {
-        assertEquals(Arrays.asList(2,3,4,1), dataStructureChallenges.reverseArray(Arrays.asList(1, 4, 3, 2)));
+        assertEquals(Arrays.asList(2, 3, 4, 1), dataStructureChallenges.reverseArray(Arrays.asList(1, 4, 3, 2)));
     }
 
     @Test
@@ -45,5 +44,11 @@ public class DataStructureChallengesTest {
                 Arrays.asList(1, 2, 100),
                 Arrays.asList(2, 5, 100),
                 Arrays.asList(3, 4, 100))));
+    }
+
+    @Test
+    public void preOrderTraversal() {
+        Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
+        dataStructureChallenges.preOrder(root);
     }
 }
