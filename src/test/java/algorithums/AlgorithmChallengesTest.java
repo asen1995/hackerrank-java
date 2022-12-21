@@ -214,5 +214,8 @@ public class AlgorithmChallengesTest {
         assertEquals("i", algorithmChallenges.solution("codility"));
     }
 
-
+    @Test
+    public void migratoryBirds(){
+        assertEquals(4, algorithmChallenges.migratoryBirds(Arrays.asList(1, 4, 4, 4, 5, 3)));
+    }
 }

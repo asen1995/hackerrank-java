@@ -349,4 +349,32 @@ public class AlgorithmChallenges {
     }
 
 
+
+    public int migratoryBirds(List<Integer> arr) {
+
+            Map<Integer, Integer> map = new HashMap<>();
+
+            for (final Integer bird : arr) {
+                if (!map.containsKey(bird)) {
+                    map.put(bird, 1);
+                } else {
+                    map.put(bird, map.get(bird) + 1);
+                }
+            }
+
+            int maxCount = 0, maxBird = 0;
+
+            for (final Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                if (entry.getValue() > maxCount) {
+                    maxCount = entry.getValue();
+                    maxBird = entry.getKey();
+                } else if (entry.getValue() == maxCount) {
+                    if (entry.getKey() < maxBird) {
+                        maxBird = entry.getKey();
+                    }
+                }
+            }
+
+            return maxBird;
+    }
 }
