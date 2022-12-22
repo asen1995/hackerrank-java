@@ -170,4 +170,23 @@ public class DataStructureChallenges {
 
         }
     }
+
+
+    public Node insert(Node root,int data) {
+        if(root==null){
+            return new Node(data,null,null);
+        }
+        else{
+            Node cur;
+            if(data<=root.getData()){
+                cur=insert(root.getLeft(),data);
+                root.setLeft(cur);
+            }
+            else{
+                cur=insert(root.getRight(),data);
+                root.setRight(cur);
+            }
+            return root;
+        }
+    }
 }
