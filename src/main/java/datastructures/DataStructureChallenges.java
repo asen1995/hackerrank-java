@@ -7,15 +7,6 @@ import java.util.*;
 public class DataStructureChallenges {
 
     public static int hourglassSum(List<List<Integer>> arr) {
-
-//        assertEquals(19, dataStructureChallenges.hourglassSum(Arrays.asList(
-//                Arrays.asList(1, 1, 1, 0, 0, 0),
-//                Arrays.asList(0, 1, 0, 0, 0, 0),
-//                Arrays.asList(1, 1, 1, 0, 0, 0),
-//                Arrays.asList(0, 0, 2, 4, 4, 0),
-//                Arrays.asList(0, 0, 0, 2, 0, 0),
-//                Arrays.asList(0, 0, 1, 2, 4, 0))));
-//
         int maxSum = Integer.MIN_VALUE;
         final int numberOfArrays = arr.size();
 
