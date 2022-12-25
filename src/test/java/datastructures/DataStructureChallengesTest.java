@@ -76,21 +76,4 @@ public class DataStructureChallengesTest {
         dataStructureChallenges.topView(root);
     }
 
-    @Test
-    public void levelOrderTraversal() {
-        Node root = new Node(1, null, new Node(2, null, new Node(5, new Node(3, null, new Node(4, null, null)), new Node(6, null, null))));
-        dataStructureChallenges.levelOrder(root);
-    }
-
-    @Test
-    public void insertIntoBST() {
-        Node root = new Node(4, new Node(2, new Node(1, null, null), new Node(3, null, null)), new Node(7, null, null));
-        dataStructureChallenges.insert(root, 6);
-    }
-
-    @Test
-    public void lowestCommonAncestor() {
-        Node root = new Node(4, new Node(2, new Node(1, null, null), new Node(3, null, null)), new Node(7, null, null));
-        assertEquals(4, dataStructureChallenges.lca(root, 1, 7).data);
-    }
 }
