@@ -88,4 +88,9 @@ public class DataStructureChallengesTest {
         dataStructureChallenges.insert(root, 6);
     }
 
+    @Test
+    public void lowestCommonAncestor() {
+        Node root = new Node(4, new Node(2, new Node(1, null, null), new Node(3, null, null)), new Node(7, null, null));
+        assertEquals(4, dataStructureChallenges.lca(root, 1, 7).data);
+    }
 }
