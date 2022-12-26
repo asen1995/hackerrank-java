@@ -78,9 +78,6 @@ public class StringsChallenges {
 			}
 			lenght++;
 		}
-		// Complete the function
-		// 'smallest' must be the lexicographically smallest substring of length 'k'
-		// 'largest' must be the lexicographically largest substring of length 'k'
 
 		return smallest + "\n" + largest;
 	}
@@ -127,7 +124,6 @@ public class StringsChallenges {
 
 		m.reset();
 		while (m.find()) {
-			// System.out.println(m.group(1)); // prints the html tags
 			System.out.println(m.group(2)); // prints the content of html tags
 		}
 	}
