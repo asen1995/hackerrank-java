@@ -4,8 +4,7 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 public class DataStructuresTest {
 
@@ -157,5 +156,18 @@ public class DataStructuresTest {
 
         assertEquals(1, treeSet.first().intValue());
         assertEquals(3, treeSet.last().intValue());
+    }
+
+    @Test
+    public void hashSetTest() {
+        Set<Integer> hashSet = new HashSet<>();
+        hashSet.add(1);
+        hashSet.add(2);
+        hashSet.add(3);
+        hashSet.add(55);
+        hashSet.add(355);
+
+        assertEquals(5, hashSet.size());
+        assertTrue(hashSet.contains(55));
     }
 }
