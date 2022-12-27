@@ -186,7 +186,7 @@ public class DataStructuresTest {
 
 
     @Test
-    public void treeMapTest(){
+    public void treeMapTest() {
         Map<Integer, String> treeMap = new TreeMap<>();
         treeMap.put(1, "one");
         treeMap.put(2, "two");
