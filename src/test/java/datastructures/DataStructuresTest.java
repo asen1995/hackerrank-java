@@ -134,4 +134,16 @@ public class DataStructuresTest {
         assertEquals(1, stack.pop().intValue());
     }
 
+    @Test
+    public void priorityQueueTest() {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        priorityQueue.add(1);
+        priorityQueue.add(2);
+        priorityQueue.add(3);
+
+        assertEquals(1, priorityQueue.peek().intValue());
+        assertEquals(1, priorityQueue.poll().intValue());
+        assertEquals(2, priorityQueue.poll().intValue());
+        assertEquals(3, priorityQueue.poll().intValue());
+    }
 }
