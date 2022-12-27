@@ -120,4 +120,18 @@ public class DataStructuresTest {
         assertEquals(1000, threadSaveVector.size());
     }
 
+    @Test
+    public void stackTest(){
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        assertEquals(3, stack.size());
+        assertEquals(3, stack.peek().intValue());
+        assertEquals(3, stack.pop().intValue());
+        assertEquals(2, stack.pop().intValue());
+        assertEquals(1, stack.pop().intValue());
+    }
+
 }
