@@ -63,4 +63,32 @@ public class DataStructuresTest {
     }
 
 
+    @Test
+    public void vectorTest() throws InterruptedException {
+        Vector<Integer> threadSaveVector = new Vector<>();
+
+        Thread thread = new Thread(() -> {
+           for(int i = 0; i < 500; i++){
+               System.out.println("Thread 1 " + i);
+               threadSaveVector.add(i);
+           }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for(int i = 0; i < 500; i++){
+
+                System.out.println("Thread 2 " + i);
+                threadSaveVector.add(i);
+            }
+        });
+
+        thread.start();
+        thread2.start();
+
+        thread.join();
+        thread2.join();
+
+        assertEquals(1000, threadSaveVector.size());
+    }
+
 }
