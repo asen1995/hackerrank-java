@@ -201,4 +201,21 @@ public class DataStructuresTest {
         assertEquals("four", treeMap.get(4));
         assertEquals("five", treeMap.get(5));
     }
+
+    @Test
+    public void hashMapTest() {
+        Map<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(1, "one");
+        hashMap.put(2, "two");
+        hashMap.put(3, "three");
+        hashMap.put(4, "four");
+        hashMap.put(5, "five");
+
+        assertEquals(5, hashMap.size());
+        assertEquals("one", hashMap.get(1));
+        assertEquals("two", hashMap.get(2));
+        assertEquals("three", hashMap.get(3));
+        assertEquals("four", hashMap.get(4));
+        assertEquals("five", hashMap.get(5));
+    }
 }
