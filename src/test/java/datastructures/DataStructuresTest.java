@@ -183,4 +183,22 @@ public class DataStructuresTest {
         assertEquals(5, linkedHashSet.size());
         assertTrue(linkedHashSet.contains(55));
     }
+
+
+    @Test
+    public void treeMapTest(){
+        Map<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(1, "one");
+        treeMap.put(2, "two");
+        treeMap.put(3, "three");
+        treeMap.put(4, "four");
+        treeMap.put(5, "five");
+
+        assertEquals(5, treeMap.size());
+        assertEquals("one", treeMap.get(1));
+        assertEquals("two", treeMap.get(2));
+        assertEquals("three", treeMap.get(3));
+        assertEquals("four", treeMap.get(4));
+        assertEquals("five", treeMap.get(5));
+    }
 }
