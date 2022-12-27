@@ -52,10 +52,10 @@ public class DataStructuresTest {
     }
 
     @Test
-    public void arrayDeque(){
+    public void arrayDeque() {
         ArrayDeque<Integer> deque = new ArrayDeque<>();
 
-        for(int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             deque.addFirst(i);
         }
 
@@ -64,17 +64,17 @@ public class DataStructuresTest {
     }
 
     @Test
-    public void arrayListWithTwoThreads(){
+    public void arrayListWithTwoThreads() {
         List<Integer> list = new ArrayList<>();
 
         Thread thread1 = new Thread(() -> {
-            for(int i = 0; i < 10000; i++){
+            for (int i = 0; i < 10000; i++) {
                 list.add(i);
             }
         });
 
         Thread thread2 = new Thread(() -> {
-            for(int i = 0; i < 10000; i++){
+            for (int i = 0; i < 10000; i++) {
                 list.add(i);
             }
         });
@@ -97,14 +97,14 @@ public class DataStructuresTest {
         Vector<Integer> threadSaveVector = new Vector<>();
 
         Thread thread = new Thread(() -> {
-           for(int i = 0; i < 500; i++){
-               System.out.println("Thread 1 " + i);
-               threadSaveVector.add(i);
-           }
+            for (int i = 0; i < 500; i++) {
+                System.out.println("Thread 1 " + i);
+                threadSaveVector.add(i);
+            }
         });
 
         Thread thread2 = new Thread(() -> {
-            for(int i = 0; i < 500; i++){
+            for (int i = 0; i < 500; i++) {
 
                 System.out.println("Thread 2 " + i);
                 threadSaveVector.add(i);
@@ -121,7 +121,7 @@ public class DataStructuresTest {
     }
 
     @Test
-    public void stackTest(){
+    public void stackTest() {
         Stack<Integer> stack = new Stack<>();
         stack.push(1);
         stack.push(2);
@@ -145,5 +145,17 @@ public class DataStructuresTest {
         assertEquals(1, priorityQueue.poll().intValue());
         assertEquals(2, priorityQueue.poll().intValue());
         assertEquals(3, priorityQueue.poll().intValue());
+    }
+
+
+    @Test
+    public void treeSetTest() {
+        SortedSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(1);
+        treeSet.add(2);
+        treeSet.add(3);
+
+        assertEquals(1, treeSet.first().intValue());
+        assertEquals(3, treeSet.last().intValue());
     }
 }
