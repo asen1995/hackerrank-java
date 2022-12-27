@@ -3,6 +3,7 @@ package datastructures;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,6 +37,20 @@ public class DataStructuresTest {
         ((LinkedList<Integer>) list).addFirst(33);
 
         assertEquals(33, list.get(0).intValue());
+    }
+
+    @Test
+    public void dequeueTest() {
+        Deque<Integer> deque = new LinkedList<>();
+        deque.add(1);
+        deque.add(2);
+        deque.add(3);
+
+        deque.addFirst(22);
+        assertEquals(22, deque.getFirst().intValue());
+        deque.addLast(33);
+        assertEquals(33, deque.getLast().intValue());
+
     }
 
 
