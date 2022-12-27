@@ -2,10 +2,7 @@ package datastructures;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -51,6 +48,18 @@ public class DataStructuresTest {
         deque.addLast(33);
         assertEquals(33, deque.getLast().intValue());
 
+    }
+
+    @Test
+    public void arrayDeque(){
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+
+        for(int i = 0; i < 100; i++){
+            deque.addFirst(i);
+        }
+
+        final Integer integer = deque.pollLast();
+        assertEquals(0, integer.intValue());
     }
 
 
