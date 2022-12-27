@@ -170,4 +170,17 @@ public class DataStructuresTest {
         assertEquals(5, hashSet.size());
         assertTrue(hashSet.contains(55));
     }
+
+    @Test
+    public void linkedHashSetTest() {
+        Set<Integer> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add(1);
+        linkedHashSet.add(2);
+        linkedHashSet.add(3);
+        linkedHashSet.add(55);
+        linkedHashSet.add(355);
+
+        assertEquals(5, linkedHashSet.size());
+        assertTrue(linkedHashSet.contains(55));
+    }
 }
