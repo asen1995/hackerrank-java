@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class DataStructuresTest {
 
@@ -62,6 +63,34 @@ public class DataStructuresTest {
         assertEquals(0, integer.intValue());
     }
 
+    @Test
+    public void arrayListWithTwoThreads(){
+        List<Integer> list = new ArrayList<>();
+
+        Thread thread1 = new Thread(() -> {
+            for(int i = 0; i < 10000; i++){
+                list.add(i);
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for(int i = 0; i < 10000; i++){
+                list.add(i);
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        assertNotEquals(20000, list.size()); // not thread safe so the two threads override each other
+    }
 
     @Test
     public void vectorTest() throws InterruptedException {
