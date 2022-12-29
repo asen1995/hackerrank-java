@@ -24,6 +24,7 @@ public class DataStructuresTest {
 
     @Test
     public void linkedListTest() {
+
         List<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
@@ -52,6 +53,7 @@ public class DataStructuresTest {
 
     @Test
     public void arrayDeque() {
+
         ArrayDeque<Integer> deque = new ArrayDeque<>();
 
         for (int i = 0; i < 100; i++) {
