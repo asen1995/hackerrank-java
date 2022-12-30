@@ -188,39 +188,39 @@ public class AlgorithmChallengesTest {
     }
 
     @Test
-    public void getTotalX(){
+    public void getTotalX() {
         algorithmChallenges.getTotalX(Arrays.asList(2, 4), Arrays.asList(16, 32, 96));
     }
 
     @Test
-    public void breakingRecords(){
+    public void breakingRecords() {
         assertEquals(Arrays.asList(2, 4), algorithmChallenges.breakingRecords(Arrays.asList(10, 5, 20, 20, 4, 5, 2, 25, 1)));
     }
 
     @Test
-    public void birthday(){
+    public void birthday() {
         assertEquals(2, algorithmChallenges.birthday(Arrays.asList(1, 2, 1, 3, 2), 3, 2));
     }
 
     @Test
-    public void divisibleSumPairs(){
+    public void divisibleSumPairs() {
         assertEquals(5, algorithmChallenges.divisibleSumPairs(6, 3, Arrays.asList(1, 3, 2, 6, 1, 2)));
         assertEquals(3, algorithmChallenges.divisibleSumPairs(6, 5, Arrays.asList(1, 2, 3, 4, 5, 6)));
     }
 
     @Test
-    public void solution(){
+    public void solution() {
         //assertEquals("a", algorithmChallenges.solution("aba"));
         assertEquals("i", algorithmChallenges.solution("codility"));
     }
 
     @Test
-    public void migratoryBirds(){
+    public void migratoryBirds() {
         assertEquals(4, algorithmChallenges.migratoryBirds(Arrays.asList(1, 4, 4, 4, 5, 3)));
     }
 
     @Test
-    public void dayOfProgrammer(){
+    public void dayOfProgrammer() {
         assertEquals("12.09.2016", algorithmChallenges.dayOfProgrammer(2016));
         assertEquals("13.09.2017", algorithmChallenges.dayOfProgrammer(2017));
         assertEquals("12.09.2018", algorithmChallenges.dayOfProgrammer(2018));

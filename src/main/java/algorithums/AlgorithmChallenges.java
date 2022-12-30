@@ -7,6 +7,31 @@ import java.util.*;
 public class AlgorithmChallenges {
 
 
+    public static String dayOfProgrammer(int year) {
+
+        if (year < 1700 || year > 2700) {
+            throw new IllegalArgumentException("Invalid year");
+        }
+
+        if (year == 1918) {
+            return "26.09.1918";
+        }
+
+        if (year < 1918) {
+            if (year % 4 == 0) {
+                return "12.09." + year;
+            } else {
+                return "13.09." + year;
+            }
+        } else {
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                return "12.09." + year;
+            } else {
+                return "13.09." + year;
+            }
+        }
+    }
+
     public List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
 
         if (a.size() != 3 || b.size() != 3) {
@@ -57,7 +82,6 @@ public class AlgorithmChallenges {
         return Math.abs(leftDiagonal - rightDiagonal);
     }
 
-
     public void plusMinus(List<Integer> arr) {
         final int arraySize = arr.size();
 
@@ -80,7 +104,6 @@ public class AlgorithmChallenges {
         System.out.println(new BigDecimal(Double.toString((double) zeroes / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
 
     }
-
 
     public void staircase(int n) {
 
@@ -224,7 +247,6 @@ public class AlgorithmChallenges {
         return "NO";
     }
 
-
     public int getTotalX(List<Integer> a, List<Integer> b) {
 
         int totalX = 0;
@@ -284,7 +306,6 @@ public class AlgorithmChallenges {
         return Arrays.asList(breakingBestRecords, breakingWorstRecord);
     }
 
-
     public int birthday(List<Integer> s, int d, int m) {
 
         int totalWays = 0;
@@ -307,7 +328,6 @@ public class AlgorithmChallenges {
 
         return totalWays;
     }
-
 
     public int divisibleSumPairs(int n, int k, List<Integer> ar) {
 
@@ -348,58 +368,31 @@ public class AlgorithmChallenges {
         throw new IllegalArgumentException("No duplicate found");
     }
 
-
-
     public int migratoryBirds(List<Integer> arr) {
 
-            Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-            for (final Integer bird : arr) {
-                if (!map.containsKey(bird)) {
-                    map.put(bird, 1);
-                } else {
-                    map.put(bird, map.get(bird) + 1);
-                }
-            }
-
-            int maxCount = 0, maxBird = 0;
-
-            for (final Map.Entry<Integer, Integer> entry : map.entrySet()) {
-                if (entry.getValue() > maxCount) {
-                    maxCount = entry.getValue();
-                    maxBird = entry.getKey();
-                } else if (entry.getValue() == maxCount) {
-                    if (entry.getKey() < maxBird) {
-                        maxBird = entry.getKey();
-                    }
-                }
-            }
-
-            return maxBird;
-    }
-
-    public static String dayOfProgrammer(int year) {
-
-            if (year < 1700 || year > 2700) {
-                throw new IllegalArgumentException("Invalid year");
-            }
-
-            if (year == 1918) {
-                return "26.09.1918";
-            }
-
-            if (year < 1918) {
-                if (year % 4 == 0) {
-                    return "12.09." + year;
-                } else {
-                    return "13.09." + year;
-                }
+        for (final Integer bird : arr) {
+            if (!map.containsKey(bird)) {
+                map.put(bird, 1);
             } else {
-                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
-                    return "12.09." + year;
-                } else {
-                    return "13.09." + year;
+                map.put(bird, map.get(bird) + 1);
+            }
+        }
+
+        int maxCount = 0, maxBird = 0;
+
+        for (final Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > maxCount) {
+                maxCount = entry.getValue();
+                maxBird = entry.getKey();
+            } else if (entry.getValue() == maxCount) {
+                if (entry.getKey() < maxBird) {
+                    maxBird = entry.getKey();
                 }
             }
+        }
+
+        return maxBird;
     }
 }
