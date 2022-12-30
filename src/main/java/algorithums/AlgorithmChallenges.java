@@ -377,4 +377,22 @@ public class AlgorithmChallenges {
 
             return maxBird;
     }
+
+    public static String dayOfProgrammer(int year) {
+
+        //                 visokostna
+       // 1918 >  12.09 or 13.09
+       // 1918 < 26.09 or 27.09
+
+       int day = 0;
+
+       if(year == 1918 ){
+           day = 26;
+       }else {
+
+           day = (year % 4 == 0)? 12 : 13;
+       }
+
+       return String.format("%d.09.%d", day, year);
+    }
 }
