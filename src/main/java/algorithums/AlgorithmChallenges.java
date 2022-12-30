@@ -380,19 +380,26 @@ public class AlgorithmChallenges {
 
     public static String dayOfProgrammer(int year) {
 
-        //                 visokostna
-       // 1918 >  12.09 or 13.09
-       // 1918 < 26.09 or 27.09
+            if (year < 1700 || year > 2700) {
+                throw new IllegalArgumentException("Invalid year");
+            }
 
-       int day = 0;
+            if (year == 1918) {
+                return "26.09.1918";
+            }
 
-       if(year == 1918 ){
-           day = 26;
-       }else {
-
-           day = (year % 4 == 0)? 12 : 13;
-       }
-
-       return String.format("%d.09.%d", day, year);
+            if (year < 1918) {
+                if (year % 4 == 0) {
+                    return "12.09." + year;
+                } else {
+                    return "13.09." + year;
+                }
+            } else {
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                    return "12.09." + year;
+                } else {
+                    return "13.09." + year;
+                }
+            }
     }
 }
