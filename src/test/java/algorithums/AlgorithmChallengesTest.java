@@ -227,6 +227,8 @@ public class AlgorithmChallengesTest {
         assertEquals("12.09.2019", algorithmChallenges.dayOfProgrammer(2019));
         assertEquals("12.09.2020", algorithmChallenges.dayOfProgrammer(2020));
         assertEquals("12.09.2021", algorithmChallenges.dayOfProgrammer(2021));
+        assertEquals("12.09.2022", algorithmChallenges.dayOfProgrammer(2022));
+        assertEquals("12.09.2023", algorithmChallenges.dayOfProgrammer(2023));
     }
 
 }
