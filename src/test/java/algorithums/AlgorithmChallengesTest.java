@@ -228,4 +228,9 @@ public class AlgorithmChallengesTest {
         assertEquals("12.09.2020", algorithmChallenges.dayOfProgrammer(2020));
     }
 
+    @Test
+    public void bonAppetit() {
+        algorithmChallenges.bonAppetit(Arrays.asList(3, 10, 2, 9), 1, 12);
+    }
+
 }

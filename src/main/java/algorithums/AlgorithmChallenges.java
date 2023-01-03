@@ -395,4 +395,21 @@ public class AlgorithmChallenges {
 
         return maxBird;
     }
+
+
+    public void bonAppetit(List<Integer> bill, int k, int b) {
+
+        //b - what brian bill Anna
+        //k - what Anna decided not to eat
+
+        int annaWillNotEatMealIndex = bill.get(k);
+        int sumToBePayedByEachPerson = ( bill.stream().mapToInt(Integer::intValue).sum() - annaWillNotEatMealIndex) / 2;
+
+        if(sumToBePayedByEachPerson == b){
+            System.out.print("bonAppetit");
+        }else {
+            System.out.println(( b - sumToBePayedByEachPerson ));
+        }
+
+    }
 }
