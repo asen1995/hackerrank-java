@@ -403,12 +403,12 @@ public class AlgorithmChallenges {
         //k - what Anna decided not to eat
 
         int annaWillNotEatMealIndex = bill.get(k);
-        int sumToBePayedByEachPerson = ( bill.stream().mapToInt(Integer::intValue).sum() - annaWillNotEatMealIndex) / 2;
+        int sumToBePayedByEachPerson = (bill.stream().mapToInt(Integer::intValue).sum() - annaWillNotEatMealIndex) / 2;
 
-        if(sumToBePayedByEachPerson == b){
+        if (sumToBePayedByEachPerson == b) {
             System.out.print("bonAppetit");
-        }else {
-            System.out.println(( b - sumToBePayedByEachPerson ));
+        } else {
+            System.out.println((b - sumToBePayedByEachPerson));
         }
 
     }
