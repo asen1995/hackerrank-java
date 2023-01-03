@@ -406,7 +406,7 @@ public class AlgorithmChallenges {
         int sumToBePayedByEachPerson = (bill.stream().mapToInt(Integer::intValue).sum() - annaWillNotEatMealIndex) / 2;
 
         if (sumToBePayedByEachPerson == b) {
-            System.out.print("bonAppetit");
+            System.out.print("Bon Appetit");
         } else {
             System.out.println((b - sumToBePayedByEachPerson));
         }
