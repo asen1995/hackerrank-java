@@ -412,4 +412,26 @@ public class AlgorithmChallenges {
         }
 
     }
+
+    public int sockMerchant(int n, List<Integer> ar) {
+
+        // number of sock pairs
+
+        int numberOfPairs = 0;
+
+        Map<Integer, Integer> socksColorMap = new HashMap<>();
+
+        for (Integer sockColor : ar) {
+            if (socksColorMap.containsKey(sockColor)) {
+                numberOfPairs++;
+                socksColorMap.remove(sockColor);
+
+            } else {
+                socksColorMap.put(sockColor, 1);
+            }
+        }
+
+
+        return numberOfPairs;
+    }
 }

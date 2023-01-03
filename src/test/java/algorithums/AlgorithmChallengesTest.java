@@ -233,4 +233,8 @@ public class AlgorithmChallengesTest {
         algorithmChallenges.bonAppetit(Arrays.asList(3, 10, 2, 9), 1, 12);
     }
 
+    @Test
+    public void sockMerchant() {
+        assertEquals(3, algorithmChallenges.sockMerchant(9, Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20)));
+    }
 }
