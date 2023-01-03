@@ -7,7 +7,7 @@ import java.util.*;
 public class AlgorithmChallenges {
 
 
-    public static String dayOfProgrammer(int year) {
+    public String dayOfProgrammer(int year) {
 
         if (year < 1700 || year > 2700) {
             throw new IllegalArgumentException("Invalid year");
