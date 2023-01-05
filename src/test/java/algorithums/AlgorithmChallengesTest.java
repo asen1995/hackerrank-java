@@ -236,4 +236,10 @@ public class AlgorithmChallengesTest {
     public void sockMerchant() {
         assertEquals(3, algorithmChallenges.sockMerchant(9, Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20)));
     }
+
+    @Test
+    public void pageCount() {
+        assertEquals(1, algorithmChallenges.pageCount(6, 2));
+        assertEquals(0, algorithmChallenges.pageCount(5, 4));
+    }
 }
