@@ -434,25 +434,4 @@ public class AlgorithmChallenges {
 
         return numberOfPairs;
     }
-
-    public int pageCount(int i, int i1) {
-
-            int totalPageTurns = 0;
-
-            if (i1 % 2 == 0) {
-                i1--;
-            }
-
-            if (i % 2 == 0) {
-                i--;
-            }
-
-            if (i1 > i) {
-                totalPageTurns = (i1 - i) / 2;
-            } else {
-                totalPageTurns = (i - i1) / 2;
-            }
-
-            return totalPageTurns;
-    }
 }
