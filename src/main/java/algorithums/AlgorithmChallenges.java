@@ -434,4 +434,33 @@ public class AlgorithmChallenges {
 
         return numberOfPairs;
     }
+
+
+    public int pageCount(int numberOfPages, int searchedPageNumber) {
+
+        int numberOfTurnsFromFront = 0;
+        int numberOfTurnsFromBack = 0;
+
+        if (searchedPageNumber == 1 || searchedPageNumber == numberOfPages) {
+            return 0;
+        }
+
+        if (searchedPageNumber % 2 == 0) {
+            numberOfTurnsFromFront = searchedPageNumber / 2;
+        } else {
+            numberOfTurnsFromFront = (searchedPageNumber - 1) / 2;
+        }
+
+        if (numberOfPages % 2 == 0) {
+            if (searchedPageNumber % 2 == 0) {
+                numberOfTurnsFromBack = (numberOfPages - searchedPageNumber) / 2;
+            } else {
+                numberOfTurnsFromBack = (numberOfPages - searchedPageNumber + 1) / 2;
+            }
+        } else {
+            numberOfTurnsFromBack = (numberOfPages - searchedPageNumber) / 2;
+        }
+
+        return Math.min(numberOfTurnsFromFront, numberOfTurnsFromBack);
+    }
 }
