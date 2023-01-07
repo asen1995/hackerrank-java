@@ -73,7 +73,7 @@ public class DataStructureChallenges {
         return max + 1;
     }
 
-    public static void topView(Node root) {
+    public void topView(Node root) {
 
         if (root == null) {
             return;
@@ -81,6 +81,30 @@ public class DataStructureChallenges {
 
         System.out.print(root.getData() + " ");
         topView(root.getRight());
+    }
+
+    /*
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
+     */
+    public SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
+
+        if (head == null) {
+            return new SinglyLinkedListNode(data, null);
+        }
+
+        if (head.next != null) {
+            insertNodeAtTail(head.next, data);
+        } else {
+            head.next = new SinglyLinkedListNode(data, null);
+        }
+        return head;
+
     }
 
     public List<Integer> reverseArray(List<Integer> a) {
@@ -162,7 +186,6 @@ public class DataStructureChallenges {
         }
     }
 
-
     public Node insert(Node root, int data) {
         if (root == null) {
             return new Node(data, null, null);
@@ -178,4 +201,5 @@ public class DataStructureChallenges {
             return root;
         }
     }
+
 }
