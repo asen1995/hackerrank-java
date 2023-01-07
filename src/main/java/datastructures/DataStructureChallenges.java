@@ -203,4 +203,16 @@ public class DataStructureChallenges {
         }
     }
 
+
+    public SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+
+        if(llist == null) {
+            return new SinglyLinkedListNode(data);
+        }else {
+            SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
+            singlyLinkedListNode.next = llist;
+            return singlyLinkedListNode;
+        }
+
+    }
 }
