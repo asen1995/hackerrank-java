@@ -84,11 +84,12 @@ public class DataStructureChallengesTest {
 
     @Test
     public void insertNodeAtTail() {
-        SinglyLinkedListNode head = new SinglyLinkedListNode(1, new SinglyLinkedListNode(2, new SinglyLinkedListNode(3, null)));
-        SinglyLinkedListNode result = dataStructureChallenges.insertNodeAtTail(head, 4);
-        assertEquals(1, result.data);
-        assertEquals(2, result.next.data);
-        assertEquals(3, result.next.next.data);
-        assertEquals(4, result.next.next.next.data);
+        SinglyLinkedListNode head = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
+        head.next = tail;
+        SinglyLinkedListNode node = dataStructureChallenges.insertNodeAtTail(head, 164);
+        assertEquals(141, node.data);
+        assertEquals(302, node.next.data);
+        assertEquals(164, node.next.next.data);
     }
 }

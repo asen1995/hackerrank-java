@@ -95,13 +95,14 @@ public class DataStructureChallenges {
     public SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
 
         if (head == null) {
-            return new SinglyLinkedListNode(data, null);
+            final SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
+            return singlyLinkedListNode;
         }
 
         if (head.next != null) {
             insertNodeAtTail(head.next, data);
         } else {
-            head.next = new SinglyLinkedListNode(data, null);
+            head.next = new SinglyLinkedListNode(data);
         }
         return head;
 
