@@ -218,24 +218,25 @@ public class DataStructureChallenges {
 
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
 
-        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+            if (llist == null) {
+                return new SinglyLinkedListNode(data);
+            }
 
-        if(llist == null){
-            return newNode;
-        }
+            SinglyLinkedListNode head = llist;
+            SinglyLinkedListNode prev = null;
+            int count = 0;
+            while (count < position) {
+                prev = llist;
+                llist = llist.next;
+                count++;
+            }
 
-        int index = 0;
+            SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
+            singlyLinkedListNode.next = llist;
+            prev.next = singlyLinkedListNode;
 
-        SinglyLinkedListNode current = llist;
+            return head;
 
-        while(index < position - 1){
-            current = current.next;
-            index++;
-        }
-        newNode.next = current.next;
-        current.next = newNode;
-
-        return llist;
     }
 
 }
