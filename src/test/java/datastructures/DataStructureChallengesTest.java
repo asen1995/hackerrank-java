@@ -104,5 +104,14 @@ public class DataStructureChallengesTest {
         assertEquals(302, node.next.next.data);
     }
 
-
+    @Test
+    public void insertNodeAtPosition() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
+        head.next = tail;
+        SinglyLinkedListNode node = dataStructureChallenges.insertNodeAtPosition(head, 164, 1);
+        assertEquals(141, node.data);
+        assertEquals(164, node.next.data);
+        assertEquals(302, node.next.next.data);
+    }
 }
