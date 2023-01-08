@@ -313,35 +313,49 @@ public class DataStructureChallenges {
 
     public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-        if(head1 == null && head2 == null){
-            return null;
-        }
-
-        TreeMap<Integer, SinglyLinkedListNode> map = new TreeMap<>();
-
-        for(SinglyLinkedListNode node = head1; node != null; node = node.next){
-            map.put(node.data, node);
-        }
-
-        for(SinglyLinkedListNode node = head2; node != null; node = node.next){
-            map.put(node.data, node);
-        }
-
-        SinglyLinkedListNode head = null;
-        SinglyLinkedListNode tail = null;
-
-        for(Map.Entry<Integer, SinglyLinkedListNode> entry : map.entrySet()){
-            if(head == null){
-                head = entry.getValue();
-                tail = entry.getValue();
-            } else {
-                tail.next = entry.getValue();
-                tail = entry.getValue();
+            if(head1 == null){
+                return head2;
             }
-        }
 
+            if(head2 == null){
+                return head1;
+            }
 
-        return head;
+            SinglyLinkedListNode head = null;
+            SinglyLinkedListNode current = null;
 
+            while(head1 != null && head2 != null){
+
+                if(head1.data < head2.data){
+                    if(head == null){
+                        head = head1;
+                        current = head1;
+                    } else {
+                        current.next = head1;
+                        current = current.next;
+                    }
+                    head1 = head1.next;
+                } else {
+                    if(head == null){
+                        head = head2;
+                        current = head2;
+                    } else {
+                        current.next = head2;
+                        current = current.next;
+                    }
+                    head2 = head2.next;
+                }
+
+            }
+
+            if(head1 != null){
+                current.next = head1;
+            }
+
+            if(head2 != null){
+                current.next = head2;
+            }
+
+            return head;
     }
 }
