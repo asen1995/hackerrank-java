@@ -239,4 +239,31 @@ public class DataStructureChallenges {
 
     }
 
+
+    public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
+
+        if(position == 0){
+            return llist.next;
+        }
+
+        SinglyLinkedListNode head = llist;
+
+        int count = 0;
+
+        SinglyLinkedListNode prev = null;
+
+        while(count < position){
+            prev = llist;
+            llist = llist.next;
+            count++;
+        }
+
+        if(llist.next == null){
+            prev.next = null;
+        }else {
+            prev.next = llist.next;
+        }
+
+        return head;
+    }
 }
