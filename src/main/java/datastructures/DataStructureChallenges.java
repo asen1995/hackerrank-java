@@ -293,11 +293,7 @@ public class DataStructureChallenges {
 
     public boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-        while(true){
-
-            if(head1 == null && head2 == null){
-                return true;
-            }
+        while(head1 != null && head2 != null){
 
             if(head1 == null || head2 == null){
                 return false;
@@ -312,6 +308,7 @@ public class DataStructureChallenges {
 
         }
 
+        return true;
     }
 
 }
