@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class DataStructureChallengesTest {
 
@@ -179,6 +178,19 @@ public class DataStructureChallengesTest {
         assertEquals(164, reversed.next.next.data);
         assertEquals(302, reversed.next.next.next.data);
         assertEquals(141, reversed.next.next.next.next.data);
+    }
+
+    @Test
+    public void compareTwoLinkedLists() {
+        SinglyLinkedListNode head1 = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail1 = new SinglyLinkedListNode(302);
+        head1.next = tail1;
+
+        SinglyLinkedListNode head2 = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail2 = new SinglyLinkedListNode(302);
+        head2.next = tail2;
+
+        assertTrue(dataStructureChallenges.compareLists(head1, head2));
     }
 
 }
