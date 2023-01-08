@@ -269,4 +269,31 @@ public class DataStructureChallenges {
         reversePrint(llist.next);
         System.out.println(llist.data);
     }
+
+
+    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
+
+        if(llist == null){
+            return null;
+        }
+
+        Stack<SinglyLinkedListNode> stack = new Stack<>();
+        stack.push(llist);
+
+        while(llist.next != null){
+            stack.push(llist.next);
+            llist = llist.next;
+        }
+
+        SinglyLinkedListNode head = stack.pop();
+
+        SinglyLinkedListNode current = head;
+        while (!stack.isEmpty()){
+            current.next = stack.pop();
+            current = current.next;
+        }
+
+        return head;
+    }
+
 }
