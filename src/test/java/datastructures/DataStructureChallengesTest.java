@@ -131,7 +131,24 @@ public class DataStructureChallengesTest {
         SinglyLinkedListNode head = new SinglyLinkedListNode(141);
         SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
         head.next = tail;
+
+        //bigger list
+        SinglyLinkedListNode node = new SinglyLinkedListNode(164);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(530);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(474);
+        tail.next = node;
+        tail = node;
+
+        //track milliseconds of execution time
+        long startTime = System.currentTimeMillis();
         dataStructureChallenges.reversePrint(head);
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);
+        System.out.println("Execution time: " + duration + " milliseconds");
     }
 
 }
