@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class DataStructureChallengesTest {
 
@@ -113,5 +114,15 @@ public class DataStructureChallengesTest {
         assertEquals(141, node.data);
         assertEquals(164, node.next.data);
         assertEquals(302, node.next.next.data);
+    }
+
+    @Test
+    public void deleteNode() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
+        head.next = tail;
+        SinglyLinkedListNode node = dataStructureChallenges.deleteNode(head, 1);
+        assertEquals(141, node.data);
+        assertNull(node.next);
     }
 }
