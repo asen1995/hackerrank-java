@@ -277,23 +277,18 @@ public class DataStructureChallenges {
             return null;
         }
 
-        Stack<SinglyLinkedListNode> stack = new Stack<>();
-        stack.push(llist);
+        SinglyLinkedListNode currentHead = llist;
 
         while(llist.next != null){
-            stack.push(llist.next);
-            llist = llist.next;
+            SinglyLinkedListNode currentNode = llist.next;
+            llist.next = currentNode.next;
+
+            currentNode.next = currentHead;
+            currentHead = currentNode;
+
         }
 
-        SinglyLinkedListNode head = stack.pop();
-
-        SinglyLinkedListNode current = head;
-        while (!stack.isEmpty()){
-            current.next = stack.pop();
-            current = current.next;
-        }
-
-        return head;
+        return currentHead;
     }
 
 }
