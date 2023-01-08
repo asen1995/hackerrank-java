@@ -193,4 +193,45 @@ public class DataStructureChallengesTest {
         assertTrue(dataStructureChallenges.compareLists(head1, head2));
     }
 
+    @Test
+    public void mergeTwoSortedLinkedLists() {
+        SinglyLinkedListNode head1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode tail1 = new SinglyLinkedListNode(2);
+        head1.next = tail1;
+        SinglyLinkedListNode node = new SinglyLinkedListNode(3);
+        tail1.next = node;
+        tail1 = node;
+        node = new SinglyLinkedListNode(4);
+        tail1.next = node;
+        tail1 = node;
+        node = new SinglyLinkedListNode(5);
+        tail1.next = node;
+        tail1 = node;
+
+        SinglyLinkedListNode head2 = new SinglyLinkedListNode(6);
+        SinglyLinkedListNode tail2 = new SinglyLinkedListNode(7);
+        head2.next = tail2;
+        node = new SinglyLinkedListNode(8);
+        tail2.next = node;
+        tail2 = node;
+        node = new SinglyLinkedListNode(9);
+        tail2.next = node;
+        tail2 = node;
+        node = new SinglyLinkedListNode(10);
+        tail2.next = node;
+        tail2 = node;
+
+        SinglyLinkedListNode merged = dataStructureChallenges.mergeLists(head1, head2);
+        assertEquals(1, merged.data);
+        assertEquals(2, merged.next.data);
+        assertEquals(3, merged.next.next.data);
+        assertEquals(4, merged.next.next.next.data);
+        assertEquals(5, merged.next.next.next.next.data);
+        assertEquals(6, merged.next.next.next.next.next.data);
+        assertEquals(7, merged.next.next.next.next.next.next.data);
+        assertEquals(8, merged.next.next.next.next.next.next.next.data);
+        assertEquals(9, merged.next.next.next.next.next.next.next.next.data);
+        assertEquals(10, merged.next.next.next.next.next.next.next.next.next.data);
+    }
+
 }
