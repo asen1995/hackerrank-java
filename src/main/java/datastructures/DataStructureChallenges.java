@@ -73,6 +73,56 @@ public class DataStructureChallenges {
         return max + 1;
     }
 
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+
+        if (llist == null) {
+            return new SinglyLinkedListNode(data);
+        }
+
+        SinglyLinkedListNode head = llist;
+        SinglyLinkedListNode prev = null;
+        int count = 0;
+        while (count < position) {
+            prev = llist;
+            llist = llist.next;
+            count++;
+        }
+
+        SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
+        singlyLinkedListNode.next = llist;
+        prev.next = singlyLinkedListNode;
+
+        return head;
+
+    }
+
+    public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
+
+        if (position == 0) {
+            return llist.next;
+        }
+
+        SinglyLinkedListNode head = llist;
+
+        int count = 0;
+
+        SinglyLinkedListNode prev = null;
+
+        while (count < position) {
+            prev = llist;
+            llist = llist.next;
+            count++;
+        }
+
+        if (llist.next == null) {
+            prev.next = null;
+        } else {
+            prev.next = llist.next;
+        }
+
+        return head;
+    }
+
     public void topView(Node root) {
 
         if (root == null) {
@@ -203,67 +253,15 @@ public class DataStructureChallenges {
         }
     }
 
-
     public SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
 
-        if(llist == null) {
+        if (llist == null) {
             return new SinglyLinkedListNode(data);
-        }else {
+        } else {
             SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
             singlyLinkedListNode.next = llist;
             return singlyLinkedListNode;
         }
 
-    }
-
-    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
-
-            if (llist == null) {
-                return new SinglyLinkedListNode(data);
-            }
-
-            SinglyLinkedListNode head = llist;
-            SinglyLinkedListNode prev = null;
-            int count = 0;
-            while (count < position) {
-                prev = llist;
-                llist = llist.next;
-                count++;
-            }
-
-            SinglyLinkedListNode singlyLinkedListNode = new SinglyLinkedListNode(data);
-            singlyLinkedListNode.next = llist;
-            prev.next = singlyLinkedListNode;
-
-            return head;
-
-    }
-
-
-    public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
-
-        if(position == 0){
-            return llist.next;
-        }
-
-        SinglyLinkedListNode head = llist;
-
-        int count = 0;
-
-        SinglyLinkedListNode prev = null;
-
-        while(count < position){
-            prev = llist;
-            llist = llist.next;
-            count++;
-        }
-
-        if(llist.next == null){
-            prev.next = null;
-        }else {
-            prev.next = llist.next;
-        }
-
-        return head;
     }
 }
