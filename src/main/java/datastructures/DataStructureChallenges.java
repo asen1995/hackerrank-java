@@ -98,6 +98,10 @@ public class DataStructureChallenges {
 
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
 
+        if(llist == null){
+            return null;
+        }
+
         if (position == 0) {
             return llist.next;
         }
