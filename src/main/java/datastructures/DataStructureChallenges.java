@@ -137,15 +137,6 @@ public class DataStructureChallenges {
         topView(root.getRight());
     }
 
-    /*
-     * For your reference:
-     *
-     * SinglyLinkedListNode {
-     *     int data;
-     *     SinglyLinkedListNode next;
-     * }
-     *
-     */
     public SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data) {
 
         if (head == null) {
