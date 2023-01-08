@@ -125,4 +125,13 @@ public class DataStructureChallengesTest {
         assertEquals(141, node.data);
         assertNull(node.next);
     }
+
+    @Test
+    public void reversePrint() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
+        head.next = tail;
+        dataStructureChallenges.reversePrint(head);
+    }
+
 }
