@@ -311,4 +311,37 @@ public class DataStructureChallenges {
         return true;
     }
 
+    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+
+        if(head1 == null && head2 == null){
+            return null;
+        }
+
+        TreeMap<Integer, SinglyLinkedListNode> map = new TreeMap<>();
+
+        for(SinglyLinkedListNode node = head1; node != null; node = node.next){
+            map.put(node.data, node);
+        }
+
+        for(SinglyLinkedListNode node = head2; node != null; node = node.next){
+            map.put(node.data, node);
+        }
+
+        SinglyLinkedListNode head = null;
+        SinglyLinkedListNode tail = null;
+
+        for(Map.Entry<Integer, SinglyLinkedListNode> entry : map.entrySet()){
+            if(head == null){
+                head = entry.getValue();
+                tail = entry.getValue();
+            } else {
+                tail.next = entry.getValue();
+                tail = entry.getValue();
+            }
+        }
+
+
+        return head;
+
+    }
 }
