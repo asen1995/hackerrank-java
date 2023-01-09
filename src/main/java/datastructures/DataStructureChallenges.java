@@ -98,7 +98,7 @@ public class DataStructureChallenges {
 
     public static SinglyLinkedListNode deleteNode(SinglyLinkedListNode llist, int position) {
 
-        if(llist == null){
+        if (llist == null) {
             return null;
         }
 
@@ -122,6 +122,84 @@ public class DataStructureChallenges {
             prev.next = null;
         } else {
             prev.next = llist.next;
+        }
+
+        return head;
+    }
+
+    public static void reversePrint(SinglyLinkedListNode llist) {
+
+        if (llist == null) {
+            return;
+        }
+
+        reversePrint(llist.next);
+        System.out.println(llist.data);
+    }
+
+    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
+
+        if (llist == null) {
+            return null;
+        }
+
+        SinglyLinkedListNode currentHead = llist;
+
+        while (llist.next != null) {
+            SinglyLinkedListNode currentNode = llist.next;
+            llist.next = currentNode.next;
+
+            currentNode.next = currentHead;
+            currentHead = currentNode;
+
+        }
+
+        return currentHead;
+    }
+
+    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+
+        if (head1 == null) {
+            return head2;
+        }
+
+        if (head2 == null) {
+            return head1;
+        }
+
+        SinglyLinkedListNode head = null;
+        SinglyLinkedListNode current = null;
+
+        while (head1 != null && head2 != null) {
+
+            if (head1.data < head2.data) {
+                if (head == null) {
+                    head = head1;
+                    current = head1;
+                } else {
+                    current.next = head1;
+                    current = current.next;
+                }
+                head1 = head1.next;
+            } else {
+                if (head == null) {
+                    head = head2;
+                    current = head2;
+                } else {
+                    current.next = head2;
+                    current = current.next;
+                }
+                head2 = head2.next;
+            }
+
+        }
+
+        if (head1 != null) {
+            current.next = head1;
+        }
+
+        if (head2 != null) {
+            current.next = head2;
         }
 
         return head;
@@ -260,46 +338,15 @@ public class DataStructureChallenges {
 
     }
 
-    public static void reversePrint(SinglyLinkedListNode llist) {
-
-        if (llist == null) {
-            return;
-        }
-
-        reversePrint(llist.next);
-        System.out.println(llist.data);
-    }
-
-
-    public static SinglyLinkedListNode reverse(SinglyLinkedListNode llist) {
-
-        if(llist == null){
-            return null;
-        }
-
-        SinglyLinkedListNode currentHead = llist;
-
-        while(llist.next != null){
-            SinglyLinkedListNode currentNode = llist.next;
-            llist.next = currentNode.next;
-
-            currentNode.next = currentHead;
-            currentHead = currentNode;
-
-        }
-
-        return currentHead;
-    }
-
     public boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-        while(head1 != null && head2 != null){
+        while (head1 != null && head2 != null) {
 
-            if(head1 == null || head2 == null){
+            if (head1 == null || head2 == null) {
                 return false;
             }
 
-            if(head1.data != head2.data){
+            if (head1.data != head2.data) {
                 return false;
             }
 
@@ -309,53 +356,5 @@ public class DataStructureChallenges {
         }
 
         return true;
-    }
-
-    public static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
-
-            if(head1 == null){
-                return head2;
-            }
-
-            if(head2 == null){
-                return head1;
-            }
-
-            SinglyLinkedListNode head = null;
-            SinglyLinkedListNode current = null;
-
-            while(head1 != null && head2 != null){
-
-                if(head1.data < head2.data){
-                    if(head == null){
-                        head = head1;
-                        current = head1;
-                    } else {
-                        current.next = head1;
-                        current = current.next;
-                    }
-                    head1 = head1.next;
-                } else {
-                    if(head == null){
-                        head = head2;
-                        current = head2;
-                    } else {
-                        current.next = head2;
-                        current = current.next;
-                    }
-                    head2 = head2.next;
-                }
-
-            }
-
-            if(head1 != null){
-                current.next = head1;
-            }
-
-            if(head2 != null){
-                current.next = head2;
-            }
-
-            return head;
     }
 }
