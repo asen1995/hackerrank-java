@@ -361,21 +361,18 @@ public class DataStructureChallenges {
 
     public int getNode(SinglyLinkedListNode llist, int positionFromTail) {
 
-        int count = 0;
         SinglyLinkedListNode current = llist;
-        while(current != null) {
-            count++;
-            current = current.next;
-        }
-        int position = count - 1 - positionFromTail;
+        SinglyLinkedListNode tail = llist;
 
-        current = llist;
-        for(int i = 0; i < position; i++) {
-            current = current.next;
+        for (int i = 0; i < positionFromTail; i++) {
+            tail = tail.next;
         }
 
+        while (tail.next != null) {
+            current = current.next;
+            tail = tail.next;
+        }
 
-        System.out.println(count);
         return current.data;
     }
 }
