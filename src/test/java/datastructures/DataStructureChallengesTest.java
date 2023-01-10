@@ -251,6 +251,6 @@ public class DataStructureChallengesTest {
         tail.next = node;
         tail = node;
 
-        assertEquals(141, dataStructureChallenges.getNode(head, 3));
+        assertEquals(141, dataStructureChallenges.getNode(head, 4));
     }
 }
