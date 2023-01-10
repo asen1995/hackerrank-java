@@ -234,4 +234,23 @@ public class DataStructureChallengesTest {
         assertEquals(10, merged.next.next.next.next.next.next.next.next.next.data);
     }
 
+    @Test
+    public void getNode() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(141);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(302);
+        head.next = tail;
+
+        //bigger list
+        SinglyLinkedListNode node = new SinglyLinkedListNode(164);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(530);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(474);
+        tail.next = node;
+        tail = node;
+
+        assertEquals(141, dataStructureChallenges.getNode(head, 3));
+    }
 }
