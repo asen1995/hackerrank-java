@@ -360,19 +360,20 @@ public class DataStructureChallenges {
 
 
     public int getNode(SinglyLinkedListNode llist, int positionFromTail) {
+        // 141 -> 302 -> 164 -> 530 -> 474 -> NULL
 
         SinglyLinkedListNode current = llist;
         SinglyLinkedListNode tail = llist;
 
-        for (int i = 0; i < positionFromTail; i++) {
-            tail = tail.next;
-        }
 
-        while (tail.next != null) {
+        for(int i = 0; i < positionFromTail ; i++){
             current = current.next;
+        }
+
+        while (current.next != null){
             tail = tail.next;
         }
 
-        return current.data;
+        return tail.data;
     }
 }
