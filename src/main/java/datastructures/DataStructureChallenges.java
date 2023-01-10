@@ -380,35 +380,17 @@ public class DataStructureChallenges {
 
     public static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode llist) {
 
-        // 1 -> 2 -> 2 -> 3 -> 3 -> 3 -> 3 -> NULL
-
-        if(llist == null){
-            return null;
-        }
-        if(llist.next == null){
-            return llist;
-        }
-
-        SinglyLinkedListNode head = llist;
         SinglyLinkedListNode current = llist;
 
-        while(current != null){
+        while(current != null && current.next != null){
 
-            if( (current.next != null) && current.data == current.next.data){
-
-                if(current.next.next == null){
-                    current.next = null;
-                }else{
-                    current.next = current.next.next;
-                }
-
+            if(current.data == current.next.data){
+                current.next = current.next.next;
+            }else{
+                current = current.next;
             }
-
-            current = current.next;
         }
 
-        return head;
-
-
+        return llist;
     }
 }
