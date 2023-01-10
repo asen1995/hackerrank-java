@@ -253,4 +253,29 @@ public class DataStructureChallengesTest {
 
         assertEquals(141, dataStructureChallenges.getNode(head, 4));
     }
+
+    @Test
+    public void removeDuplicates() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(2);
+        head.next = tail;
+        SinglyLinkedListNode node = new SinglyLinkedListNode(2);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(3);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(3);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(4);
+        tail.next = node;
+        tail = node;
+
+        SinglyLinkedListNode noDuplicates = dataStructureChallenges.removeDuplicates(head);
+        assertEquals(1, noDuplicates.data);
+        assertEquals(2, noDuplicates.next.data);
+        assertEquals(3, noDuplicates.next.next.data);
+        assertEquals(4, noDuplicates.next.next.next.data);
+    }
 }
