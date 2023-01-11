@@ -25,16 +25,6 @@ public class Main {
 			final String s = reverseString(param.substring(1, param.length()));
 			return s.concat(String.valueOf(param.charAt(0)));
 		}
-
-		// e s a
-		// sa
-		// a
-
-
-		//concat 1
-
-
-
 	}
 
 }
