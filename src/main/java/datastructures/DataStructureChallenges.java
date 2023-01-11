@@ -366,11 +366,11 @@ public class DataStructureChallenges {
         SinglyLinkedListNode tail = llist;
 
 
-        for(int i = 0; i < positionFromTail ; i++){
+        for (int i = 0; i < positionFromTail; i++) {
             current = current.next;
         }
 
-        while (current.next != null){
+        while (current.next != null) {
             tail = tail.next;
         }
 
@@ -382,15 +382,32 @@ public class DataStructureChallenges {
 
         SinglyLinkedListNode current = llist;
 
-        while(current != null && current.next != null){
+        while (current != null && current.next != null) {
 
-            if(current.data == current.next.data){
+            if (current.data == current.next.data) {
                 current.next = current.next.next;
-            }else{
+            } else {
                 current = current.next;
             }
         }
 
         return llist;
     }
+
+    static boolean hasCycle(SinglyLinkedListNode head) {
+
+        SinglyLinkedListNode current = head;
+
+        while (current != null && current.next != null) {
+            current = current.next.next;
+            head = head.next;
+
+            if (current == head) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
