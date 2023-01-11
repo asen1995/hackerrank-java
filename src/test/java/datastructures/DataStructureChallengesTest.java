@@ -278,4 +278,60 @@ public class DataStructureChallengesTest {
         assertEquals(3, noDuplicates.next.next.data);
         assertEquals(4, noDuplicates.next.next.next.data);
     }
+
+    @Test
+    public void hasCycle() {
+        SinglyLinkedListNode head = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode tail = new SinglyLinkedListNode(2);
+        head.next = tail;
+        SinglyLinkedListNode node = new SinglyLinkedListNode(3);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(4);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(5);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(6);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(7);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(8);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(9);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(10);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(11);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(12);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(13);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(14);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(15);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(12);
+        tail.next = node;
+        tail = node;
+        node = new SinglyLinkedListNode(17);
+        tail.next = node;
+        tail = node;
+
+        assertTrue(dataStructureChallenges.hasCycle(head));
+    }
+
+
 }
