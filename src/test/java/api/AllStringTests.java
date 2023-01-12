@@ -3,6 +3,7 @@ package api;
 import org.junit.Test;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 
 import static org.junit.Assert.assertEquals;
 
@@ -30,6 +31,10 @@ public class AllStringTests {
         for(byte i = 0 ; i < bytes.length ; i++){
             assertEquals(bytes[i], expected[i]);
         }
+
+
+        assertEquals("something".toLowerCase(Locale.CHINA), "something");
+        assertEquals("something".toLowerCase(Locale.ENGLISH), "something");
     }
 
 }
