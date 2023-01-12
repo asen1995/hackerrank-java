@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class AllStringTests {
 
@@ -48,12 +48,16 @@ public class AllStringTests {
         assertEquals("something".replace("e", ""), "somthing");
 
         //endsWith example
-        assertEquals("something".endsWith("ing"), true);
-        assertEquals("something".endsWith("ingg"), false);
+        assertTrue("something".endsWith("ing"));
+        assertFalse("something".endsWith("ingg"));
 
         //contains example
-        assertEquals("something".contains("ing"), true);
-        assertEquals("something".contains("ingg"), false);
+        assertTrue("something".contains("ing"));
+        assertFalse("something".contains("ingg"));
+
+        // isEmpty example
+        assertEquals("something".isEmpty(), false);
+        assertEquals("".isEmpty(), true);
 
 
     }
