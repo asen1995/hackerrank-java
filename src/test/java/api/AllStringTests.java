@@ -43,6 +43,10 @@ public class AllStringTests {
         assertEquals(split[0], "som");
         assertEquals(split[1], "thing");
 
+        //replace example
+        assertEquals("something".replace("e", "a"), "somathing");
+        assertEquals("something".replace("e", ""), "somthing");
+
     }
 
 }
