@@ -2,6 +2,8 @@ package api;
 
 import org.junit.Test;
 
+import java.nio.charset.StandardCharsets;
+
 import static org.junit.Assert.assertEquals;
 
 public class AllStringTests {
@@ -21,6 +23,13 @@ public class AllStringTests {
         assertEquals("something".substring(0), "something");
         assertEquals("something".substring(5), "hing");
 
+        final byte[] bytes = "something".getBytes(StandardCharsets.UTF_8);
+
+        final byte[] expected = {115, 111, 109, 101, 116, 104, 105, 110, 103};
+
+        for(byte i = 0 ; i < bytes.length ; i++){
+            assertEquals(bytes[i], expected[i]);
+        }
     }
 
 }
