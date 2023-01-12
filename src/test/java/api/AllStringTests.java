@@ -47,6 +47,11 @@ public class AllStringTests {
         assertEquals("something".replace("e", "a"), "somathing");
         assertEquals("something".replace("e", ""), "somthing");
 
+        //endsWith example
+        assertEquals("something".endsWith("ing"), true);
+        assertEquals("something".endsWith("ingg"), false);
+
+
     }
 
 }
