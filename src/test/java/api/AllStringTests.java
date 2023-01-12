@@ -60,6 +60,11 @@ public class AllStringTests {
         assertEquals("".isEmpty(), true);
 
 
+        // compareTo example
+        assertEquals("something".compareTo("something"), 0);
+        assertEquals("something".compareTo("somethin"), 1);
+        assertEquals("something".compareTo("somethingg"), -1);
+
     }
 
 }
