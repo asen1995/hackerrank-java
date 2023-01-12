@@ -51,6 +51,10 @@ public class AllStringTests {
         assertEquals("something".endsWith("ing"), true);
         assertEquals("something".endsWith("ingg"), false);
 
+        //contains example
+        assertEquals("something".contains("ing"), true);
+        assertEquals("something".contains("ingg"), false);
+
 
     }
 
