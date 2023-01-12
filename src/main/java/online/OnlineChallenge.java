@@ -27,17 +27,21 @@ public class OnlineChallenge {
 
     public int[] moveZeroesToEndOfArray(int[] arr) {
 
-        int index = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                arr[index] = arr[i];
-                index++;
+        //we have pointer from the start that counts the non zeroes
+
+
+        int nextNonZero = 0;
+
+        for(int i = 0 ; i < arr.length ; i++) {
+
+            if(arr[i] != 0){
+
+                int temp = arr[i];
+                arr[i] = arr[nextNonZero];
+                arr[nextNonZero] = temp;
+                nextNonZero++;
             }
-        }
-
-        for(int i = index; i < arr.length; i++){
-            arr[i] = 0;
         }
 
         return arr;
