@@ -65,6 +65,14 @@ public class AllStringTests {
         assertEquals("something".compareTo("somethin"), 1);
         assertEquals("something".compareTo("somethingg"), -1);
 
+        // matches example
+
+        assertTrue("asen.nikolaev95@gmail.com".matches(".*@.*"));
+        assertTrue("something".matches(".*thing"));
+        assertFalse("something".matches(".*thingg"));
+
+
+
     }
 
 }
