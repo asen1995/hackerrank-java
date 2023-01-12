@@ -35,6 +35,9 @@ public class AllStringTests {
 
         assertEquals("something".toLowerCase(Locale.CHINA), "something");
         assertEquals("something".toLowerCase(Locale.ENGLISH), "something");
+
+        assertEquals("something".toUpperCase(Locale.CHINA), "SOMETHING");
+        assertEquals("something".toUpperCase(Locale.ENGLISH), "SOMETHING");
     }
 
 }
