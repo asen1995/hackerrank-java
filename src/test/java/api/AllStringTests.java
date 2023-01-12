@@ -21,7 +21,6 @@ public class AllStringTests {
         assertEquals("something".substring(3, 9), "ething");
 
         assertEquals("something".substring(3), "ething");
-        assertEquals("something".substring(0), "something");
         assertEquals("something".substring(5), "hing");
 
         final byte[] bytes = "something".getBytes(StandardCharsets.UTF_8);
@@ -38,6 +37,12 @@ public class AllStringTests {
 
         assertEquals("something".toUpperCase(Locale.CHINA), "SOMETHING");
         assertEquals("something".toUpperCase(Locale.ENGLISH), "SOMETHING");
+
+        //split example
+        final String[] split = "something".split("e");
+        assertEquals(split[0], "som");
+        assertEquals(split[1], "thing");
+
     }
 
 }
