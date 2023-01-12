@@ -72,6 +72,10 @@ public class AllStringTests {
         assertFalse("something".matches(".*thingg"));
 
 
+        // replaceall example
+        assertEquals("something".replaceAll("e", "a"), "somathing");
+        assertEquals("something".replaceAll("e", ""), "somthing");
+
 
     }
 
