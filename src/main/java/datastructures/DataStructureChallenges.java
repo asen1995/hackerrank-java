@@ -232,7 +232,21 @@ public class DataStructureChallenges {
     }
 
     public List<Integer> reverseArray(List<Integer> a) {
-        Collections.reverse(a);
+        if(a == null || a.size() == 0) {
+            return a;
+        }
+
+        int first = 0;
+        int last = a.size() - 1;
+
+        while(first < last) {
+            int temp = a.get(first);
+            a.set(first, a.get(last));
+            a.set(last, temp);
+            first++;
+            last--;
+        }
+
         return a;
     }
 
