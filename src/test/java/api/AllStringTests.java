@@ -77,6 +77,12 @@ public class AllStringTests {
         assertEquals("something".replaceAll("e", ""), "somthing");
 
 
+        // replaceFirst example
+        assertEquals("something".replaceFirst("e", "a"), "somathing");
+        assertEquals("something".replaceFirst("e", ""), "somthing");
+
+
+
     }
 
 }
