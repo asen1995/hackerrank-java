@@ -28,35 +28,13 @@ public class OnlineChallenge {
         return productArr;
     }
 
-    public int[] moveZeroesToEndOfArray(int[] arr) {
-
-
-        //we have pointer from the start that counts the non zeroes
-
-
-        int nextNonZero = 0;
-
-        for(int i = 0 ; i < arr.length ; i++) {
-
-            if(arr[i] != 0){
-
-                int temp = arr[i];
-                arr[i] = arr[nextNonZero];
-                arr[nextNonZero] = temp;
-                nextNonZero++;
-            }
-        }
-
-        return arr;
-    }
-
     static int[] findDuplicates(int[] arr1, int[] arr2) {
 
         List<Integer> result = new ArrayList<>();
 
-        for(int i = 0; i < arr1.length ; i++) {
+        for (int i = 0; i < arr1.length; i++) {
 
-            if(binarySearch(arr1[i] , arr2) != -1 ){
+            if (binarySearch(arr1[i], arr2) != -1) {
                 result.add(arr1[i]);
             }
 
@@ -70,15 +48,15 @@ public class OnlineChallenge {
         int begin = 0;
         int end = arr.length;
 
-        while(begin <= end){
+        while (begin <= end) {
 
-            int middle = ( begin + end ) / 2;
+            int middle = (begin + end) / 2;
 
-            if(arr[middle] == target){
+            if (arr[middle] == target) {
                 return middle;
-            }else if ( target > arr[middle] ){
+            } else if (target > arr[middle]) {
                 begin = middle + 1;
-            }else {
+            } else {
                 end = middle - 1;
             }
 
@@ -88,7 +66,6 @@ public class OnlineChallenge {
         return -1;
     }
 
-
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 5, 6, 7};
         int[] arr2 = {3, 6, 7, 8, 20};
@@ -96,5 +73,27 @@ public class OnlineChallenge {
         for (int i = 0; i < result.length; i++) {
             System.out.println(result[i]);
         }
+    }
+
+    public int[] moveZeroesToEndOfArray(int[] arr) {
+
+
+        //we have pointer from the start that counts the non zeroes
+
+
+        int nextNonZero = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] != 0) {
+
+                int temp = arr[i];
+                arr[i] = arr[nextNonZero];
+                arr[nextNonZero] = temp;
+                nextNonZero++;
+            }
+        }
+
+        return arr;
     }
 }
