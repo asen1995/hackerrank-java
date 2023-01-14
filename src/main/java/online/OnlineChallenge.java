@@ -2,6 +2,7 @@ package online;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class OnlineChallenge {
 
@@ -88,6 +89,56 @@ public class OnlineChallenge {
 
         return arr;
     }
+
+    static char[] reverseWordsWithStack(char[] arr) {
+        //using a stack
+
+        Stack<Character> stack = new Stack<>();
+
+        int beginWord = 0;
+        int endWord = 0;
+
+        while(beginWord < arr.length && arr[beginWord] == ' '){
+            stack.push(' ');
+            beginWord++;
+        }
+
+        for(int i = beginWord; i < arr.length; i++){
+
+
+            if(arr[i] == ' '){
+
+                endWord = i - 1;
+
+                for(int j = endWord ; j >= beginWord ; j--){
+                    stack.push(arr[j]);
+                }
+                while (arr[i] == ' ' && i < arr.length){
+                    stack.push(' ');
+                    i++;
+                }
+
+                beginWord = i;
+
+            }
+        }
+
+        if(beginWord < arr.length){
+            endWord = arr.length - 1;
+
+            for(int i = endWord ; i >= beginWord; i--){
+                stack.push(arr[i]);
+            }
+        }
+
+        char[] result = new char[arr.length];
+
+        for(int i = 0; i < arr.length ;i++) {
+            result[i] = stack.pop();
+        }
+        return result;
+    }
+
 
     static char[] reverseWords(char[] arr) {
 
