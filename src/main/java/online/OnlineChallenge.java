@@ -140,6 +140,54 @@ public class OnlineChallenge {
     }
 
 
+    static char[] reverseWordsMirror(char[] arr) {
+
+        mirror(0,arr.length - 1 , arr);
+
+        int wordBegin = 0;
+        int endBegin = 0;
+
+        while (wordBegin < arr.length &&  arr[wordBegin] == ' '){
+            wordBegin++;
+        }
+
+        for(int i = wordBegin; i < arr.length ; i++){
+
+            if(arr[i] == ' ' ){
+                endBegin = i - 1;
+
+                mirror(wordBegin, endBegin,arr);
+
+                wordBegin = i;
+
+                while(i < arr.length && arr[i] == ' ' ){
+                    i++;
+                    wordBegin++;
+                }
+            }
+
+        }
+
+        if(wordBegin < arr.length){
+            mirror(wordBegin, arr.length - 1,arr);
+        }
+
+        return arr;
+    }
+
+    private static void mirror(int begin, int end, char[] arr) {
+
+        while(begin < end){
+
+            char temp = arr[begin];
+            arr[begin] = arr[end];
+            arr[end] = temp;
+
+            begin++;
+            end--;
+        }
+    }
+
     static char[] reverseWords(char[] arr) {
 
         //2 point
@@ -188,7 +236,7 @@ public class OnlineChallenge {
         char[] arr = { 'p', 'e', 'r', 'f', 'e', 'c', 't', ' ',
                 'm', 'a', 'k', 'e', 's', ' ',
                 'p', 'r', 'a', 'c', 't', 'i', 'c', 'e'};
-        char[] result = reverseWords(arr);
+        char[] result = reverseWordsMirror(arr);
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i]);
         }
