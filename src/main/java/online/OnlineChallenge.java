@@ -241,4 +241,16 @@ public class OnlineChallenge {
             System.out.print(result[i]);
         }
     }
+
+
+    public static String reverseString(String param){
+
+        if(param.length() == 1){
+            return param;
+        }else {
+            final String s = reverseString(param.substring(1, param.length()));
+            return s.concat(String.valueOf(param.charAt(0)));
+        }
+    }
+
 }
