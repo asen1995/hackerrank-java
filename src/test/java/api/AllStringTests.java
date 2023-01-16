@@ -27,7 +27,7 @@ public class AllStringTests {
 
         final byte[] expected = {115, 111, 109, 101, 116, 104, 105, 110, 103};
 
-        for(byte i = 0 ; i < bytes.length ; i++){
+        for (byte i = 0; i < bytes.length; i++) {
             assertEquals(bytes[i], expected[i]);
         }
 
@@ -80,7 +80,6 @@ public class AllStringTests {
         // replaceFirst example
         assertEquals("something".replaceFirst("e", "a"), "somathing");
         assertEquals("something".replaceFirst("e", ""), "somthing");
-
 
 
     }
