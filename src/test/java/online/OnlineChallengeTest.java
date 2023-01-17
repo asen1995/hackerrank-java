@@ -21,5 +21,12 @@ public class OnlineChallengeTest {
         int[] expected = {3, 3, 1, -2, 0};
         assertArrayEquals(expected, onlineChallenge.moveZeroesToEndOfArray(input));
     }
+    @Test
+    public void moveZeroesToEndOfArraySecondExample() {
+        int[] input = {0 ,0 ,3 ,4 ,0 ,4 ,2 };
+        int[] expected = {3 ,4 ,4 ,2 ,0 ,0 ,0 };
+        assertArrayEquals(expected, onlineChallenge.moveZeroesToEndOfArray(input));
+    }
+
 
 }
