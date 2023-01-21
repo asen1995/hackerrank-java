@@ -28,5 +28,12 @@ public class OnlineChallengeTest {
         assertArrayEquals(expected, onlineChallenge.moveZeroesToEndOfArray(input));
     }
 
+    @Test
+    public void mergeSortedArrays() {
+        int[] input1 = {1, 3, 4, 5};
+        int[] input2 = {2, 6, 7, 8};
+        int[] expected = {1, 2, 3, 4, 5, 6, 7, 8};
+        assertArrayEquals(expected, onlineChallenge.mergeSortedArrays(input1, input2));
+    }
 
 }
