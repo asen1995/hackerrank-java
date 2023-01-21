@@ -205,6 +205,38 @@ public class DataStructureChallenges {
         return head;
     }
 
+    public static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode llist) {
+
+        SinglyLinkedListNode current = llist;
+
+        while (current != null && current.next != null) {
+
+            if (current.data == current.next.data) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+
+        return llist;
+    }
+
+    static boolean hasCycle(SinglyLinkedListNode head) {
+
+        SinglyLinkedListNode current = head;
+
+        while (current != null && current.next != null) {
+            current = current.next.next;
+            head = head.next;
+
+            if (current == head) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void topView(Node root) {
 
         if (root == null) {
@@ -232,14 +264,14 @@ public class DataStructureChallenges {
     }
 
     public List<Integer> reverseArray(List<Integer> a) {
-        if(a == null || a.size() == 0) {
+        if (a == null || a.size() == 0) {
             return a;
         }
 
         int first = 0;
         int last = a.size() - 1;
 
-        while(first < last) {
+        while (first < last) {
             int temp = a.get(first);
             a.set(first, a.get(last));
             a.set(last, temp);
@@ -372,7 +404,6 @@ public class DataStructureChallenges {
         return true;
     }
 
-
     public int getNode(SinglyLinkedListNode llist, int positionFromTail) {
         // 141 -> 302 -> 164 -> 530 -> 474 -> NULL
 
@@ -389,39 +420,6 @@ public class DataStructureChallenges {
         }
 
         return tail.data;
-    }
-
-
-    public static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode llist) {
-
-        SinglyLinkedListNode current = llist;
-
-        while (current != null && current.next != null) {
-
-            if (current.data == current.next.data) {
-                current.next = current.next.next;
-            } else {
-                current = current.next;
-            }
-        }
-
-        return llist;
-    }
-
-    static boolean hasCycle(SinglyLinkedListNode head) {
-
-        SinglyLinkedListNode current = head;
-
-        while (current != null && current.next != null) {
-            current = current.next.next;
-            head = head.next;
-
-            if (current == head) {
-                return true;
-            }
-        }
-
-        return false;
     }
 
 }
