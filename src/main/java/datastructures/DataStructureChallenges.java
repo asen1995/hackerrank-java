@@ -262,6 +262,9 @@ public class DataStructureChallenges {
         return head;
 
     }
+    //what this method does - explain?
+
+
 
     public List<Integer> reverseArray(List<Integer> a) {
         if (a == null || a.size() == 0) {
@@ -420,6 +423,30 @@ public class DataStructureChallenges {
         }
 
         return tail.data;
+    }
+
+
+    public int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+
+        SinglyLinkedListNode current1 = head1;
+        SinglyLinkedListNode current2 = head2;
+
+        Map<Integer, SinglyLinkedListNode> map = new HashMap<>();
+
+        while(current1.next != null) {
+            map.put(current1.next.hashCode(), current1);
+            current1 = current1.next;
+        }
+
+        while(current2.next != null) {
+            if(map.containsKey(current2.next.hashCode()) && map.get(current2.next.hashCode()).equals(current2.next)) {
+                return current2.next.data;
+            }
+            current2 = current2.next;
+        }
+
+        return -1;
+
     }
 
 }
