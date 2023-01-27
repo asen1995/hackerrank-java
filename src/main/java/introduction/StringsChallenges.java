@@ -7,127 +7,126 @@ import java.util.regex.Pattern;
 
 public class StringsChallenges {
 
-	
-	//examples of ANAGRAM is   CAT = ACT , elbow = below
-	static boolean isAnagram(String a, String b) {
 
-		if (a == null && b == null) {
-			return true;
-		}
-		if (a == null || b == null) {
-			return false;
-		}
+    //examples of ANAGRAM is   CAT = ACT , elbow = below
+    static boolean isAnagram(String a, String b) {
 
-		if (a.length() != b.length()) {
-			return false;
-		}
-		
-		//upperCase both words for easier comparing
-		String firstWord = a.toUpperCase();
-		StringBuilder secondWord = new StringBuilder(b.toUpperCase());		
-		
-		for (int i = 0; i < firstWord.length(); i++) {
-			
-			String letter = String.valueOf(firstWord.charAt(i)).toUpperCase();			
-			int indexOfLetterInsideStringBuilder = secondWord.indexOf(letter);
-			if(indexOfLetterInsideStringBuilder != -1) {
-				secondWord.deleteCharAt(indexOfLetterInsideStringBuilder);
-			}else {
-				return false;
-			}
-			
-		}
-		return true;
-	}
-	
-	//we need to print all tokens from string sentence and split them by space and special characters
-	public static void splitStringIntoTokens(String s) {
+        if (a == null && b == null) {
+            return true;
+        }
+        if (a == null || b == null) {
+            return false;
+        }
 
-		String trimmedSentense = s.trim();
-		
-		if (trimmedSentense == null || trimmedSentense.isEmpty()) {
-			System.out.println("0");
+        if (a.length() != b.length()) {
+            return false;
+        }
 
-		} else {
+        //upperCase both words for easier comparing
+        String firstWord = a.toUpperCase();
+        StringBuilder secondWord = new StringBuilder(b.toUpperCase());
 
-			String rexeg = "[! ,?._'@]+"; // split by all this characters
+        for (int i = 0; i < firstWord.length(); i++) {
 
-			String[] splitWordsFromSentence = trimmedSentense.split(rexeg);
-			System.out.println(splitWordsFromSentence.length);
-			for (String splittedString : splitWordsFromSentence) {
-				System.out.println(splittedString);
-			}
+            String letter = String.valueOf(firstWord.charAt(i)).toUpperCase();
+            int indexOfLetterInsideStringBuilder = secondWord.indexOf(letter);
+            if (indexOfLetterInsideStringBuilder != -1) {
+                secondWord.deleteCharAt(indexOfLetterInsideStringBuilder);
+            } else {
+                return false;
+            }
 
-		}
-	}
-	
+        }
+        return true;
+    }
 
-	public static String getSmallestAndLargest(String s, int k) {
-		String smallest = "";
-		String largest = "";
+    //we need to print all tokens from string sentence and split them by space and special characters
+    public static void splitStringIntoTokens(String s) {
 
-		int lenght = 0;
+        String trimmedSentense = s.trim();
 
-		smallest = s.substring(lenght, lenght + k);
-		lenght++;
+        if (trimmedSentense == null || trimmedSentense.isEmpty()) {
+            System.out.println("0");
 
-		while ((lenght + k) < s.length() - 1) {
-			String secondStringForCompare = s.substring(lenght, lenght + k);
-			if (secondStringForCompare.compareTo(smallest) < 0) { // smaller
-				smallest = secondStringForCompare;
-			}
-			lenght++;
-		}
+        } else {
 
-		return smallest + "\n" + largest;
-	}
+            String rexeg = "[! ,?._'@]+"; // split by all this characters
 
-	//check if its a valid regex pattern
-	public static void isItAValidPattern(List<String> listOfRegularExpressions) {
-		List<String> listOfRegularExdpressions = new ArrayList();
-		for (String regex : listOfRegularExpressions) {
+            String[] splitWordsFromSentence = trimmedSentense.split(rexeg);
+            System.out.println(splitWordsFromSentence.length);
+            for (String splittedString : splitWordsFromSentence) {
+                System.out.println(splittedString);
+            }
 
-			try {
-				Pattern compile = Pattern.compile(regex);
-				System.out.println("Valid");
+        }
+    }
 
-			} catch (java.util.regex.PatternSyntaxException e) {
-				System.out.println("Invalid"); // if pattern compile throws exception, the regex is invalid
-			}
-		}
 
-	}
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
 
-	public static String removeDuplicateWords(String sentence) {
-		String regexMatchingDuplicateWords = "\\b(\\w+)(\\s+\\1\\b)*";
-		 
-		Pattern p = Pattern.compile(regexMatchingDuplicateWords, Pattern.CASE_INSENSITIVE);
-		
-		Matcher m = p.matcher(sentence);
-		
-		while (m.find()) {
-		     sentence = sentence.replaceAll(m.group(0), m.group(1));
-		}		
-		return sentence;
-		
-	}
+        int lenght = 0;
 
-	public static void removeTagsFromSentence(String line) {
+        smallest = s.substring(lenght, lenght + k);
+        lenght++;
 
-		String regexForMatchingTags = "<(.+)>(([^<>]+))</\\1>";
+        while ((lenght + k) < s.length() - 1) {
+            String secondStringForCompare = s.substring(lenght, lenght + k);
+            if (secondStringForCompare.compareTo(smallest) < 0) { // smaller
+                smallest = secondStringForCompare;
+            }
+            lenght++;
+        }
 
-		Matcher m = Pattern.compile(regexForMatchingTags).matcher(line);
+        return smallest + "\n" + largest;
+    }
 
-		if (!m.find()) {
-			System.out.println("None");
-		}
+    //check if its a valid regex pattern
+    public static void isItAValidPattern(List<String> listOfRegularExpressions) {
+        List<String> listOfRegularExdpressions = new ArrayList();
+        for (String regex : listOfRegularExpressions) {
 
-		m.reset();
-		while (m.find()) {
-			System.out.println(m.group(2)); // prints the content of html tags
-		}
-	}
+            try {
+                Pattern compile = Pattern.compile(regex);
+                System.out.println("Valid");
 
-	
+            } catch (java.util.regex.PatternSyntaxException e) {
+                System.out.println("Invalid"); // if pattern compile throws exception, the regex is invalid
+            }
+        }
+
+    }
+
+    public static String removeDuplicateWords(String sentence) {
+        String regexMatchingDuplicateWords = "\\b(\\w+)(\\s+\\1\\b)*";
+
+        Pattern p = Pattern.compile(regexMatchingDuplicateWords, Pattern.CASE_INSENSITIVE);
+
+        Matcher m = p.matcher(sentence);
+
+        while (m.find()) {
+            sentence = sentence.replaceAll(m.group(0), m.group(1));
+        }
+        return sentence;
+
+    }
+
+    public static void removeTagsFromSentence(String line) {
+
+        String regexForMatchingTags = "<(.+)>(([^<>]+))</\\1>";
+
+        Matcher m = Pattern.compile(regexForMatchingTags).matcher(line);
+
+        if (!m.find()) {
+            System.out.println("None");
+        }
+
+        m.reset();
+        while (m.find()) {
+            System.out.println(m.group(2)); // prints the content of html tags
+        }
+    }
+
 
 }
