@@ -334,4 +334,29 @@ public class DataStructureChallengesTest {
     }
 
 
+    @Test
+    public void findMergeNode() {
+        SinglyLinkedListNode head1 = new SinglyLinkedListNode(1);
+        SinglyLinkedListNode tail1 = new SinglyLinkedListNode(2);
+        head1.next = tail1;
+        SinglyLinkedListNode node = new SinglyLinkedListNode(3);
+        tail1.next = node;
+        tail1 = node;
+        node = new SinglyLinkedListNode(4);
+        tail1.next = node;
+        tail1 = node;
+        node = new SinglyLinkedListNode(5);
+        tail1.next = node;
+        tail1 = node;
+
+        SinglyLinkedListNode head2 = new SinglyLinkedListNode(6);
+        SinglyLinkedListNode tail2 = new SinglyLinkedListNode(7);
+        head2.next = tail2;
+        node = new SinglyLinkedListNode(8);
+        tail2.next = node;
+        tail2 = node;
+
+
+        assertEquals(1, dataStructureChallenges.findMergeNode(head1, head2));
+    }
 }
