@@ -40,5 +40,18 @@ public class Main {
 		end = System.currentTimeMillis();
 		System.out.println("StringBuilder took " + (end-start) + " ms");
 
+
+		StringBuffer sbf = new StringBuffer("a");
+		start = System.currentTimeMillis();
+
+		for(int i = 0; i< n; i++) {
+			sbf.append("a");
+		}
+
+		end = System.currentTimeMillis();
+		System.out.println("StringBuffer took " + (end-start) + " ms");
+
 	}
+
+
 }
