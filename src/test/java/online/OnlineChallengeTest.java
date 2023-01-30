@@ -29,4 +29,15 @@ public class OnlineChallengeTest {
     }
 
 
+    @Test
+    public void AESEncryptionTest() throws Exception {
+        String input = "abc";
+
+        String expected = "muBf811uywyOj1MhILpyfw==";
+        AESEncryption aesEncryption = new AESEncryption();
+        String actual = aesEncryption.encrypt(input);
+
+        assertArrayEquals(expected.toCharArray(), actual.toCharArray());
+    }
+
 }
