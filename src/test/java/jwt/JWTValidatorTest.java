@@ -38,5 +38,7 @@ public class JWTValidatorTest {
 
         Map<String, Claim> jwtClaims = jwtValidator.extractHMAC256JWTClaims(token, secret);
         assertEquals("asen", jwtClaims.get("iss").asString());
+        assertEquals("subject", jwtClaims.get("sub").asString());
+
     }
 }
