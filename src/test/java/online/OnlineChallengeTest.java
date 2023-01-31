@@ -52,12 +52,4 @@ public class OnlineChallengeTest {
 
         assertArrayEquals(expected.toCharArray(), actual.toCharArray());
     }
-
-//    @Test
-//    public void findClosestValueInBst() {
-//        int input = 12;
-//        int expected = 10;
-//        int actual = onlineChallenge.findClosestValueInBst(input);
-//        assertArrayEquals(expected, actual);
-//    }
 }
