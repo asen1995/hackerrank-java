@@ -28,11 +28,13 @@ public class JWTValidatorTest {
 
     @Test
     public void extractHMAC256JWTClaimsTest() {
+
         String secret = "asen-secret";
 
         JWTValidator jwtValidator = new JWTValidator();
 
         JWTgenerator jwtGenerator = new JWTgenerator();
+
 
         String token = jwtGenerator.generateHMAC256JWT(secret);
 
