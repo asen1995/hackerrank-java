@@ -39,4 +39,21 @@ public class JWTValidator {
 
 
     }
+
+    public DecodedJWT decodeJwt(String token, String secret) {
+        try {
+            Algorithm algorithm = Algorithm.HMAC256("asen-secret");
+            DecodedJWT jwt = JWT.require(algorithm).build().verify(token);
+
+            System.out.println("JWT verification succeeded!");
+
+            return jwt;
+
+        } catch (Exception e) {
+            System.out.println("JWT verification failed!");
+            throw new RuntimeException("JWT verification failed!");
+        }
+
+
+    }
 }
