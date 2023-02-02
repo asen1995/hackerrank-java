@@ -40,7 +40,7 @@ public class JWTValidator {
 
     }
 
-    public DecodedJWT decodeJwt(String token, String secret) {
+    public DecodedJWT decodeJwt(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256("asen-secret");
             DecodedJWT jwt = JWT.require(algorithm).build().verify(token);

@@ -56,7 +56,7 @@ public class JWTValidatorTest {
 
         String token = jwtGenerator.generateHMAC256JWT(secret);
 
-        DecodedJWT decodedJWT = jwtValidator.decodeJwt(token, secret);
+        DecodedJWT decodedJWT = jwtValidator.decodeJwt(token);
 
         assertEquals("HS256", decodedJWT.getAlgorithm());
 
