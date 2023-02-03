@@ -32,11 +32,11 @@ public class StringsChallengesTest {
 		StringsChallenges.isItAValidPattern(Arrays.asList(first, second, third));
 	}
 
-//	@Test
-//	public void getSmallestAndLargest() {
-//		String smallestAndLargest = StringsChallenges.getSmallestAndLargest("welcometojava", 3);
-//		Assert.assertTrue(smallestAndLargest.isEmpty());
-//	}
+	@Test
+	public void getSmallestAndLargest() {
+		String smallestAndLargest = StringsChallenges.getSmallestAndLargest("welcometojava", 3);
+		Assert.assertTrue(smallestAndLargest.isEmpty());
+	}
 
 	@Test
 	public void removeDuplicateWordsTest() {
