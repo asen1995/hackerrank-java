@@ -50,8 +50,7 @@ public class StringsChallengesTest {
 	
 
 	}
-	
-	// expecting to not throw exception
+
 	@Test(expected = None.class)
 	public void removeTagsFromSentence() {
 
