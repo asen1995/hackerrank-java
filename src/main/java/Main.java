@@ -9,7 +9,7 @@ public class Main {
 
         List<Person> persons = new ArrayList<>();
 
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < 1_000_000_000; i++) {
             persons.add(new Person("Name" + i, i));
         }
 
