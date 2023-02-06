@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class AlgorithmChallengesTest {
@@ -241,5 +242,10 @@ public class AlgorithmChallengesTest {
     public void pageCount() {
         assertEquals(1, algorithmChallenges.pageCount(6, 2));
         assertEquals(0, algorithmChallenges.pageCount(5, 4));
+    }
+
+    @Test
+    public void selectionSort() {
+        assertArrayEquals(algorithmChallenges.selectionSort(new int[]{5, 321, 543, 5464, 7, 8, 99, 4, 3, 2, 1}), new int[]{1, 2, 3, 4, 5, 7, 8, 99, 321, 543, 5464});
     }
 }
