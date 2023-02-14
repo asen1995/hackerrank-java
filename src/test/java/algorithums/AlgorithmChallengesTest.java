@@ -248,8 +248,9 @@ public class AlgorithmChallengesTest {
     public void selectionSort() {
         assertArrayEquals(algorithmChallenges.selectionSort(new int[]{5, 321, 543, 5464, 7, 8, 99, 4, 3, 2, 1}), new int[]{1, 2, 3, 4, 5, 7, 8, 99, 321, 543, 5464});
     }
+
     @Test
     public void selectionSortSmall() {
-        assertArrayEquals(algorithmChallenges.selectionSort(new int[]{1,2,3,4,5}), new int[]{5,4,3,2,1});
+        assertArrayEquals(algorithmChallenges.selectionSort(new int[]{1, 2, 3, 4, 5}), new int[]{5, 4, 3, 2, 1});
     }
 }
