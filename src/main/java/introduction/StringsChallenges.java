@@ -194,6 +194,12 @@ public class StringsChallenges {
     }
 
 
+    public static void main(String[] args) {
+        StringsChallenges stringsChallenges = new StringsChallenges();
+        stringsChallenges.testSpeedOfString();
+    }
+
+
 
 
 }
