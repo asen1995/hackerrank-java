@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class StringsChallenges {
 
 
+    //examples of ANAGRAM is   CAT = ACT , elbow = below
     static boolean isAnagram(String a, String b) {
 
         if (a == null && b == null) {
@@ -39,6 +40,7 @@ public class StringsChallenges {
         return true;
     }
 
+    //we need to print all tokens from string sentence and split them by space and special characters
     public static void splitStringIntoTokens(String s) {
 
         String trimmedSentense = s.trim();
@@ -80,6 +82,7 @@ public class StringsChallenges {
         return smallest + "\n" + largest;
     }
 
+    //check if its a valid regex pattern
     public static void isItAValidPattern(List<String> listOfRegularExpressions) {
         List<String> listOfRegularExdpressions = new ArrayList();
         for (String regex : listOfRegularExpressions) {
