@@ -88,7 +88,7 @@ public class StringsChallenges {
         for (String regex : listOfRegularExpressions) {
 
             try {
-                Pattern compile = getCompile(regex);
+                getCompile(regex);
                 System.out.println("Valid");
 
             } catch (java.util.regex.PatternSyntaxException e) {
