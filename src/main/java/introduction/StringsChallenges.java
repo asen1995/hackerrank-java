@@ -88,7 +88,7 @@ public class StringsChallenges {
         for (String regex : listOfRegularExpressions) {
 
             try {
-                Pattern compile = Pattern.compile(regex);
+                Pattern compile = getCompile(regex);
                 System.out.println("Valid");
 
             } catch (java.util.regex.PatternSyntaxException e) {
@@ -96,6 +96,10 @@ public class StringsChallenges {
             }
         }
 
+    }
+
+    private static Pattern getCompile(String regex) {
+        return Pattern.compile(regex);
     }
 
     public static String removeDuplicateWords(String sentence) {
