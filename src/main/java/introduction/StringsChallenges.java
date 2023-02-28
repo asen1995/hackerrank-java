@@ -118,18 +118,23 @@ public class StringsChallenges {
 
     public static void removeTagsFromSentence(String line) {
 
-        String regexForMatchingTags = "<(.+)>(([^<>]+))</\\1>";
+        String regexForMatchingTags = "<(.+)>([^<]+)</\\1>";
 
-        Matcher m = Pattern.compile(regexForMatchingTags).matcher(line);
+        Pattern p = Pattern.compile(regexForMatchingTags);
 
-        if (!m.find()) {
-            System.out.println("None");
-        }
 
-        m.reset();
+        Matcher m = p.matcher(line);
+        boolean found = false;
         while (m.find()) {
-            System.out.println(m.group(2)); // prints the content of html tags
+            line = line.replaceAll(m.group(0), m.group(2));
+            found = true;
         }
+        if (!found) {
+            System.out.println("None");
+        } else {
+            System.out.println(line);
+        }
+
     }
 
 
