@@ -183,5 +183,16 @@ public class StringsChallenges {
         }
         System.out.println(count);
     }
+
+    public void countLettersInStringWithRegex(String word) {
+        String regex = "[a-zA-Z]";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(word);
+        int count = 0;
+        while (m.find()) {
+            count++;
+        }
+        System.out.println(count);
+    }
 }
 
