@@ -137,6 +137,19 @@ public class StringsChallenges {
 
     }
 
-
+    public String getPoints(String[] games) {
+        int points = 0;
+        for (String game : games) {
+            String[] split = game.split(":");
+            int firstTeam = Integer.parseInt(split[0]);
+            int secondTeam = Integer.parseInt(split[1]);
+            if (firstTeam > secondTeam) {
+                points += 3;
+            } else if (firstTeam == secondTeam) {
+                points += 1;
+            }
+        }
+        return String.valueOf(points);
+    }
 }
 
