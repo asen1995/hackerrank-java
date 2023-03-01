@@ -151,5 +151,65 @@ public class StringsChallenges {
         }
         return String.valueOf(points);
     }
+
+    public void mergeSort(int[] array) {
+        if (array.length > 1) {
+            int[] left = leftHalf(array);
+            int[] right = rightHalf(array);
+
+            mergeSort(left);
+            mergeSort(right);
+
+            merge(array, left, right);
+        }
+    }
+
+    private void merge(int[] array, int[] left, int[] right) {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+
+        while (a < left.length && b < right.length) {
+            if (left[a] < right[b]) {
+                array[c] = left[a];
+                a++;
+            } else {
+                array[c] = right[b];
+                b++;
+            }
+            c++;
+        }
+
+        while (a < left.length) {
+            array[c] = left[a];
+            a++;
+            c++;
+        }
+
+        while (b < right.length) {
+            array[c] = right[b];
+            b++;
+            c++;
+        }
+    }
+
+    private int[] rightHalf(int[] array) {
+        int size1 = array.length / 2;
+        int size2 = array.length - size1;
+        int[] right = new int[size2];
+        for (int i = 0; i < size2; i++) {
+            right[i] = array[i + size1];
+        }
+        return right;
+    }
+
+    private int[] leftHalf(int[] array) {
+        int size1 = array.length / 2;
+        int[] left = new int[size1];
+        for (int i = 0; i < size1; i++) {
+            left[i] = array[i];
+        }
+        return left;
+    }
 }
 
