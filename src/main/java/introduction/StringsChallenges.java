@@ -138,4 +138,17 @@ public class StringsChallenges {
     }
 
 
+    public void removeAllOccurencesOfLetter(String word, char letter) {
+
+        String regex = "[^" + letter + "]";
+
+        Pattern p = Pattern.compile(regex);
+
+        Matcher m = p.matcher(word);
+
+        while (m.find()) {
+            word = word.replaceAll(m.group(0), m.group(1));
+        }
+        System.out.println(word);
+    }
 }
