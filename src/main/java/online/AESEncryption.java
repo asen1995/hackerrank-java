@@ -25,4 +25,11 @@ public class AESEncryption {
         byte[] decryptedValueBytes = cipher.doFinal(decryptedValue);
         return new String(decryptedValueBytes);
     }
+
+    public static void main(String[] args) throws Exception {
+        String encrypted = AESEncryption.encrypt("Hello World");
+        System.out.println(encrypted);
+        String decrypted = AESEncryption.decrypt(encrypted);
+        System.out.println(decrypted);
+    }
 }
