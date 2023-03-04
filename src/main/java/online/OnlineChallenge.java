@@ -29,6 +29,20 @@ public class OnlineChallenge {
         return productArr;
     }
 
+    static int[] findDuplicates(int[] arr1, int[] arr2) {
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 0; i < arr1.length; i++) {
+
+            if (binarySearch(arr1[i], arr2) != -1) {
+                result.add(arr1[i]);
+            }
+
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
+    }
 
 
     public int[] moveZeroesToEndOfArray(int[] arr) {
