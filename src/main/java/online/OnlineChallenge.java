@@ -158,7 +158,7 @@ public class OnlineChallenge {
         if (param.length() == 1) {
             return param;
         } else {
-            final String s = reverseString(param.substring(1, param.length()));
+            final String s = reverseString(param.substring(1));
             return s.concat(String.valueOf(param.charAt(0)));
         }
 
