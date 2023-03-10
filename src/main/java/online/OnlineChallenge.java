@@ -98,48 +98,4 @@ public class OnlineChallenge {
         }
     }
 
-    static char[] reverseWords(char[] arr) {
-
-        //2 point
-
-        char[] result = new char[arr.length];
-        int resultIndex = 0;
-
-        int endOfWord = arr.length;
-
-        for(int i = arr.length - 1 ; i >= 0 ; i--){
-
-            if(arr[i] == ' '){
-
-                for(int j = i + 1 ; j < endOfWord ; j++ ){
-
-                    result[resultIndex] = arr[j];
-                    resultIndex++;
-                }
-
-                // we can have one or more spaces
-                while (i >= 0 && arr[i] == ' ') {
-                    result[resultIndex++] = ' ';
-                    i--;
-                }
-
-                endOfWord = i + 1;
-
-            }
-
-
-
-        }
-
-        if (endOfWord > 0) {
-            for (int i = 0; i < endOfWord; i++) {
-                result[resultIndex++] = arr[i];
-            }
-        }
-
-
-        return result;
-
-    }
-
 }
