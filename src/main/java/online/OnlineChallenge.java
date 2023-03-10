@@ -1,9 +1,5 @@
 package online;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
 public class OnlineChallenge {
 
     static int[] arrayOfArrayProducts(int[] arr) {
