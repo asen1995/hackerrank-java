@@ -46,19 +46,6 @@ public class SortingAlgorithms {
         return arr;
     }
 
-    public static int[] mergeSort(int[] arr) {
-        int n = arr.length;
-        if (n < 2) {
-            return arr;
-        }
-        int mid = n / 2;
-        int[] left = new int[mid];
-        int[] right = new int[n - mid];
-        for (int i = 0; i < mid; i++) {
-            left[i] = arr[i];
-        }
-        return left;
-    }
 
 
     public static int[] quickSort(int[] arr) {
