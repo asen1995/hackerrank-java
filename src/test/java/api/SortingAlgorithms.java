@@ -46,7 +46,4 @@ public class SortingAlgorithms {
         return arr;
     }
 
-
-
-    public static int[] quickSort(int[] arr)
 }
