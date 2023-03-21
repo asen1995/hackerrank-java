@@ -48,35 +48,5 @@ public class SortingAlgorithms {
 
 
 
-    public static int[] quickSort(int[] arr) {
-        int n = arr.length;
-        if (n < 2) {
-            return arr;
-        }
-        int pivot = arr[n - 1];
-        int[] left = new int[n];
-        int[] right = new int[n];
-        int leftIndex = 0;
-        int rightIndex = 0;
-        for (int i = 0; i < n - 1; i++) {
-            if (arr[i] < pivot) {
-                left[leftIndex] = arr[i];
-                leftIndex++;
-            } else {
-                right[rightIndex] = arr[i];
-                rightIndex++;
-            }
-        }
-        int[] leftSorted = quickSort(left);
-        int[] rightSorted = quickSort(right);
-        int[] result = new int[n];
-        for (int i = 0; i < leftIndex; i++) {
-            result[i] = leftSorted[i];
-        }
-        result[leftIndex] = pivot;
-        for (int i = 0; i < rightIndex; i++) {
-            result[leftIndex + 1 + i] = rightSorted[i];
-        }
-        return result;
-    }
+    public static int[] quickSort(int[] arr)
 }
