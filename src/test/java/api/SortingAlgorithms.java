@@ -79,4 +79,53 @@ public class SortingAlgorithms {
         }
         return result;
     }
+
+    public static int[] mergeSort(int[] array) {
+        int numberOfElements = array.length;
+        if (numberOfElements < 2) {
+            return array;
+        }
+        int middle = numberOfElements / 2;
+        int[] left = new int[middle];
+        int[] right = new int[numberOfElements - middle];
+        for (int i = 0; i < middle; i++) {
+            left[i] = array[i];
+        }
+        for (int i = middle; i < numberOfElements; i++) {
+            right[i - middle] = array[i];
+        }
+        int[] leftSorted = mergeSort(left);
+        int[] rightSorted = mergeSort(right);
+        return merge(leftSorted, rightSorted);
+    }
+
+    private static int[] merge(int[] left, int[] right) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int leftLength = left.length;
+        int rightLength = right.length;
+        int[] result = new int[leftLength + rightLength];
+        int resultIndex = 0;
+        while (leftIndex < leftLength && rightIndex < rightLength) {
+            if (left[leftIndex] < right[rightIndex]) {
+                result[resultIndex] = left[leftIndex];
+                leftIndex++;
+            } else {
+                result[resultIndex] = right[rightIndex];
+                rightIndex++;
+            }
+            resultIndex++;
+        }
+        while (leftIndex < leftLength) {
+            result[resultIndex] = left[leftIndex];
+            leftIndex++;
+            resultIndex++;
+        }
+        while (rightIndex < rightLength) {
+            result[resultIndex] = right[rightIndex];
+            rightIndex++;
+            resultIndex++;
+        }
+        return result;
+    }
 }
