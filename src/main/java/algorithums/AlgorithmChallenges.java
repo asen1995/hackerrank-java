@@ -522,12 +522,12 @@ public class AlgorithmChallenges {
         return arr;
     }
 
-    public String reverseString(String string) {
+    public String reverseStringRecursion(String string) {
 
         if(string.length() == 1){
           return string;
         }
-        return reverseString(string.substring(1,string.length())) + string.charAt(0);
+        return reverseStringRecursion(string.substring(1,string.length())) + string.charAt(0);
     }
 
     public int binarySearch(int[] array, int i) {
