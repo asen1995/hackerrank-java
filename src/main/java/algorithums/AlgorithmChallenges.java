@@ -521,4 +521,12 @@ public class AlgorithmChallenges {
 
         return arr;
     }
+
+    public String reverseString(String string) {
+
+        if(string.length() == 1){
+          return string;
+        }
+        return reverseString(string.substring(1,string.length())) + string.charAt(0);
+    }
 }
