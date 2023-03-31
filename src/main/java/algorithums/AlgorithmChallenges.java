@@ -524,55 +524,59 @@ public class AlgorithmChallenges {
 
     public String reverseStringRecursion(String string) {
 
-        if (string.length() == 1) {
-            return string;
+        if(string.length() == 1){
+          return string;
         }
-        return reverseStringRecursion(string.substring(1, string.length())) + string.charAt(0);
+        return reverseStringRecursion(string.substring(1,string.length())) + string.charAt(0);
     }
 
     public String reverseString(String string) {
 
-        if (string == null || string.isEmpty() || string.length() == 1) return string;
+        if(string == null || string.isEmpty() || string.length() == 1) return string;
 
         int left = 0;
         int right = string.length() - 1;
 
         char[] charArray = string.toCharArray();
 
-        while (left < right) {
+        while(left < right){
+
+            //do swapping
 
             final char temp = charArray[left];
             charArray[left] = charArray[right];
             charArray[right] = temp;
-
+            //increment //decrement
             left++;
             right--;
 
         }
 
+
         return new String(charArray);
+
     }
 
     public int binarySearch(int[] array, int i) {
 
-        if (array.length == 0) return -1;
+        if(array.length == 0 ) return -1;
 
         int left = 0;
         int right = array.length - 1;
 
 
-        while (left <= right) {
+        while( left <= right ) {
 
 
             int middle = (left + right) / 2;
 
-            if (array[middle] == i) {
+            if(array[middle] == i){
                 return middle;
             }
 
-            if (i > array[middle]) {
+            if(i > array[middle]){
                 left = middle + 1;
-            } else {
+            }else{
                 right = middle - 1;
             }
         }
