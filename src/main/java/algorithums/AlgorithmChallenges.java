@@ -530,33 +530,6 @@ public class AlgorithmChallenges {
         return reverseStringRecursion(string.substring(1,string.length())) + string.charAt(0);
     }
 
-    public String reverseString(String string) {
-
-        if(string == null || string.isEmpty() || string.length() == 1) return string;
-
-        int left = 0;
-        int right = string.length() - 1;
-
-        char[] charArray = string.toCharArray();
-
-        while(left < right){
-
-            //do swapping
-
-            final char temp = charArray[left];
-            charArray[left] = charArray[right];
-            charArray[right] = temp;
-            //increment //decrement
-            left++;
-            right--;
-
-        }
-
-
-        return new String(charArray);
-
-    }
-
     public int binarySearch(int[] array, int i) {
 
         if(array.length == 0 ) return -1;
