@@ -529,4 +529,34 @@ public class AlgorithmChallenges {
         }
         return reverseString(string.substring(1,string.length())) + string.charAt(0);
     }
+
+    public int binarySearch(int[] array, int i) {
+
+        if(array.length == 0 ) return -1;
+
+        int left = 0;
+        int right = array.length - 1;
+
+
+        while( left <= right ) {
+
+
+            int middle = (left + right) / 2;
+
+            if(array[middle] == i){
+                return middle;
+            }
+
+            if(i > array[middle]){
+                left = middle + 1;
+            }else{
+                right = middle - 1;
+            }
+        }
+
+
+        return -1;
+
+
+    }
 }
