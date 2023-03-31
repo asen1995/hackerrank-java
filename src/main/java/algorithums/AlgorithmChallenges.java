@@ -582,24 +582,4 @@ public class AlgorithmChallenges {
 
 
     }
-
-    public int binarySearchRecursion(int[] array, int i, int left, int right) {
-
-        if (array.length == 0) return -1;
-
-        if (left > right) return -1;
-
-        int middle = (left + right) / 2;
-
-        if (array[middle] == i) {
-            return middle;
-        }
-
-        if (i > array[middle]) {
-            return binarySearchRecursion(array, i, middle + 1, right);
-        } else {
-            return binarySearchRecursion(array, i, left, middle - 1);
-        }
-
-    }
 }
