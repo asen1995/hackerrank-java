@@ -582,16 +582,4 @@ public class AlgorithmChallenges {
 
 
     }
-
-    public int[] mergeSort(int[] array) {
-
-        if (array.length == 1) return array;
-
-        int middle = array.length / 2;
-
-        int[] left = Arrays.copyOfRange(array, 0, middle);
-        int[] right = Arrays.copyOfRange(array, middle, array.length);
-
-        return merge(mergeSort(left), mergeSort(right));
-    }
 }
