@@ -592,7 +592,6 @@ public class AlgorithmChallenges {
                 sb.append(" ");
             }
         }
-
         return sb.toString();
     }
 }
