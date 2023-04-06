@@ -1,5 +1,6 @@
 package introduction;
 
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Currency;
@@ -63,5 +64,9 @@ public class IntroductionChallenges {
 
 	public static double devide(double number1,double number2) {
 		return number1/number2;
+	}
+
+	public static BigDecimal devide(BigDecimal number1,BigDecimal number2) {
+		return number1.divide(number2);
 	}
 }
