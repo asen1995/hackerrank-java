@@ -12,7 +12,7 @@ public class IntroductionChallenges {
 	// Java Date and Time
 	public static String findDayOfWeek(int month, int day, int year) {
 
-		String dayNames[] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		String dayNames[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 		// January is represented as 0
 		month = month - 1;
 		Calendar myCalendar = new GregorianCalendar(year, month, day);
@@ -43,30 +43,23 @@ public class IntroductionChallenges {
 		return "SUCCESS";
 
 	}
-	
-	public static double calculator(double number1,double number2, String operation) {
-		
-		switch (operation) {
-		case "+":
-			return number1 + number2;
-		case "-":
-			return number1 - number2;
-		case "*":
-			return number1 * number2;
-		case "/":
-			return number1 / number2;
 
-		default:
-			break;
+	public static double calculator(double number1, double number2, String operation) {
+
+		switch (operation) {
+			case "+":
+				return number1 + number2;
+			case "-":
+				return number1 - number2;
+			case "*":
+				return number1 * number2;
+			case "/":
+				return number1 / number2;
+
+			default:
+				break;
 		}
 		return 0.0;
 	}
 
-	public static double devide(double number1,double number2) {
-		return number1/number2;
-	}
-
-	public static BigDecimal devide(BigDecimal number1,BigDecimal number2) {
-		return number1.divide(number2);
-	}
 }
