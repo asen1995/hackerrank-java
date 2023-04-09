@@ -64,4 +64,24 @@ public class IntroductionChallenges {
 	public static double devide(double number1,double number2) {
 		return number1/number2;
 	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// Java Date and Time
+		System.out.println(findDayOfWeek(8, 5, 2015));
+
+		// Java Currency Formatter
+		currencyConverter(12324.134);
+
+		// Java Currency Formatter
+		System.out.println(calculator(100.0, 200.0, "+"));
+		System.out.println(calculator(100.0, 200.0, "-"));
+		System.out.println(calculator(100.0, 200.0, "*"));
+		System.out.println(calculator(100.0, 200.0, "/"));
+		System.out.println(calculator(100.0, 200.0, "%"));
+
+		// Java Currency Formatter
+		System.out.println(devide(100.0, 200.0));
+	}
 }
