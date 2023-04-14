@@ -70,4 +70,17 @@ public class IntroductionChallenges {
 		return (short) (a + b);
 	}
 
+
+	public int bitwiseAnd(int n, int k) {
+		int max = 0;
+		for (int i = 1; i < n; i++) {
+			for (int j = i + 1; j <= n; j++) {
+				int bitwiseAnd = i & j;
+				if (bitwiseAnd < k && bitwiseAnd > max) {
+					max = bitwiseAnd;
+				}
+			}
+		}
+		return max;
+	}
 }
