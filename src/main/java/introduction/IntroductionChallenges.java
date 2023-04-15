@@ -43,17 +43,17 @@ public class IntroductionChallenges {
 
 	}
 	
-	public static double calculator(double n,double m, String operation) {
+	public static double calculator(double number1,double number2, String operation) {
 		
 		switch (operation) {
 		case "+":
-			return n + m;
+			return number1 + number2;
 		case "-":
-			return n - m;
+			return number1 - number2;
 		case "*":
-			return n * m;
+			return number1 * number2;
 		case "/":
-			return n / m;
+			return number1 / number2;
 
 		default:
 			break;
