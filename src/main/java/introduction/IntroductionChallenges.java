@@ -83,4 +83,23 @@ public class IntroductionChallenges {
 		}
 		return max;
 	}
+
+	public int palindromeIndex(String s) {
+		int i = 0;
+		int j = s.length() - 1;
+		while (i < j) {
+			if (s.charAt(i) != s.charAt(j)) {
+				if (isPalindrome(s, i + 1, j)) {
+					return i;
+				} else if (isPalindrome(s, i, j - 1)) {
+					return j;
+				} else {
+					return -1;
+				}
+			}
+			i++;
+			j--;
+		}
+		return -1;
+	}
 }
