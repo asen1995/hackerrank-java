@@ -102,15 +102,4 @@ public class IntroductionChallenges {
 		}
 		return -1;
 	}
-
-	private boolean isPalindrome(String s, int i, int i1) {
-		while (i < i1) {
-			if (s.charAt(i) != s.charAt(i1)) {
-				return false;
-			}
-			i++;
-			i1--;
-		}
-		return true;
-	}
 }
