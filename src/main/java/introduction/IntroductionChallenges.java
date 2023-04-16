@@ -75,10 +75,7 @@ public class IntroductionChallenges {
 
         // Java Currency Formatter
         System.out.println(calculator(100.0, 200.0, "+"));
-        System.out.println(calculator(100.0, 200.0, "-"));
-        System.out.println(calculator(100.0, 200.0, "*"));
-        System.out.println(calculator(100.0, 200.0, "/"));
-        System.out.println(calculator(100.0, 200.0, "%"));
+
 
 
     }
