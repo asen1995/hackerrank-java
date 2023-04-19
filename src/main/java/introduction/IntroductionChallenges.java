@@ -63,4 +63,5 @@ public class IntroductionChallenges {
     public static double devide(double number1, double number2) {
         return number1 / number2;
 
+    }
 }
