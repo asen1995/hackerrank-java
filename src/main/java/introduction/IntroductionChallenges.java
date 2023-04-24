@@ -70,37 +70,4 @@ public class IntroductionChallenges {
 
 
     }
-
-
-
-    static int[] arrayOfArrayProducts(int[] arr) {
-
-
-//        input:  arr = [8, 10, 2]
-//        output: [20, 16, 80] # by calculating: [10*2, 8*2, 8*10]
-
-        if(arr.length <= 1){
-            return new int[]{};
-        }
-
-        int result[] = new int[arr.length];
-
-        int product = 1;
-
-        for( int i = 0; i < arr.length ; i++){
-            result[i] = product;
-            product *= arr[i];
-        }
-
-        product = 1;
-        for(int i = arr.length - 1 ; i>=0 ; i--){
-            result[i] *= product;
-            product *= arr[i];
-        }
-
-        return result;
-    }
-
-
-
 }
