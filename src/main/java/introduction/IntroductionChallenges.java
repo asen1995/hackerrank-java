@@ -66,7 +66,15 @@ public class IntroductionChallenges {
         // Java Date and Time
         System.out.println(findDayOfWeek(8, 5, 2015));
 
+        // Java Currency Formatter
         currencyConverter(12324.134);
+
+        // Java Currency Formatter
+        System.out.println(calculator(100.0, 200.0, "+"));
+        System.out.println(calculator(100.0, 200.0, "-"));
+        System.out.println(calculator(100.0, 200.0, "*"));
+        System.out.println(calculator(100.0, 200.0, "/"));
+        System.out.println(calculator(100.0, 200.0, "%"));
 
 
     }
