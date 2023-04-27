@@ -94,17 +94,17 @@ public class IntroductionChallenges {
 
         int result[] = new int[arr.length];
 
-        int productIndex = 1;
+        int product = 1;
 
         for( int i = 0; i < arr.length ; i++){
-            result[i] = productIndex;
-            productIndex *= arr[i];
+            result[i] = product;
+            product *= arr[i];
         }
 
-        productIndex = 1;
+        product = 1;
         for(int i = arr.length - 1 ; i>=0 ; i--){
-            result[i] *= productIndex;
-            productIndex *= arr[i];
+            result[i] *= product;
+            product *= arr[i];
         }
 
         return result;
