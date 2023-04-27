@@ -82,7 +82,7 @@ public class IntroductionChallenges {
 
 
     }
-    int[] arrayOfArrayProducts(int[] arr) {
+    static int[] arrayOfArrayProducts(int[] arr) {
 
 
 //        input:  arr = [8, 10, 2]
