@@ -119,4 +119,14 @@ public class IntroductionChallenges {
 
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println(findDayOfWeek(8, 5, 2015));
+        System.out.println(currencyConverter(12324.134));
+        System.out.println(calculator(12.00, 5.00, "+"));
+        System.out.println(calculator(12.00, 5.00, "-"));
+        System.out.println(calculator(12.00, 5.00, "*"));
+        System.out.println(calculator(12.00, 5.00, "/"));
+        System.out.println(calculator(12.00, 5.00, "x"));
+    }
 }
