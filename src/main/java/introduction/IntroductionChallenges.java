@@ -64,13 +64,23 @@ public class IntroductionChallenges {
         return number1 / number2;
     }
 
+    public static void main(String[] args) {
+        System.out.println(findDayOfWeek(8, 5, 2015));
+        System.out.println(currencyConverter(12324.134));
+        System.out.println(calculator(12.00, 5.00, "+"));
+        System.out.println(calculator(12.00, 5.00, "-"));
+        System.out.println(calculator(12.00, 5.00, "*"));
+        System.out.println(calculator(12.00, 5.00, "/"));
+        System.out.println(calculator(12.00, 5.00, "x"));
+    }
+
     int[] arrayOfArrayProducts(int[] arr) {
 
 
 //        input:  arr = [8, 10, 2]
 //        output: [20, 16, 80] # by calculating: [10*2, 8*2, 8*10]
 
-        if(arr.length <= 1){
+        if (arr.length <= 1) {
             return new int[]{};
         }
 
@@ -78,13 +88,13 @@ public class IntroductionChallenges {
 
         int productIndex = 1;
 
-        for( int i = 0; i < arr.length ; i++){
+        for (int i = 0; i < arr.length; i++) {
             result[i] = productIndex;
             productIndex *= arr[i];
         }
 
         productIndex = 1;
-        for(int i = arr.length - 1 ; i>=0 ; i--){
+        for (int i = arr.length - 1; i >= 0; i--) {
             result[i] *= productIndex;
             productIndex *= arr[i];
         }
@@ -96,8 +106,8 @@ public class IntroductionChallenges {
 
         int[][] result = new int[a.length][a.length];
 
-        for(int i = 0 ; i < a.length ; i++){
-            for(int j = 0 ; j < a.length ; j++){
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
                 result[j][a.length - 1 - i] = a[i][j];
             }
         }
@@ -109,8 +119,8 @@ public class IntroductionChallenges {
 
         short[][] result = new short[image.length - 2][image[0].length - 2];
 
-        for(int i = 1 ; i < image.length - 1 ; i++){
-            for(int j = 1 ; j < image[0].length - 1 ; j++){
+        for (int i = 1; i < image.length - 1; i++) {
+            for (int j = 1; j < image[0].length - 1; j++) {
                 result[i - 1][j - 1] = (short) ((image[i - 1][j - 1] + image[i - 1][j] + image[i - 1][j + 1] +
                         image[i][j - 1] + image[i][j] + image[i][j + 1] +
                         image[i + 1][j - 1] + image[i + 1][j] + image[i + 1][j + 1]) / 9);
@@ -118,15 +128,5 @@ public class IntroductionChallenges {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(findDayOfWeek(8, 5, 2015));
-        System.out.println(currencyConverter(12324.134));
-        System.out.println(calculator(12.00, 5.00, "+"));
-        System.out.println(calculator(12.00, 5.00, "-"));
-        System.out.println(calculator(12.00, 5.00, "*"));
-        System.out.println(calculator(12.00, 5.00, "/"));
-        System.out.println(calculator(12.00, 5.00, "x"));
     }
 }
