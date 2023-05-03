@@ -91,4 +91,17 @@ public class IntroductionChallenges {
 
         return result;
     }
+
+    int[][] rotateImage(int[][] a) {
+
+        int[][] result = new int[a.length][a.length];
+
+        for(int i = 0 ; i < a.length ; i++){
+            for(int j = 0 ; j < a.length ; j++){
+                result[j][a.length - 1 - i] = a[i][j];
+            }
+        }
+
+        return result;
+    }
 }
