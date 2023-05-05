@@ -143,8 +143,6 @@ public class IntroductionChallenges {
             }
         }
 
-        Arrays.sort(result);
-
         index = 0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] != -1) {
