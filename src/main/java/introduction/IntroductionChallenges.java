@@ -1,7 +1,6 @@
 package introduction;
 
 import java.text.NumberFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -152,25 +151,5 @@ public class IntroductionChallenges {
         }
 
         return a;
-    }
-
-    int rounders(int value) {
-
-        int result = 0;
-        int power = 1;
-
-        while (value > 0) {
-            int digit = value % 10;
-            value /= 10;
-
-            if (value > 0 || digit >= 5) {
-                digit++;
-            }
-
-            result += digit * power;
-            power *= 10;
-        }
-
-        return result;
     }
 }
