@@ -1,7 +1,6 @@
 package introduction;
 
 import java.text.NumberFormat;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -129,30 +128,5 @@ public class IntroductionChallenges {
         }
 
         return result;
-    }
-
-    int[] sortByHeight(int[] a) {
-
-        int[] result = new int[a.length];
-
-        int index = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != -1) {
-                result[index] = a[i];
-                index++;
-            }
-        }
-
-        Arrays.sort(result);
-
-        index = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] != -1) {
-                a[i] = result[index];
-                index++;
-            }
-        }
-
-        return a;
     }
 }
