@@ -115,4 +115,18 @@ public class IntroductionChallenges {
         return result;
     }
 
+    int firstDuplicate(int[] a) {
+
+        int[] result = new int[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            if (result[a[i] - 1] == 0) {
+                result[a[i] - 1] = a[i];
+            } else {
+                return a[i];
+            }
+        }
+
+        return -1;
+    }
 }
