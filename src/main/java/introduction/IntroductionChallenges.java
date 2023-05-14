@@ -129,4 +129,21 @@ public class IntroductionChallenges {
 
         return -1;
     }
+
+    int firstNotRepeatingCharacter(String s) {
+
+        int[] result = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            result[s.charAt(i) - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (result[s.charAt(i) - 'a'] == 1) {
+                return s.charAt(i);
+            }
+        }
+
+        return '_';
+    }
 }
