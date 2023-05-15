@@ -145,4 +145,12 @@ public class IntroductionChallenges {
 
         return secondMax;
     }
+
+    byte getBytesFromFiles(String[] files) {
+        byte result = 0;
+        for (int i = 0; i < files.length; i++) {
+            result ^= files[i].getBytes()[0];
+        }
+        return result;
+    }
 }
