@@ -168,4 +168,16 @@ public class IntroductionChallenges {
         }
         return result;
     }
+
+    byte[] getByteArrayFromFile(File file) {
+        byte[] result = null;
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            result = new byte[fis.available()];
+            fis.read(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
