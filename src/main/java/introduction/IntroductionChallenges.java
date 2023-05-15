@@ -153,4 +153,17 @@ public class IntroductionChallenges {
         }
         return result;
     }
+
+    byte getBytesFromFile(File file) {
+        byte result = 0;
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            byte[] bytes = new byte[1];
+            fis.read(bytes);
+            result = bytes[0];
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
