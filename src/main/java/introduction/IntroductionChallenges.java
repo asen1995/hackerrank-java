@@ -181,5 +181,13 @@ public class IntroductionChallenges {
         return result;
     }
 
+    int getSumOfDigits(int number) {
+        int result = 0;
+        while (number > 0) {
+            result += number % 10;
+            number = number / 10;
+        }
+        return result;
+    }
 
 }
