@@ -181,20 +181,5 @@ public class IntroductionChallenges {
         return result;
     }
 
-    int[] detectSquares(int[][][] matrix) {
-        int[] result = new int[3];
-        int[][][] temp = new int[matrix.length][matrix[0].length][3];
-        for (int i = 0; i < matrix.length; i++) {
-            int[] temp1 = new int[3];
-            for (int j = 0; j < matrix[0].length; j++) {
-                int[] temp2 = new int[3];
-                for (int k = 0; k < matrix[0][0].length; k++) {
-                    temp2[k] = matrix[i][j][k];
-                }
-                temp1[j] = temp2;
-            }
-            temp[i] = temp1;
-        }
-        return result;
-    }
+
 }
