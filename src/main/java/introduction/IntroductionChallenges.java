@@ -1,7 +1,5 @@
 package introduction;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -117,77 +115,35 @@ public class IntroductionChallenges {
         return result;
     }
 
-    short[][] boxBlur(int[][] image) {
+    int firstDuplicate(int[] a) {
 
-        short[][] result = new short[image.length - 2][image[0].length - 2];
+        int[] result = new int[a.length];
 
-        for (int i = 1; i < image.length - 1; i++) {
-            for (int j = 1; j < image[0].length - 1; j++) {
-                result[i - 1][j - 1] = (short) ((image[i - 1][j - 1] + image[i - 1][j] + image[i - 1][j + 1] +
-                        image[i][j - 1] + image[i][j] + image[i][j + 1] +
-                        image[i + 1][j - 1] + image[i + 1][j] + image[i + 1][j + 1]) / 9);
+        for (int i = 0; i < a.length; i++) {
+            if (result[a[i] - 1] == 0) {
+                result[a[i] - 1] = a[i];
+            } else {
+                return a[i];
             }
         }
 
-        return result;
+        return -1;
     }
 
-    int findSecondLargest(int[] arr) {
-        int max = Integer.MIN_VALUE;
-        int secondMax = Integer.MIN_VALUE;
+    int firstNotRepeatingCharacter(String s) {
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
-                secondMax = max;
-                max = arr[i];
-            } else if (arr[i] > secondMax && arr[i] != max) {
-                secondMax = arr[i];
+        int[] result = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            result[s.charAt(i) - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (result[s.charAt(i) - 'a'] == 1) {
+                return s.charAt(i);
             }
         }
 
-        return secondMax;
+        return '_';
     }
-
-    byte getBytesFromFiles(String[] files) {
-        byte result = 0;
-        for (int i = 0; i < files.length; i++) {
-            result ^= files[i].getBytes()[0];
-        }
-        return result;
-    }
-
-    byte getBytesFromFile(File file) {
-        byte result = 0;
-        try {
-            FileInputStream fis = new FileInputStream(file);
-            byte[] bytes = new byte[1];
-            fis.read(bytes);
-            result = bytes[0];
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    byte[] getByteArrayFromFile(File file) {
-        byte[] result = null;
-        try {
-            FileInputStream fis = new FileInputStream(file);
-            result = new byte[fis.available()];
-            fis.read(result);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    int getSumOfDigits(int number) {
-        int result = 0;
-        while (number > 0) {
-            result += number % 10;
-            number = number / 10;
-        }
-        return result;
-    }
-
 }
