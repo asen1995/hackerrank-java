@@ -678,40 +678,4 @@ public class AlgorithmChallenges {
         return result;
 
     }
-
-
-    public int[] quickSort(int[] array) {
-
-        if (array.length <= 1) {
-            return array;
-        }
-
-        int pivot = array[array.length - 1];
-
-        int[] left = new int[array.length];
-        int[] right = new int[array.length];
-
-        int leftPointer = 0;
-        int rightPointer = 0;
-
-        for (int i = 0; i < array.length - 1; i++) {
-
-            if (array[i] < pivot) {
-                left[leftPointer++] = array[i];
-            } else {
-                right[rightPointer++] = array[i];
-            }
-        }
-
-        left = quickSort(Arrays.copyOfRange(left, 0, leftPointer));
-        right = quickSort(Arrays.copyOfRange(right, 0, rightPointer));
-
-        System.arraycopy(left, 0, array, 0, leftPointer);
-        array[leftPointer] = pivot;
-        System.arraycopy(right, 0, array, leftPointer + 1, rightPointer);
-
-        return array;
-    }
-
-
 }
