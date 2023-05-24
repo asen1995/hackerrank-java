@@ -623,4 +623,17 @@ public class AlgorithmChallenges {
         }
         return ans;
     }
+
+
+    public String buildPalindrome(String st) {
+        String reverse = new StringBuilder(st).reverse().toString();
+        String palindrome = st;
+        int i = 0;
+        while (!palindrome.equals(reverse)) {
+            palindrome = st + reverse.substring(reverse.length() - i);
+            reverse = new StringBuilder(palindrome).reverse().toString();
+            i++;
+        }
+        return palindrome;
+    }
 }
