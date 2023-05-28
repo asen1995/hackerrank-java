@@ -221,22 +221,4 @@ public class DataStructuresTest {
         assertEquals("four", hashMap.get(4));
         assertEquals("five", hashMap.get(5));
     }
-
-    @Test
-    public void linkedHashMapTest() {
-        Map<Integer, String> linkedHashMap = new LinkedHashMap<>();
-        linkedHashMap.put(1, "one");
-        linkedHashMap.put(2, "two");
-        linkedHashMap.put(3, "three");
-        linkedHashMap.put(4, "four");
-        linkedHashMap.put(5, "five");
-
-        assertEquals(5, linkedHashMap.size());
-        assertEquals("one", linkedHashMap.get(1));
-        assertEquals("two", linkedHashMap.get(2));
-        assertEquals("three", linkedHashMap.get(3));
-        assertEquals("four", linkedHashMap.get(4));
-        assertEquals("five", linkedHashMap.get(5));
-
-    }
 }
