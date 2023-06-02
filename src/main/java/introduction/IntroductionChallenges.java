@@ -186,7 +186,7 @@ public class IntroductionChallenges {
                     count++;
                 }
 
-                if (i + 1 < matrix.length && j - 1 < matrix[0].length && matrix[i + 1][j + 1]) {
+                if (i + 1 < matrix.length && j + 1 < matrix[0].length && matrix[i + 1][j + 1]) {
                     count++;
                 }
 
