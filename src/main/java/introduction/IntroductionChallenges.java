@@ -144,6 +144,6 @@ public class IntroductionChallenges {
             }
         }
 
-        return '_';
+        return '-';
     }
 }
