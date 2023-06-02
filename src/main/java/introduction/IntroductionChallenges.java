@@ -196,28 +196,4 @@ public class IntroductionChallenges {
 
         return result;
     }
-
-    int[][] boxBlur(int[][] image) {
-
-        int[][] result = new int[image.length - 2][image[0].length - 2];
-
-        for (int i = 1; i < image.length - 1; i++) {
-
-            for (int j = 1; j < image[0].length - 1; j++) {
-
-                int sum = 0;
-
-                for (int k = i - 1; k <= i + 1; k++) {
-
-                    for (int l = j - 1; l <= j + 1; l++) {
-                        sum += image[k][l];
-                    }
-                }
-
-                result[i - 1][j - 1] = sum / 9;
-            }
-        }
-
-        return result;
-    }
 }
