@@ -146,4 +146,25 @@ public class IntroductionChallenges {
 
         return '-';
     }
+
+    int[] sortedSquaredArray(int[] array) {
+        // Write your code here.
+        int[] result = new int[array.length];
+        int left = 0;
+        int right = array.length - 1;
+        int index = array.length - 1;
+
+        while (left <= right) {
+            if (Math.abs(array[left]) > Math.abs(array[right])) {
+                result[index] = array[left] * array[left];
+                left++;
+            } else {
+                result[index] = array[right] * array[right];
+                right--;
+            }
+            index--;
+        }
+
+        return result;
+    }
 }
