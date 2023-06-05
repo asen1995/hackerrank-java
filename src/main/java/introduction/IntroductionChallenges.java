@@ -149,17 +149,17 @@ public class IntroductionChallenges {
 
     int[] sortedSquaredArray(int[] array) {
         int[] result = new int[array.length];
-        int left = 0;
-        int right = array.length - 1;
+        int leftIndex = 0;
+        int rightIndex = array.length - 1;
         int index = array.length - 1;
 
-        while (left <= right) {
-            if (Math.abs(array[left]) > Math.abs(array[right])) {
-                result[index] = array[left] * array[left];
-                left++;
+        while (leftIndex <= rightIndex) {
+            if (Math.abs(array[leftIndex]) > Math.abs(array[rightIndex])) {
+                result[index] = array[leftIndex] * array[leftIndex];
+                leftIndex++;
             } else {
-                result[index] = array[right] * array[right];
-                right--;
+                result[index] = array[rightIndex] * array[rightIndex];
+                rightIndex--;
             }
             index--;
         }
