@@ -148,7 +148,6 @@ public class IntroductionChallenges {
     }
 
     int[] sortedSquaredArray(int[] array) {
-        // Write your code here.
         int[] result = new int[array.length];
         int left = 0;
         int right = array.length - 1;
@@ -167,4 +166,6 @@ public class IntroductionChallenges {
 
         return result;
     }
+
+
 }
