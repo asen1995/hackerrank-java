@@ -153,7 +153,7 @@ public class IntroductionChallenges {
         int rightIndex = array.length - 1;
         int index = array.length - 1;
 
-        while (leftIndex < rightIndex) {
+        while (leftIndex <= rightIndex) {
             if (Math.abs(array[leftIndex]) > Math.abs(array[rightIndex])) {
                 result[index] = array[leftIndex] * array[leftIndex];
                 leftIndex++;
