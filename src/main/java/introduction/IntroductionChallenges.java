@@ -2,14 +2,13 @@ package introduction;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 public class IntroductionChallenges {
 
 
     private static boolean isItValidBracket(String input) {
 
-        List<Character> openingBrackets = new Stack<>();
+        List<Character> openingBrackets = new LinkedList<>();
 
         for (Character character : input.toCharArray()) {
 
