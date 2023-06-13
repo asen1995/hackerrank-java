@@ -1,6 +1,5 @@
 package introduction;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -70,6 +69,14 @@ public class IntroductionChallenges {
             return 1;
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
+
+    }
+
+    int digitSum(int n) {
+        if (n < 10) {
+            return n;
+        }
+        return n % 10 + digitSum(n / 10);
 
     }
 
