@@ -1,64 +1,47 @@
 package algorithums;
 
-import java.util.PriorityQueue;
-
 public class SmallestPathFinder {
-    private static final int[][] DIRECTIONS = {{1, 0}, {0, 1}}; // down and right
+    public int findSmallestPath(int[][] matrix) {
 
-    public static int findSmallestPath(int[][] array) {
-        int m = array.length;
-        int n = array[0].length;
+        final int numberOfRows = matrix.length;
+        final int numberOfColumns = matrix[0].length;
 
-        // Create a distance array to store the minimum distance to reach each element
-        int[][] distances = new int[m][n];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                distances[i][j] = Integer.MAX_VALUE;
+        // Create a 2D array to store the minimum path sums
+        int[][] arrayPathSums = new int[numberOfRows][numberOfColumns];
+
+        // Initialize the top left element to be the same as the value of the matrix
+        arrayPathSums[0][0] = matrix[0][0];
+
+        // Calculate the minimum path sum for the first row
+        for (int i = 1; i < numberOfColumns; i++) {
+            arrayPathSums[0][i] = arrayPathSums[0][i - 1] + matrix[0][i];
+        }
+
+        // Calculate the minimum path sum for the first column
+        for (int i = 1; i < numberOfRows; i++) {
+            arrayPathSums[i][0] = arrayPathSums[i - 1][0] + matrix[i][0];
+        }
+
+        // Calculate the minimum path sum for the rest of the matrix
+        for (int row = 1; row < numberOfRows; row++) {
+            for (int column = 1; column < numberOfColumns; column++) {
+                arrayPathSums[row][column] =
+                        Math.min(arrayPathSums[row - 1][column], arrayPathSums[row][column - 1]) + matrix[row][column];
             }
         }
 
-        distances[0][0] = array[0][0];
-
-        // Create a priority queue to store the elements with their distances
-        PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> a[2] - b[2]);
-        queue.offer(new int[]{0, 0, array[0][0]});
-
-        while (!queue.isEmpty()) {
-            int[] current = queue.poll();
-            int row = current[0];
-            int col = current[1];
-            int distance = current[2];
-
-            if (distance > distances[row][col]) {
-                continue; // Skip if we've already found a shorter path
-            }
-
-            for (int[] dir : DIRECTIONS) {
-                int newRow = row + dir[0];
-                int newCol = col + dir[1];
-
-                if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n) {
-                    int newDistance = distance + array[newRow][newCol];
-
-                    if (newDistance < distances[newRow][newCol]) {
-                        distances[newRow][newCol] = newDistance;
-                        queue.offer(new int[]{newRow, newCol, newDistance});
-                    }
-                }
-            }
-        }
-
-        return distances[m - 1][n - 1];
+        // The last element of the arrayPathSums array will contain the minimum path sum
+        return arrayPathSums[numberOfRows - 1][numberOfColumns - 1];
     }
 
     public static void main(String[] args) {
-        int[][] array = {
-                {1, 3, 4},
-                {2, 1, 3},
-                {5, 2, 1}
+
+        int[][] matrix = {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}
         };
 
-        int smallestPath = findSmallestPath(array);
-        System.out.println("Smallest Path: " + smallestPath);
+        System.out.println("Smallest path sum: " + new SmallestPathFinder().findSmallestPath(matrix));
     }
 }
