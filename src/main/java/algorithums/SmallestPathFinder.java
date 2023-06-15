@@ -37,9 +37,10 @@ public class SmallestPathFinder {
     public static void main(String[] args) {
 
         int[][] matrix = {
-                {1, 3, 1},
-                {1, 5, 1},
-                {4, 2, 1}
+                {1, 8, 1, 1 },
+                {1, 5, 1, 85},
+                {4, 2, 14, 1},
+                {4, 2, 1, 1}
         };
 
         System.out.println("Smallest path sum: " + new SmallestPathFinder().findSmallestPath(matrix));
