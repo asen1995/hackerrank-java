@@ -90,20 +90,4 @@ public class IntroductionChallenges {
     }
 
 
-
-     int removeDuplicates(int[] array) {
-         int length = array.length;
-         int[] temp = new int[length];
-         int j = 0;
-         for (int i = 0; i < length - 1; i++) {
-             if (array[i] != array[i + 1]) {
-                 temp[j++] = array[i];
-             }
-         }
-         temp[j++] = array[length - 1];
-         for (int i = 0; i < j; i++) {
-             array[i] = temp[i];
-         }
-         return j;
-     }
 }
