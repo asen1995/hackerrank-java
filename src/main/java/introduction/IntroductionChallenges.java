@@ -55,17 +55,7 @@ public class IntroductionChallenges {
     }
 
     public static void main(String[] args) {
-        HttpClient httpClient = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://en.wikipedia.org/wiki/"))
-                .build();
 
-        CompletableFuture<HttpResponse<String>> responseFuture =
-                httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());
-
-        responseFuture.thenApply(HttpResponse::body)
-                .thenAccept(System.out::println)
-                .join();
 
     }
 
