@@ -55,19 +55,53 @@ public class IntroductionChallenges {
 
     public static void main(String[] args) {
 
-        Queue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder());
-
-        queue.add(8);
-        queue.add(2);
-        queue.add(3);
-        queue.add(4);
-        queue.add(5);
-
-        while (!queue.isEmpty()) {
-            System.out.println(queue.poll());
-        }
+        System.out.println(new IntroductionChallenges().longestPalindrome("babad"));
 
     }
+
+    public String longestPalindrome(String s) {
+
+            if (s.length() == 1) {
+                return s;
+            }
+
+           String longestPalidrome = "";
+
+           for(int i = 0 ; i < s.length() - 1; i++){
+
+               for(int j = i + 1 ; j < s.length() ; j++){
+
+                   final String substring = s.substring(i, j);
+
+                   if(isPalidrome(substring) && substring.length() > longestPalidrome.length()){
+                       longestPalidrome = substring;
+                   }
+
+               }
+
+           }
+
+           return longestPalidrome;
+    }
+
+    private boolean isPalidrome(String string) {
+
+        int start = 0;
+        int end = string.length() - 1;
+
+        while(start < end){
+            //comparing
+            if(string.charAt(start) != string.charAt(end)){
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
 
     int factorial(int n) {
         if (n == 1) {
