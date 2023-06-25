@@ -1,11 +1,7 @@
 package introduction;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.*;
-import java.util.concurrent.CompletableFuture;
+import java.util.List;
+import java.util.Stack;
 
 public class IntroductionChallenges {
 
@@ -61,27 +57,27 @@ public class IntroductionChallenges {
 
     public String longestPalindrome(String s) {
 
-            if (s.length() == 1) {
-                return s;
+        if (s.length() == 1) {
+            return s;
+        }
+
+        String longestPalidrome = "";
+
+        for (int i = 0; i < s.length() - 1; i++) {
+
+            for (int j = i + 1; j < s.length(); j++) {
+
+                final String substring = s.substring(i, j);
+
+                if (isPalidrome(substring) && substring.length() > longestPalidrome.length()) {
+                    longestPalidrome = substring;
+                }
+
             }
 
-           String longestPalidrome = "";
+        }
 
-           for(int i = 0 ; i < s.length() - 1; i++){
-
-               for(int j = i + 1 ; j < s.length() ; j++){
-
-                   final String substring = s.substring(i, j);
-
-                   if(isPalidrome(substring) && substring.length() > longestPalidrome.length()){
-                       longestPalidrome = substring;
-                   }
-
-               }
-
-           }
-
-           return longestPalidrome;
+        return longestPalidrome;
     }
 
     private boolean isPalidrome(String string) {
@@ -89,9 +85,9 @@ public class IntroductionChallenges {
         int start = 0;
         int end = string.length() - 1;
 
-        while(start < end){
+        while (start < end) {
             //comparing
-            if(string.charAt(start) != string.charAt(end)){
+            if (string.charAt(start) != string.charAt(end)) {
                 return false;
             }
 
