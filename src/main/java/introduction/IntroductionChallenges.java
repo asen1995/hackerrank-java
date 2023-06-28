@@ -4,7 +4,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.*;
+import java.util.List;
+import java.util.Stack;
 import java.util.concurrent.CompletableFuture;
 
 public class IntroductionChallenges {
@@ -55,17 +56,6 @@ public class IntroductionChallenges {
 
     public static void main(String[] args) {
 
-        Queue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder());
-
-        queue.add(8);
-        queue.add(2);
-        queue.add(3);
-        queue.add(4);
-        queue.add(5);
-
-        while (!queue.isEmpty()) {
-            System.out.println(queue.poll());
-        }
 
     }
 
