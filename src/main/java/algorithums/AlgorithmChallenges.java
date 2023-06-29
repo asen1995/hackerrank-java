@@ -623,4 +623,58 @@ public class AlgorithmChallenges {
         }
         return ans;
     }
+
+
+    public int[] mergeSort(int[] array) {
+
+        if (array.length <= 1) {
+            return array;
+        }
+
+        int middle = array.length / 2;
+
+        int[] left = new int[middle];
+        int[] right = new int[array.length - middle];
+
+        for (int i = 0; i < middle; i++) {
+            left[i] = array[i];
+        }
+
+        for (int i = middle; i < array.length; i++) {
+            right[i - middle] = array[i];
+        }
+
+        left = mergeSort(left);
+        right = mergeSort(right);
+
+        return merge(left, right);
+    }
+
+    private int[] merge(int[] left, int[] right) {
+
+        int[] result = new int[left.length + right.length];
+
+        int leftPointer = 0;
+        int rightPointer = 0;
+        int resultPointer = 0;
+
+        while (leftPointer < left.length || rightPointer < right.length) {
+
+            if (leftPointer < left.length && rightPointer < right.length) {
+
+                if (left[leftPointer] < right[rightPointer]) {
+                    result[resultPointer++] = left[leftPointer++];
+                } else {
+                    result[resultPointer++] = right[rightPointer++];
+                }
+
+            } else if (leftPointer < left.length) {
+                result[resultPointer++] = left[leftPointer++];
+            } else if (rightPointer < right.length) {
+                result[resultPointer++] = right[rightPointer++];
+            }
+        }
+
+        return result;
+    }
 }
