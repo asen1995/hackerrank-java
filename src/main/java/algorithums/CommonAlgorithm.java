@@ -43,26 +43,4 @@ public class CommonAlgorithm {
 
         return true;
     }
-
-
-    public int insertSort(List<Integer> list, int number){
-
-        int left = 0, right = list.size() - 1;
-
-        while (left <= right){
-
-            int middleIndex = (right + left) / 2;
-
-            if(list.get(middleIndex) == number){
-                return middleIndex;
-            }else if(list.get(middleIndex) > number){
-                right = middleIndex - 1;
-            }else{
-                left = middleIndex + 1;
-            }
-
-        }
-
-        return -1;
-    }
 }
