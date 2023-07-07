@@ -4,8 +4,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 public class IntroductionChallenges {
@@ -55,17 +54,7 @@ public class IntroductionChallenges {
     }
 
     public static void main(String[] args) {
-        HttpClient httpClient = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://en.wikipedia.org/wiki/"))
-                .build();
-
-        CompletableFuture<HttpResponse<String>> responseFuture =
-                httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString());
-
-        responseFuture.thenApply(HttpResponse::body)
-                .thenAccept(System.out::println)
-                .join();
+        System.out.println(new IntroductionChallenges().isAllUniqueCharachters("abcb"));
 
     }
 
@@ -115,4 +104,18 @@ public class IntroductionChallenges {
         return gcd(a, b - a);
 
     }
+
+    boolean isAllUniqueCharachters(String sentence){
+       Set<Character> charsMap = new HashSet<>();
+
+        for(Character character : sentence.toCharArray()){
+            if(charsMap.contains(character)) return false;
+
+            charsMap.add(character);
+        }
+
+        return true;
+    }
+
+
 }
