@@ -107,7 +107,6 @@ public class IntroductionChallenges {
 
     boolean isAllUniqueCharachters(String sentence){
        Set<Character> charsMap = new HashSet<>();
-
         for(Character character : sentence.toCharArray()){
             if(charsMap.contains(character)) return false;
 
