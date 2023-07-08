@@ -99,8 +99,7 @@ public class IntroductionChallenges {
             return a;
         }
         if (a > b) {
-            final int gcd = gcd(a - b, b);
-            return gcd;
+            return gcd(a - b, b);
         }
         return gcd(a, b - a);
 
