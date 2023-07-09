@@ -36,9 +36,36 @@ public class AlgorithmChallenges {
         return new String(finalString);
     }
 
+    public static boolean oneOperationOnlyValidation(String beforeString, String afterString) {
+
+        if (beforeString == null || afterString == null) {
+            return false;
+        }
+
+        if (afterString.length() == beforeString.length()) {
+            return oneWayReplace(beforeString, afterString);
+        }
+
+
+        return true;
+    }
+
+    private static boolean oneWayReplace(String beforeString, String afterString) {
+        int differentChars = 0;
+        for (int i = 0; i < beforeString.length(); i++) {
+            if (differentChars > 1) {
+                return false;
+            }
+            if (beforeString.charAt(i) != afterString.charAt(i))
+                differentChars++;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
 
-        System.out.println(replaceAllSpacesWith("Mr John Smith    "));
+        System.out.println(oneOperationOnlyValidation("pale","btle"));
     }
 
     public String dayOfProgrammer(int year) {
