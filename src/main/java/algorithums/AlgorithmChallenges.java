@@ -7,6 +7,40 @@ import java.util.*;
 public class AlgorithmChallenges {
 
 
+    public static String replaceAllSpacesWith(String string) {
+
+        int spaceCount = 0;
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == ' ') {
+                spaceCount++;
+            }
+        }
+
+        char[] finalString = new char[string.length() - spaceCount + (spaceCount * 3)];
+
+        int index = 0;
+
+
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == ' ') {
+                finalString[index++] = '%';
+                finalString[index++] = '2';
+                finalString[index++] = '0';
+            } else {
+                finalString[index++] = string.charAt(i);
+            }
+        }
+
+
+        return new String(finalString);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(replaceAllSpacesWith("Mr John Smith    "));
+    }
+
     public String dayOfProgrammer(int year) {
 
         if (year < 1700 || year > 2700) {
@@ -396,7 +430,6 @@ public class AlgorithmChallenges {
         return maxBird;
     }
 
-
     public void bonAppetit(List<Integer> bill, int k, int b) {
 
         //b - what brian bill Anna
@@ -434,7 +467,6 @@ public class AlgorithmChallenges {
 
         return numberOfPairs;
     }
-
 
     public int pageCount(int numberOfPages, int searchedPageNumber) {
 
@@ -485,7 +517,6 @@ public class AlgorithmChallenges {
         return arr;
     }
 
-
     public int[] insertionSort(int[] arr) {
 
         for (int i = 1; i < arr.length; i++) {
@@ -503,7 +534,6 @@ public class AlgorithmChallenges {
 
         return arr;
     }
-
 
     public int[] bubbleSort(int[] arr) {
 
@@ -607,7 +637,6 @@ public class AlgorithmChallenges {
         }
         throw new IllegalArgumentException("No two sum solution");
     }
-
 
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
