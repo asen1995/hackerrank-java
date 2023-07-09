@@ -45,8 +45,30 @@ public class AlgorithmChallenges {
         if (afterString.length() == beforeString.length()) {
             return oneWayReplace(beforeString, afterString);
         }
+        else if(afterString.length() == beforeString.length() + 1) {
+            return oneWayInsert(beforeString, afterString);
+        }
 
+        return true;
+    }
 
+    private static boolean oneWayInsert(String beforeString, String afterString) {
+
+        int differenceCount = 0;
+        int newStringIndex = 0;
+
+        for(int i = 0 ; i < beforeString.length(); i++){
+
+            if(differenceCount == 2){
+                return false;
+            }
+
+            if(beforeString.charAt(i) != afterString.charAt(newStringIndex)){
+                differenceCount++;
+                newStringIndex++;
+                i--;
+            }
+        }
         return true;
     }
 
@@ -65,7 +87,7 @@ public class AlgorithmChallenges {
 
     public static void main(String[] args) {
 
-        System.out.println(oneOperationOnlyValidation("pale","btle"));
+        System.out.println(oneOperationOnlyValidation("pale","palle"));
     }
 
     public String dayOfProgrammer(int year) {
