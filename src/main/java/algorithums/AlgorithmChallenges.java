@@ -142,16 +142,6 @@ public class AlgorithmChallenges {
         int leftDiagonal = 0, rightDiagonal = 0;
         final int matrixMax = arr.size();
 
-        //3 dimensional array example of diagonals
-
-        //        0 0
-        //        1 1
-        //        2 2
-
-        //         2 0
-        //         1 1
-        //         0 2
-
 
         for (int iteration = 0, leftDiagonalIndex = 0, rightDiagonalIndex = matrixMax - 1; iteration < matrixMax; iteration++) {
 
