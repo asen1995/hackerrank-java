@@ -155,6 +155,29 @@ public class AlgorithmChallenges {
         return Math.abs(leftDiagonal - rightDiagonal);
     }
 
+    public void plusMinus(int[] arr) {
+        final int arraySize = arr.length;
+
+        int positives = 0, negatives = 0, zeroes = 0;
+
+        for (final int number : arr) {
+            if (number > 0) {
+                positives++;
+            } else if (number < 0) {
+                negatives++;
+            } else {
+                zeroes++;
+            }
+        }
+
+        int roundingOffsets = 5;
+
+        System.out.println(new BigDecimal(Double.toString((double) positives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal(Double.toString((double) negatives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal(Double.toString((double) zeroes / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+
+    }
+
     public void plusMinus(List<Integer> arr) {
         final int arraySize = arr.size();
 
