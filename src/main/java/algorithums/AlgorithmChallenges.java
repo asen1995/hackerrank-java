@@ -175,11 +175,10 @@ public class AlgorithmChallenges {
         System.out.println(new BigDecimal(Double.toString((double) positives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
         System.out.println(new BigDecimal(Double.toString((double) negatives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
         System.out.println(new BigDecimal(Double.toString((double) zeroes / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
-
     }
 
     public void plusMinus(List<Integer> arr) {
-        final int arraySize = arr.size();
+        final int size = arr.size();
 
         int positives = 0, negatives = 0, zeroes = 0;
 
@@ -195,9 +194,9 @@ public class AlgorithmChallenges {
 
         int roundingOffsets = 5;
 
-        System.out.println(new BigDecimal(Double.toString((double) positives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
-        System.out.println(new BigDecimal(Double.toString((double) negatives / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
-        System.out.println(new BigDecimal(Double.toString((double) zeroes / arraySize)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal(Double.toString((double) positives / size)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal(Double.toString((double) negatives / size)).setScale(roundingOffsets, RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal(Double.toString((double) zeroes / size)).setScale(roundingOffsets, RoundingMode.HALF_UP));
 
     }
 
