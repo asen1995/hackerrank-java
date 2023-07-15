@@ -20,6 +20,24 @@ public class Graph {
     }
 
 
+    public void BFS(int startVertex) {
+        boolean[] visited = new boolean[numVertices];
+        Queue<Integer> queue = new LinkedList<>();
+        visited[startVertex] = true;
+        queue.add(startVertex);
+
+        while (!queue.isEmpty()) {
+            int currentVertex = queue.poll();
+            System.out.print(currentVertex + " ");
+
+            for (int adjacentVertex : adjacencyList[currentVertex]) {
+                if (!visited[adjacentVertex]) {
+                    visited[adjacentVertex] = true;
+                    queue.add(adjacentVertex);
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Graph graph = new Graph(10);
@@ -34,5 +52,8 @@ public class Graph {
         graph.addEdge(4, 8);
         graph.addEdge(5, 9);
 
+        System.out.println(graph);
+
+        graph.BFS(0);
     }
 }
