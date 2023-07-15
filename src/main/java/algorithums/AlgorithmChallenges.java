@@ -216,14 +216,6 @@ public class AlgorithmChallenges {
             System.out.println();
             treeCellsPerRow++;
         }
-
-        //
-        //     #
-        //    ##
-        //   ###
-        //  ####
-        // #####
-        //######
     }
 
     public void miniMaxSum(List<Integer> arr) {
