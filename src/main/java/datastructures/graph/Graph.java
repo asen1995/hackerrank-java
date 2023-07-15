@@ -7,7 +7,7 @@ public class Graph {
 
         final Node root = GraphFactory.createGraph();
 
-        GraphSearch search = new BFS();
+        GraphSearch search = new DFS();
 
         search.search(root);
     }
