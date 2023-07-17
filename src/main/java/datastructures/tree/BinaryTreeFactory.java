@@ -13,10 +13,10 @@ public class BinaryTreeFactory {
 
         Node subtree1 = new Node(5, leaf, leaf2);
 
-        Node subtree2 = new Node(15, null, leaf3);
+        Node subtree2 = new Node(20, null, leaf3);
 
 
-        Node root = new Node(1, subtree1, subtree2);
+        Node root = new Node(10, subtree1, subtree2);
 
         return root;
 
