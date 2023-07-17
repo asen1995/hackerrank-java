@@ -88,21 +88,5 @@ public class IntroductionChallenges {
 
     }
 
-    int digitSum(int n) {
-        if (n < 10) {
-            return n;
-        }
-        return n % 10 + digitSum(n / 10);
-
-    }
-
-
-    int power(int base, int exponent) {
-        if (exponent == 0) {
-            return 1;
-        }
-        return base * power(base, exponent - 1);
-
-    }
 
 }
