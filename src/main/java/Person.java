@@ -7,21 +7,6 @@ public class Person implements Serializable, Cloneable {
 	private transient String name;
 	transient int height;
 
-	public Person(int age, String name, int height) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.height = height;
-	}
-
-	public Person(int age, String name) {
-		this(age, name, 0);
-	}
-
-	public static String getCountry() {
-
-		return country;
-	}
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
