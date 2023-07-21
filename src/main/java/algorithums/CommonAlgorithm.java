@@ -43,4 +43,10 @@ public class CommonAlgorithm {
 
         return true;
     }
+
+
+    public static void main(String[] args) {
+        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+        System.out.println(commonAlgorithm.isPalidrome("madam"));
+    }
 }
