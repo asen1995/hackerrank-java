@@ -89,5 +89,14 @@ public class IntroductionChallenges {
     }
 
 
+    short sumOfDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return (short) (n % 10 + sumOfDigits(n / 10));
+
+    }
+
+
 
 }
