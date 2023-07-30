@@ -29,7 +29,7 @@ public class CommonAlgorithm {
         return -1;
     }
 
-    public boolean isPalindrome(String word){
+    public boolean isPalidrome(String word){
 
         int left = 0, right = word.length() - 1 ;
 
@@ -47,6 +47,6 @@ public class CommonAlgorithm {
 
     public static void main(String[] args) {
         CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
-        System.out.println(commonAlgorithm.isPalindrome("madam"));
+        System.out.println(commonAlgorithm.isPalidrome("madam"));
     }
 }

@@ -3,6 +3,7 @@ package algorithums;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class CommonAlgorithmTest {
 
     @Test
     public void isPalidrome() {
-        assertTrue(commonAlgorithms.isPalindrome("racecar"));
+        assertTrue(commonAlgorithms.isPalidrome("racecar"));
     }
 
 }
