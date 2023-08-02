@@ -43,6 +43,6 @@ public class SmallestPathFinder {
                 {4, 2, 1, 1}
         };
 
-        System.out.println("Smallest path sum: " + new SmallestPathFinder().findSmallestPath(matrix));
+        System.out.println(String.format("The minimum path sum is %d", new SmallestPathFinder().findSmallestPath(matrix)));
     }
 }
