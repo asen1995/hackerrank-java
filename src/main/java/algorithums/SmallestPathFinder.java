@@ -1,6 +1,18 @@
 package algorithums;
 
 public class SmallestPathFinder {
+    public static void main(String[] args) {
+
+        int[][] matrix = {
+                {1, 8, 1, 1},
+                {1, 5, 1, 85},
+                {4, 2, 14, 1},
+                {4, 2, 1, 1}
+        };
+
+        System.out.println(String.format("The minimum path sum is %d", new SmallestPathFinder().findSmallestPath(matrix)));
+    }
+
     public int findSmallestPath(int[][] matrix) {
 
         final int numberOfRows = matrix.length;
@@ -27,17 +39,5 @@ public class SmallestPathFinder {
 
         // The last element of the arrayPathSums array will contain the minimum path sum
         return arrayPathSums[numberOfRows - 1][numberOfColumns - 1];
-    }
-
-    public static void main(String[] args) {
-
-        int[][] matrix = {
-                {1, 8, 1, 1 },
-                {1, 5, 1, 85},
-                {4, 2, 14, 1},
-                {4, 2, 1, 1}
-        };
-
-        System.out.println(String.format("The minimum path sum is %d", new SmallestPathFinder().findSmallestPath(matrix)));
     }
 }
