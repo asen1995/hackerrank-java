@@ -1,58 +1,16 @@
 package introduction;
 
+import model.BracketValidator;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
-import java.util.Stack;
 import java.util.concurrent.CompletableFuture;
 
 public class IntroductionChallenges {
 
-
-    public boolean isItValidBracket(String input) {
-
-        List<Character> openingBrackets = new Stack<>();
-
-        for (Character character : input.toCharArray()) {
-
-            switch (character) {
-                case ')': {
-                    if (openingBrackets.isEmpty()) return false;
-                    removeFromTailIfExists('(', openingBrackets);
-                    break;
-                }
-                case ']': {
-
-                    if (openingBrackets.isEmpty()) return false;
-                    removeFromTailIfExists('[', openingBrackets);
-                    break;
-                }
-                case '}': {
-                    if (openingBrackets.isEmpty()) return false;
-                    removeFromTailIfExists('{', openingBrackets);
-                    break;
-                }
-                default: {
-                    openingBrackets.add(character);
-                }
-
-            }
-
-
-        }
-
-        if (!openingBrackets.isEmpty()) return false;
-
-        return true;
-    }
-
-    private static void removeFromTailIfExists(Character closingBracket, List<Character> openingBrackets) {
-        if (openingBrackets.get(openingBrackets.size() - 1).equals(closingBracket)) {
-            openingBrackets.remove(openingBrackets.size() - 1);
-        }
-    }
 
     public static void main(String[] args) {
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -67,6 +25,11 @@ public class IntroductionChallenges {
                 .thenAccept(System.out::println)
                 .join();
 
+    }
+
+    public boolean isItValidBracket(String input) {
+        BracketValidator bracketValidator = new BracketValidator();
+        return bracketValidator.isValid(input);
     }
 
     int factorial(int n) {
