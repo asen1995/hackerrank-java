@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 public class IntroductionChallenges {
 
 
-    private static boolean isItValidBracket(String input) {
+    public boolean isItValidBracket(String input) {
 
         List<Character> openingBrackets = new Stack<>();
 
