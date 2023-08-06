@@ -52,8 +52,9 @@ public class BracketValidator {
     }
 
     private void removeFromTailIfExists(Character closingBracket, List<Character> openingBrackets) {
-        if (openingBrackets.get(openingBrackets.size() - 1).equals(closingBracket)) {
-            openingBrackets.remove(openingBrackets.size() - 1);
+        final int lastFounderOpeningBracket = openingBrackets.size() - 1;
+        if (openingBrackets.get(lastFounderOpeningBracket).equals(closingBracket)) {
+            openingBrackets.remove(lastFounderOpeningBracket);
         }
     }
 
