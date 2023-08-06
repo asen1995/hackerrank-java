@@ -1,111 +1,83 @@
 public class BadCodeExample {
-    public void processOrder(Order order) {
+    public void processStudentRecords(List<Student> students) {
+        // Input validation
+        if (students == null) {
+            throw new IllegalArgumentException("Student list cannot be null");
+        }
+        if (students.isEmpty()) {
+            throw new IllegalArgumentException("Student list cannot be empty");
+        }
 
-        validateOrder(order);
+        // Data processing
+        Map<String, List<Student>> studentsByGrade = new HashMap<>();
+        List<Student> failedStudents = new ArrayList<>();
 
-        double totalPrice = getTotalPricesOfItemsInOrder(order);
-
-        if (orderIsDiscounted(order)) {
-
-            double discountPercentage = order.getDiscountPercentage();
-            if (invalidDiscountPercentage(discountPercentage)) {
-                throw new IllegalArgumentException("Invalid discount percentage");
+        for (Student student : students) {
+            if (student.getGrade() < 1 || student.getGrade() > 12) {
+                throw new IllegalArgumentException("Invalid grade for student: " + student.getName());
             }
-            totalPrice = applyDiscountPercantage(totalPrice, discountPercentage);
-        }
 
-        double taxRate = determineTaxRate(order);
-
-        double taxAmount = calculateTaxAmount(totalPrice, taxRate);
-
-        totalPrice += taxAmount;
-
-        double shippingCost = determineShippingCostBasedOnTotalPrice(totalPrice);
-        totalPrice += shippingCost;
-        saveOrder(order);
-        sendEmailNotification(order, totalPrice);
-    }
-
-    private void sendEmailNotification(Order order, double totalPrice) {
-        EmailService.sendEmail(order.getCustomerEmail(), "Order Confirmation",
-                "Thank you for your order! Your total amount is: $" + totalPrice);
-    }
-
-    private void saveOrder(Order order) {
-        // Save the order to the database
-        OrderDAO.saveOrder(order);
-    }
-
-    private double determineShippingCostBasedOnTotalPrice(double totalPrice) {
-        double shippingCost = 0;
-        if (totalPrice >= 100) {
-            shippingCost = 5;
-        } else if (totalPrice >= 50) {
-            shippingCost = 10;
-        } else {
-            shippingCost = 15;
-        }
-        return shippingCost;
-    }
-
-    private double calculateTaxAmount(double totalPrice, double taxRate) {
-        return totalPrice * taxRate;
-    }
-
-    private double determineTaxRate(Order order) {
-        double taxRate = 0.1;
-        if (order.getCountry().equals("USA")) {
-            taxRate = 0.08;
-        } else if (order.getCountry().equals("UK")) {
-            taxRate = 0.2;
-        }
-        return taxRate;
-    }
-
-    private double applyDiscountPercantage(double totalPrice, double discountPercentage) {
-        totalPrice *= (1 - discountPercentage / 100);
-        return totalPrice;
-    }
-
-    private boolean invalidDiscountPercentage(double discountPercentage) {
-        return discountPercentage < 0 || discountPercentage > 100;
-    }
-
-    private boolean orderIsDiscounted(Order order) {
-        return order.isDiscounted();
-    }
-
-    private void validateOrder(Order order) {
-        if (orderIsNull(order)) {
-            throw new IllegalArgumentException("Order cannot be null");
-        }
-        if (orderNotContainAnyItems(order)) {
-            throw new IllegalArgumentException("Order items cannot be empty");
-        }
-    }
-
-    private double getTotalPricesOfItemsInOrder(Order order) {
-        double totalPrice = 0;
-        for (OrderItem item : order.getItems()) {
-            if (item.getQuantity() <= 0) {
-                throw new IllegalArgumentException("Invalid quantity for item: " + item.getName());
+            if (student.getScore() < 0 || student.getScore() > 100) {
+                throw new IllegalArgumentException("Invalid score for student: " + student.getName());
             }
-            double itemPrice = item.getPrice();
-            if (itemPrice < 0) {
-                throw new IllegalArgumentException("Invalid price for item: " + item.getName());
+
+            // Categorize students by grade
+            List<Student> gradeStudents = studentsByGrade.getOrDefault(student.getGrade(), new ArrayList<>());
+            gradeStudents.add(student);
+            studentsByGrade.put(student.getGrade(), gradeStudents);
+
+            // Check if the student failed
+            if (student.getScore() < 60) {
+                failedStudents.add(student);
             }
-            totalPrice += itemPrice * item.getQuantity();
         }
-        return totalPrice;
+
+        // Calculate average scores for each grade
+        Map<Integer, Double> averageScoresByGrade = new HashMap<>();
+        for (Map.Entry<String, List<Student>> entry : studentsByGrade.entrySet()) {
+            int grade = Integer.parseInt(entry.getKey());
+            List<Student> gradeStudents = entry.getValue();
+            double totalScore = 0;
+            for (Student student : gradeStudents) {
+                totalScore += student.getScore();
+            }
+            double averageScore = totalScore / gradeStudents.size();
+            averageScoresByGrade.put(grade, averageScore);
+        }
+
+        // Calculate overall average score
+        double totalScore = 0;
+        for (Student student : students) {
+            totalScore += student.getScore();
+        }
+        double overallAverageScore = totalScore / students.size();
+
+        // Identify top students
+        List<Student> topStudents = new ArrayList<>();
+        for (Student student : students) {
+            if (student.getScore() >= 90) {
+                topStudents.add(student);
+            }
+        }
+
+        // Print results
+        System.out.println("Average scores by grade:");
+        for (Map.Entry<Integer, Double> entry : averageScoresByGrade.entrySet()) {
+            System.out.println("Grade " + entry.getKey() + ": " + entry.getValue());
+        }
+
+        System.out.println("Overall average score: " + overallAverageScore);
+
+        System.out.println("Top students:");
+        for (Student student : topStudents) {
+            System.out.println(student.getName() + " (Grade: " + student.getGrade() + ", Score: " + student.getScore() + ")");
+        }
+
+        System.out.println("Failed students:");
+        for (Student student : failedStudents) {
+            System.out.println(student.getName() + " (Grade: " + student.getGrade() + ", Score: " + student.getScore() + ")");
+        }
     }
 
-    private boolean orderNotContainAnyItems(Order order) {
-        return order.getItems() == null || order.getItems().isEmpty();
-    }
-
-    private boolean orderIsNull(Order order) {
-        return order == null;
-    }
-
-
+    // ... other unrelated methods and code
 }
