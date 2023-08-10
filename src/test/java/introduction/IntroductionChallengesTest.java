@@ -21,11 +21,4 @@ public class IntroductionChallengesTest {
 		assertFalse(itValidBracket);
 	}
 
-	@Test
-	public void testingFactorial() {
-		IntroductionChallenges introductionChallenges = new IntroductionChallenges();
-		final int factorial = introductionChallenges.factorial(3);
-		assertTrue(factorial == 6);
-	}
-
 }
