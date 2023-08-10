@@ -57,4 +57,11 @@ public class IntroductionChallenges {
         }
         return n + calculateSum(n - 1);
     }
+
+    int calculateSum(List<Integer> list) {
+        if (list.size() == 1) {
+            return list.get(0);
+        }
+        return list.get(0) + calculateSum(list.subList(1, list.size()));
+    }
 }
