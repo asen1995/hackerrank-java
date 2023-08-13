@@ -64,4 +64,20 @@ public class IntroductionChallenges {
         }
         return list.get(0) + calculateSum(list.subList(1, list.size()));
     }
+
+
+    int calculateSum(int[] array) {
+        if (array.length == 1) {
+            return array[0];
+        }
+        return array[0] + calculateSum(subArray(array));
+    }
+
+    private int[] subArray(int[] array) {
+        int[] subArray = new int[array.length - 1];
+        System.arraycopy(array, 1, subArray, 0, array.length - 1);
+        return subArray;
+    }
+
+
 }
