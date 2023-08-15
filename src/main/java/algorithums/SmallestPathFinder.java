@@ -37,6 +37,7 @@ public class SmallestPathFinder {
             }
         }
 
+        // The last element of the arrayPathSums array will contain the minimum path sum
         return arrayPathSums[numberOfRows - 1][numberOfColumns - 1];
     }
 }
