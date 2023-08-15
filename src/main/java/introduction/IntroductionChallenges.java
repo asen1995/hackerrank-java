@@ -32,6 +32,14 @@ public class IntroductionChallenges {
         return bracketValidator.isValid(input);
     }
 
+    int factorial(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+
+    }
+
     int fibonacci(int n) {
         if (n == 0) {
             return 0;
@@ -69,13 +77,6 @@ public class IntroductionChallenges {
         int[] subArray = new int[array.length - 1];
         System.arraycopy(array, 1, subArray, 0, array.length - 1);
         return subArray;
-    }
-
-    int calculateSum(int[] array, int index) {
-        if (index == array.length - 1) {
-            return array[index];
-        }
-        return array[index] + calculateSum(array, index + 1);
     }
 
 
