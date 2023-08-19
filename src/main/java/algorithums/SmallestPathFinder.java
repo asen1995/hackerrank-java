@@ -10,8 +10,7 @@ public class SmallestPathFinder {
                 {4, 2, 1, 1}
         };
 
-        final SmallestPathFinder smallestPathFinder = new SmallestPathFinder();
-        System.out.println(String.format("The minimum path sum is %d", smallestPathFinder.findSmallestPath(matrix)));
+        System.out.println(String.format("The minimum path sum is %d", new SmallestPathFinder().findSmallestPath(matrix)));
     }
 
     public int findSmallestPath(int[][] matrix) {
@@ -38,6 +37,7 @@ public class SmallestPathFinder {
             }
         }
 
+        // The last element of the arrayPathSums array will contain the minimum path sum
         return arrayPathSums[numberOfRows - 1][numberOfColumns - 1];
     }
 }
