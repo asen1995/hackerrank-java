@@ -116,7 +116,7 @@ public class StringsChallenges {
 
     }
 
-    public static void removeTagsFromSentence(String line) {
+    public void removeTagsFromSentence(String line) {
 
         String regexForMatchingTags = "<(.+)>([^<]+)</\\1>";
 
