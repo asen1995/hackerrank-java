@@ -84,7 +84,7 @@ public class StringsChallenges {
 
     //check if its a valid regex pattern
     public static void isItAValidPattern(List<String> listOfRegularExpressions) {
-        List<String> listOfRegularExdpressions = new ArrayList();
+
         for (String regex : listOfRegularExpressions) {
 
             try {
