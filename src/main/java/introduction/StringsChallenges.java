@@ -105,7 +105,7 @@ public class StringsChallenges {
     public static String removeDuplicateWords(String sentence) {
         String regexMatchingDuplicateWords = "\\b(\\w+)(\\s+\\1\\b)*";
 
-        Pattern p = Pattern.compile(regexMatchingDuplicateWords, Pattern.CASE_INSENSITIVE);
+        Pattern p = Pattern.compile(regexMatchingDuplicateWords, Pattern.MULTILINE);
 
         Matcher m = p.matcher(sentence);
 
