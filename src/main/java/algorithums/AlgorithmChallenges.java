@@ -44,8 +44,7 @@ public class AlgorithmChallenges {
 
         if (afterString.length() == beforeString.length()) {
             return oneWayReplace(beforeString, afterString);
-        }
-        else if(afterString.length() == beforeString.length() + 1) {
+        } else if (afterString.length() == beforeString.length() + 1) {
             return oneWayInsert(beforeString, afterString);
         }
 
@@ -57,13 +56,13 @@ public class AlgorithmChallenges {
         int differenceCount = 0;
         int newStringIndex = 0;
 
-        for(int i = 0 ; i < beforeString.length(); i++){
+        for (int i = 0; i < beforeString.length(); i++) {
 
-            if(differenceCount == 2){
+            if (differenceCount == 2) {
                 return false;
             }
 
-            if(beforeString.charAt(i) != afterString.charAt(newStringIndex)){
+            if (beforeString.charAt(i) != afterString.charAt(newStringIndex)) {
                 differenceCount++;
                 newStringIndex++;
                 i--;
@@ -87,7 +86,7 @@ public class AlgorithmChallenges {
 
     public static void main(String[] args) {
 
-        System.out.println(oneOperationOnlyValidation("pale","palle"));
+        System.out.println(oneOperationOnlyValidation("pale", "palle"));
     }
 
     public String dayOfProgrammer(int year) {
@@ -475,7 +474,7 @@ public class AlgorithmChallenges {
                 maxCount = entry.getValue();
                 maxBird = entry.getKey();
             } else if (entry.getValue() == maxCount && (entry.getKey() < maxBird)) {
-                    maxBird = entry.getKey();
+                maxBird = entry.getKey();
             }
         }
 
