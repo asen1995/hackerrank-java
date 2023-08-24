@@ -474,10 +474,8 @@ public class AlgorithmChallenges {
             if (entry.getValue() > maxCount) {
                 maxCount = entry.getValue();
                 maxBird = entry.getKey();
-            } else if (entry.getValue() == maxCount) {
-                if (entry.getKey() < maxBird) {
+            } else if (entry.getValue() == maxCount && (entry.getKey() < maxBird)) {
                     maxBird = entry.getKey();
-                }
             }
         }
 
