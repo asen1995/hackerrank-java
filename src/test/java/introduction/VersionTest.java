@@ -29,28 +29,28 @@ public class VersionTest {
     public void releaseVersionVsSnapshoptVersion() {
         Version version = new Version("3.8.0");
         Version versionSnapshot = new Version("3.8.1-SNAPSHOT");
-        Assert.assertTrue(version.compareTo(versionSnapshot) == 1);
+        Assert.assertEquals(1, version.compareTo(versionSnapshot));
     }
 
     @Test
     public void snapshotVersionVsReleaseVersion() {
         Version version = new Version("3.8.0");
         Version versionSnapshot = new Version("3.8.1-SNAPSHOT");
-        Assert.assertTrue(versionSnapshot.compareTo(version) == -1);
+        Assert.assertEquals(-1, versionSnapshot.compareTo(version));
     }
 
     @Test
     public void sameVersions() {
         Version version = new Version("3.8.0");
         Version versionSnapshot = new Version("3.8.0");
-        Assert.assertTrue(versionSnapshot.compareTo(version) == 0);
+        Assert.assertEquals(0, versionSnapshot.compareTo(version));
     }
 
     @Test
     public void firstVersionBiggerThenSecond() {
         Version version = new Version("4.8.0");
         Version versionSecond = new Version("3.8.0");
-        Assert.assertTrue(version.compareTo(versionSecond) == 1);
+        Assert.assertEquals(1, version.compareTo(versionSecond));
     }
 
 
