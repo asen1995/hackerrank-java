@@ -369,7 +369,8 @@ public class AlgorithmChallenges {
 
     public List<Integer> breakingRecords(List<Integer> scores) {
 
-        int breakingBestRecords = 0, breakingWorstRecord = 0;
+        int breakingBestRecords = 0;
+        int breakingWorstRecord = 0;
 
         int bestRecord = scores.get(0);
         int worstRecord = scores.get(0);
