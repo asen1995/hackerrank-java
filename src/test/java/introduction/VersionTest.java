@@ -9,7 +9,7 @@ public class VersionTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void nulls() {
-        assertNull(new Version(null));
+        new Version(null);
     }
 
     @Test(expected = IllegalArgumentException.class)
