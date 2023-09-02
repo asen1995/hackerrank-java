@@ -482,6 +482,18 @@ public class AlgorithmChallenges {
         return maxBird;
     }
 
+    public void bonAppetit(List<Integer> bill, int k, int b) {
+
+        int annaWillNotEatMealIndex = bill.get(k);
+        int sumToBePayedByEachPerson = (bill.stream().mapToInt(Integer::intValue).sum() - annaWillNotEatMealIndex) / 2;
+
+        if (sumToBePayedByEachPerson == b) {
+            System.out.print("Bon Appetit");
+        } else {
+            System.out.println((b - sumToBePayedByEachPerson));
+        }
+
+    }
 
     public int sockMerchant(int n, List<Integer> ar) {
 
