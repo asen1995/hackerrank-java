@@ -3,7 +3,20 @@ package datastructures.graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * <p>
+ * This is a specific implementation of the GraphSearch interface for BFS
+ * </p>
+ * author: Asen Nikolaev
+ */
 public class BFS implements GraphSearch {
+
+    /**
+     * <p>
+     * This method implements the BFS algorithm
+     * </p>
+     * @param root - the root node of the graph
+     */
     @Override
     public void search(Node root) {
 
